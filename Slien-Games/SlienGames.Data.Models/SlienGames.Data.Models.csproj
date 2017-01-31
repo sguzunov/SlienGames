@@ -63,6 +63,7 @@
     <Compile Include="Contracts\IDbModel.cs" />
     <Compile Include="GameProfile.cs" />
     <Compile Include="Image.cs" />
+    <Compile Include="User.cs" />
     <Compile Include="Vote.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

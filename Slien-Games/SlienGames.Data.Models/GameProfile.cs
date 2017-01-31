@@ -11,11 +11,13 @@ namespace SlienGames.Data.Models
     {
         private ICollection<Vote> votes;
         private ICollection<Comment> comments;
+        private ICollection<User> usersVotedThisGame;
 
         public GameProfile()
         {
             this.votes = new HashSet<Vote>();
             this.comments = new HashSet<Comment>();
+            this.usersVotedThisGame = new HashSet<User>();
         }
 
         public int Id { get; set; }
@@ -51,6 +53,12 @@ namespace SlienGames.Data.Models
         {
             get { return this.comments; }
             set { this.comments = value; }
+        }
+
+        public ICollection<User> UsersVotedThisGame
+        {
+            get { return this.usersVotedThisGame; }
+            set { this.usersVotedThisGame = value; }
         }
     }
 }
