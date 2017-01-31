@@ -9,12 +9,12 @@ namespace SlienGames.Data.Models
 {
     public class GameProfile : IDbModel
     {
-        private ICollection<LikeHate> likes;
+        private ICollection<Vote> votes;
         private ICollection<Comment> comments;
 
         public GameProfile()
         {
-            this.likes = new HashSet<LikeHate>();
+            this.votes = new HashSet<Vote>();
             this.comments = new HashSet<Comment>();
         }
 
@@ -41,10 +41,10 @@ namespace SlienGames.Data.Models
 
         public Image Cover { get; set; }
 
-        public ICollection<LikeHate> Likes
+        public ICollection<Vote> Votes
         {
-            get { return this.likes; }
-            set { this.likes = value; }
+            get { return this.votes; }
+            set { this.votes = value; }
         }
 
         public ICollection<Comment> Comments
