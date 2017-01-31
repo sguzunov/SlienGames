@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{88EA6705-5F7
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlienGames.Web", "SlienGames.Web\SlienGames.Web.csproj", "{9B6774B9-87BB-427F-AD51-3987FA89CE1C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlienGames.Data", "SlienGames.Data\SlienGames.Data.csproj", "{8C257009-EEF1-46BA-8D5C-638D3C42B634}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{9B6774B9-87BB-427F-AD51-3987FA89CE1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9B6774B9-87BB-427F-AD51-3987FA89CE1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9B6774B9-87BB-427F-AD51-3987FA89CE1C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C257009-EEF1-46BA-8D5C-638D3C42B634}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C257009-EEF1-46BA-8D5C-638D3C42B634}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C257009-EEF1-46BA-8D5C-638D3C42B634}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C257009-EEF1-46BA-8D5C-638D3C42B634}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,5 +38,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{AD2774FC-9410-4C86-B293-95FB02F70F43} = {6D226BA6-D717-42BE-A992-EF4EED376A7E}
 		{9B6774B9-87BB-427F-AD51-3987FA89CE1C} = {88EA6705-5F77-4132-99E8-E80FDF7EDAAD}
+		{8C257009-EEF1-46BA-8D5C-638D3C42B634} = {6D226BA6-D717-42BE-A992-EF4EED376A7E}
 	EndGlobalSection
 EndGlobal

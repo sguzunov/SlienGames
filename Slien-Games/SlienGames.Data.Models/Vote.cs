@@ -4,11 +4,11 @@ using SlienGames.Data.Models.Contracts;
 
 namespace SlienGames.Data.Models
 {
-    public class LikeHate : IDbModel
+    public class Vote : IDbModel
     {
         private ICollection<GameProfile> games;
 
-        public LikeHate()
+        public Vote()
         {
             this.games = new HashSet<GameProfile>();
         }
