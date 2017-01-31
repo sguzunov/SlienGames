@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{6D226BA6-D717-42BE-A992-EF4EED376A7E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlienGames.Data.Models", "SlienGames.Data.Models\SlienGames.Data.Models.csproj", "{AD2774FC-9410-4C86-B293-95FB02F70F43}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{88EA6705-5F77-4132-99E8-E80FDF7EDAAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlienGames.Web", "SlienGames.Web\SlienGames.Web.csproj", "{9B6774B9-87BB-427F-AD51-3987FA89CE1C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD2774FC-9410-4C86-B293-95FB02F70F43}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD2774FC-9410-4C86-B293-95FB02F70F43}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD2774FC-9410-4C86-B293-95FB02F70F43}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD2774FC-9410-4C86-B293-95FB02F70F43}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B6774B9-87BB-427F-AD51-3987FA89CE1C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B6774B9-87BB-427F-AD51-3987FA89CE1C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B6774B9-87BB-427F-AD51-3987FA89CE1C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B6774B9-87BB-427F-AD51-3987FA89CE1C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AD2774FC-9410-4C86-B293-95FB02F70F43} = {6D226BA6-D717-42BE-A992-EF4EED376A7E}
+		{9B6774B9-87BB-427F-AD51-3987FA89CE1C} = {88EA6705-5F77-4132-99E8-E80FDF7EDAAD}
+	EndGlobalSection
+EndGlobal
