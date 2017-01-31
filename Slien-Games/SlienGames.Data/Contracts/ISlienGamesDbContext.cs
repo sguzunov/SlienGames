@@ -3,7 +3,7 @@ using System.Data.Entity.Infrastructure;
 
 using SlienGames.Data.Models;
 
-namespace SlienGames.Data
+namespace SlienGames.Data.Contracts
 {
     public interface ISlienGamesDbContext
     {
@@ -18,5 +18,7 @@ namespace SlienGames.Data
         IDbSet<T> Set<T>() where T : class;
 
         DbEntityEntry<TEntity> Entry<TEntity>(TEntity entity) where TEntity : class;
+
+        void SaveChanges();
     }
 }

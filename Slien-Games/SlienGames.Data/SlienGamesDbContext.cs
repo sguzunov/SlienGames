@@ -1,5 +1,7 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+
+using SlienGames.Data.Contracts;
 using SlienGames.Data.Models;
 
 namespace SlienGames.Data
@@ -33,6 +35,11 @@ namespace SlienGames.Data
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+        }
+
+        public new void SaveChanges()
+        {
+            this.SaveChanges();
         }
     }
 }
