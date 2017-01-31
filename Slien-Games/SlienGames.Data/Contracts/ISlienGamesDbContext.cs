@@ -7,6 +7,8 @@ namespace SlienGames.Data.Contracts
 {
     public interface ISlienGamesDbContext
     {
+        IDbSet<User> Users { get; set; }
+
         IDbSet<Comment> Comments { get; set; }
 
         IDbSet<GameProfile> GamesProfiles { get; set; }
@@ -19,6 +21,6 @@ namespace SlienGames.Data.Contracts
 
         DbEntityEntry<TEntity> Entry<TEntity>(TEntity entity) where TEntity : class;
 
-        void SaveChanges();
+        int SaveChanges();
     }
 }

@@ -8,8 +8,14 @@ namespace SlienGames.Data
 {
     public class SlienGamesDbContext : DbContext, ISlienGamesDbContext
     {
-        protected SlienGamesDbContext(string connectionString) : base(connectionString)
+        protected SlienGamesDbContext() : base("name=SlienGamesConnection")
         {
+        }
+
+        public static SlienGamesDbContext Create()
+        {
+            var instance = new SlienGamesDbContext();
+            return instance;
         }
 
         public IDbSet<Comment> Comments { get; set; }
@@ -37,9 +43,9 @@ namespace SlienGames.Data
             base.OnModelCreating(modelBuilder);
         }
 
-        public new void SaveChanges()
+        public new int SaveChanges()
         {
-            this.SaveChanges();
+            return this.SaveChanges();
         }
     }
 }
