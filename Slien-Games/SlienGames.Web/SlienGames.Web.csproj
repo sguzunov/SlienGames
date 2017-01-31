@@ -333,6 +333,7 @@
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
     </Compile>
+    <Compile Include="App_Start\ApplicationUserManager.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -341,6 +342,7 @@
     <Compile Include="About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
+    <Compile Include="App_Start\DbConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
@@ -361,7 +363,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Identity\IdentityHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -393,6 +395,10 @@
     <ProjectReference Include="..\SlienGames.Data.Models\SlienGames.Data.Models.csproj">
       <Project>{ad2774fc-9410-4c86-b293-95fb02f70f43}</Project>
       <Name>SlienGames.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SlienGames.Data\SlienGames.Data.csproj">
+      <Project>{8c257009-eef1-46ba-8d5c-638d3c42b634}</Project>
+      <Name>SlienGames.Data</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

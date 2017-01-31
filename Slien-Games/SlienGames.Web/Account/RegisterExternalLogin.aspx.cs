@@ -3,8 +3,8 @@ using System.Web;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using Owin;
-using SlienGames.Web.Models;
+using SlienGames.Data.Models;
+using SlienGames.Web.App_Start;
 
 namespace SlienGames.Web.Account
 {
