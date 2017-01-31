@@ -50,10 +50,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\IRepository.cs" />
+    <Compile Include="Contracts\ISlienGamesData.cs" />
     <Compile Include="Contracts\ISlienGamesDbContext.cs" />
     <Compile Include="EfRepository.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SlienGamesData.cs" />
     <Compile Include="SlienGamesDbContext.cs" />
   </ItemGroup>
   <ItemGroup>

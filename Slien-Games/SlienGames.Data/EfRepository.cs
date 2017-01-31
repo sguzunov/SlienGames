@@ -18,7 +18,7 @@ namespace SlienGames.Data
         {
             if (dbContext == null)
             {
-                throw new ArgumentException(nameof(dbContext) + " is null in repository!");
+                throw new ArgumentNullException($"{nameof(dbContext)} is null in DB context!");
             }
 
             this.dbContext = dbContext;
