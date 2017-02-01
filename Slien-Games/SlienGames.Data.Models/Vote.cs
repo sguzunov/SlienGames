@@ -16,5 +16,11 @@ namespace SlienGames.Data.Models
         public int Id { get; set; }
 
         public bool Value { get; set; }
+
+        public virtual ICollection<GameProfile> Games
+        {
+            get { return this.games; }
+            set { this.games = value; }
+        }
     }
 }

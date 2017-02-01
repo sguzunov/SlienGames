@@ -61,8 +61,11 @@
   <ItemGroup>
     <Compile Include="Comment.cs" />
     <Compile Include="Contracts\IDbModel.cs" />
+    <Compile Include="CoverImage.cs" />
+    <Compile Include="FileInfo.cs" />
     <Compile Include="GameProfile.cs" />
-    <Compile Include="Image.cs" />
+    <Compile Include="ProfileImage.cs" />
+    <Compile Include="User.cs" />
     <Compile Include="Vote.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

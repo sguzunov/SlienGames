@@ -11,11 +11,13 @@ namespace SlienGames.Data.Models
     {
         private ICollection<Vote> votes;
         private ICollection<Comment> comments;
+        private ICollection<User> usersVotedThisGame;
 
         public GameProfile()
         {
             this.votes = new HashSet<Vote>();
             this.comments = new HashSet<Comment>();
+            this.usersVotedThisGame = new HashSet<User>();
         }
 
         public int Id { get; set; }
@@ -36,21 +38,25 @@ namespace SlienGames.Data.Models
         public int Rating { get; set; }
 
         public DateTime CreatedOn { get; set; }
+        
+        public virtual CoverImage CoverImage { get; set; }
 
-        public int CoverId { get; set; }
-
-        public Image Cover { get; set; }
-
-        public ICollection<Vote> Votes
+        public virtual ICollection<Vote> Votes
         {
             get { return this.votes; }
             set { this.votes = value; }
         }
 
-        public ICollection<Comment> Comments
+        public virtual ICollection<Comment> Comments
         {
             get { return this.comments; }
             set { this.comments = value; }
+        }
+
+        public virtual ICollection<User> UsersVotedThisGame
+        {
+            get { return this.usersVotedThisGame; }
+            set { this.usersVotedThisGame = value; }
         }
     }
 }
