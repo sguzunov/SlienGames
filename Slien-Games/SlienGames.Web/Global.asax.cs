@@ -6,6 +6,7 @@ using System.Web.Optimization;
 using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
+using SlienGames.Web.App_Start;
 
 namespace SlienGames.Web
 {
@@ -16,6 +17,7 @@ namespace SlienGames.Web
             // Code that runs on application startup
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            DbConfig.InitDatabase();
         }
     }
 }
