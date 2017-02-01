@@ -13,7 +13,9 @@ namespace SlienGames.Data.Contracts
 
         IDbSet<GameProfile> GamesProfiles { get; set; }
 
-        IDbSet<Image> Images { get; set; }
+        IDbSet<ProfileImage> ProfileImages { get; set; }
+
+        IDbSet<CoverImage> CoverImages { get; set; }
 
         IDbSet<Vote> Votes { get; set; }
 
