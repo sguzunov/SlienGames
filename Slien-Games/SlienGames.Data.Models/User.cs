@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -16,19 +17,16 @@ namespace SlienGames.Data.Models
             this.gamesComments = new HashSet<Comment>();
             this.votedGames = new HashSet<GameProfile>();
         }
+        
+        public virtual ProfileImage ProfileImage { get; set; }
 
-        public int ImageId { get; set; }
-
-        public Image Image { get; set; }
-
-
-        public ICollection<Comment> GamesComments
+        public virtual ICollection<Comment> GamesComments
         {
             get { return this.gamesComments; }
             set { this.gamesComments = value; }
         }
 
-        public ICollection<GameProfile> VotedGames
+        public virtual ICollection<GameProfile> VotedGames
         {
             get { return this.votedGames; }
             set { this.votedGames = value; }

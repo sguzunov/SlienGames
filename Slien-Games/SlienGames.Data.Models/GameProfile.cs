@@ -38,24 +38,22 @@ namespace SlienGames.Data.Models
         public int Rating { get; set; }
 
         public DateTime CreatedOn { get; set; }
+        
+        public virtual CoverImage CoverImage { get; set; }
 
-        public int CoverId { get; set; }
-
-        public Image Cover { get; set; }
-
-        public ICollection<Vote> Votes
+        public virtual ICollection<Vote> Votes
         {
             get { return this.votes; }
             set { this.votes = value; }
         }
 
-        public ICollection<Comment> Comments
+        public virtual ICollection<Comment> Comments
         {
             get { return this.comments; }
             set { this.comments = value; }
         }
 
-        public ICollection<User> UsersVotedThisGame
+        public virtual ICollection<User> UsersVotedThisGame
         {
             get { return this.usersVotedThisGame; }
             set { this.usersVotedThisGame = value; }

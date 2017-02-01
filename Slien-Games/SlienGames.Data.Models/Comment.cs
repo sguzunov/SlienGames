@@ -24,6 +24,6 @@ namespace SlienGames.Data.Models
         public int GameProfileId { get; set; }
 
         [Required]
-        public GameProfile GameProfile { get; set; }
+        public virtual GameProfile GameProfile { get; set; }
     }
 }
