@@ -22,8 +22,7 @@ namespace SlienGames.Data
         public IDbSet<Comment> Comments { get; set; }
 
         public IDbSet<GameProfile> GamesProfiles { get; set; }
-
-        public IDbSet<ProfileImage> Images { get; set; }
+       
 
         public IDbSet<Vote> Votes { get; set; }
 

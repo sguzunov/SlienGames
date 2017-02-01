@@ -14,6 +14,7 @@ namespace SlienGames.Data
             {
                 throw new ArgumentNullException($"{nameof(dbContext)} is null in unit of work!");
             }
+            this.dbContext = dbContext;
         }
 
         public void Commit()
