@@ -11,6 +11,7 @@ namespace SlienGames.Web.App_Start
 
     using Ninject;
     using Ninject.Web.Common;
+    using WebFormsMvp.Binder;
 
     public static class NinjectWebCommon
     {
@@ -40,20 +41,26 @@ namespace SlienGames.Web.App_Start
         /// <returns>The created kernel.</returns>
         private static IKernel CreateKernel()
         {
-            var kernel = new StandardKernel();
+            Kernel = new StandardKernel();
             try
             {
-                kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
-                kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
+                Kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);
+                Kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
 
-                RegisterServices(kernel);
-                return kernel;
+                RegisterServices(Kernel);
+                return Kernel;
             }
             catch
             {
-                kernel.Dispose();
+                Kernel.Dispose();
                 throw;
             }
+        }
+
+        public static IKernel Kernel
+        {
+            get;
+            private set;
         }
 
         /// <summary>
@@ -65,6 +72,10 @@ namespace SlienGames.Web.App_Start
             kernel.Bind<ISlienGamesData>().To<SlienGamesData>();
             kernel.Bind<ISlienGamesDbContext>().To<SlienGamesDbContext>();
             kernel.Bind(typeof(IRepository<>)).To(typeof(EfRepository<>));
+
+            kernel.Load(new MvpNinjectModule());
+
+            PresenterBinder.Factory = kernel.Get<IPresenterFactory>();
         }
     }
 }

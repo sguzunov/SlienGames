@@ -43,6 +43,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core, Version=3.2.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.3.2.0\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -54,6 +58,10 @@
     </Reference>
     <Reference Include="Ninject.Extensions.Conventions, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <HintPath>..\packages\Ninject.Extensions.Conventions.3.2.0.0\lib\net45-full\Ninject.Extensions.Conventions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ninject.Extensions.Factory, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.Extensions.Factory.3.2.1.0\lib\net45-full\Ninject.Extensions.Factory.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Ninject.Web, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
@@ -101,6 +109,10 @@
     </Reference>
     <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
       <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebFormsMvp, Version=1.4.5.0, Culture=neutral, PublicKeyToken=537f18701145dff0, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebFormsMvp.1.4.5.0\lib\WebFormsMvp.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="WebGrease">
@@ -370,6 +382,7 @@
     </Compile>
     <Compile Include="App_Start\DbConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
+    <Compile Include="App_Start\MvpNinjectModule.cs" />
     <Compile Include="App_Start\NinjectWeb.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -388,6 +401,8 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Factories\ICustomPresenterFactory.cs" />
+    <Compile Include="Factories\WebFormsMvpPresenterFactory.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -419,6 +434,10 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\style\images\" />
+    <Folder Include="Models\" />
+    <Folder Include="Presenters\" />
+    <Folder Include="Services\" />
+    <Folder Include="Views\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SlienGames.Data.Models\SlienGames.Data.Models.csproj">
