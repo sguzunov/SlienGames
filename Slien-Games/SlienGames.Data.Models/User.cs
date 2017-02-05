@@ -17,7 +17,9 @@ namespace SlienGames.Data.Models
             this.gamesComments = new HashSet<Comment>();
             this.votedGames = new HashSet<GameProfile>();
         }
-        
+
+        public int Score { get; set; }
+
         public virtual ProfileImage ProfileImage { get; set; }
 
         public virtual ICollection<Comment> GamesComments
