@@ -74,7 +74,7 @@ namespace SlienGames.Web.App_Start
             kernel.Bind(typeof(IRepository<>)).To(typeof(EfRepository<>));
 
             kernel.Load(new MvpNinjectModule());
-
+            kernel.Load(new UsersNinjectModule());
             PresenterBinder.Factory = kernel.Get<IPresenterFactory>();
         }
     }
