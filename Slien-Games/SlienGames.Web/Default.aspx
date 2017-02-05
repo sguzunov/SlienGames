@@ -199,7 +199,7 @@
         </div>
       </div>
       <!-- / Search -->
-      <!-- Sign In -->
+      <%--<!-- Sign In -->
       <div id="sign" class="block">
         <div class="block-bot">
           <div class="block-cnt">
@@ -210,7 +210,7 @@
           </div>
         </div>
       </div>
-      <!-- / Sign In -->
+      <!-- / Sign In -->--%>
       <div class="block">
         <div class="block-bot">
           <div class="head">

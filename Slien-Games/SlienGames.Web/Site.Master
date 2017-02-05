@@ -13,7 +13,7 @@
     </asp:PlaceHolder>
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <link rel="stylesheet" href="~/Content/style/style.css" type="text/css" media="all" />   
+    <link rel="stylesheet" href="~/Content/style/style.css" type="text/css" media="all" />
 </head>
 <body>
     <form runat="server">
@@ -32,7 +32,7 @@
                 <asp:ScriptReference Name="DetailsView.js" Assembly="System.Web" Path="~/Scripts/WebForms/DetailsView.js" />
                 <asp:ScriptReference Name="TreeView.js" Assembly="System.Web" Path="~/Scripts/WebForms/TreeView.js" />
                 <asp:ScriptReference Name="WebParts.js" Assembly="System.Web" Path="~/Scripts/WebForms/WebParts.js" />
-                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />                
+                <asp:ScriptReference Name="Focus.js" Assembly="System.Web" Path="~/Scripts/WebForms/Focus.js" />
 
                 <asp:ScriptReference Name="WebFormsBundle" />
                 <%--Site Scripts--%>
@@ -43,16 +43,22 @@
                 <!-- Top Navigation -->
                 <div id="top-nav">
                     <ul>
-                        <li class="home"><a href="#">home</a></li>
-                        <li><a href="#">pc</a></li>
-                        <li><a href="#">xbox</a></li>
-                        <li><a href="#">360</a></li>
-                        <li><a href="#">wii</a></li>
-                        <li><a href="#">ps3</a></li>
-                        <li><a href="#">ps2</a></li>
-                        <li><a href="#">psp</a></li>
-                        <li class="last"><a href="#">ds</a></li>
+                        <li class="home"><a href="~/">home</a></li>
+                        <asp:LoginView runat="server" ViewStateMode="Disabled">
+                            <AnonymousTemplate>
+                                <li><a runat="server" href="~/Account/Register">Register</a></li>
+                                <li><a runat="server" href="~/Account/Login">Log in</a></li>
+                            </AnonymousTemplate>
+                            <LoggedInTemplate>
+                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                                <li>
+                                    <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
+                                </li>
+                            </LoggedInTemplate>
+                        </asp:LoginView>
                     </ul>
+
+
                 </div>
                 <!-- / Top Navigation -->
                 <div class="cl">&nbsp;</div>
