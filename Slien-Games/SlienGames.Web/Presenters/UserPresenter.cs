@@ -16,7 +16,7 @@ namespace SlienGames.Web.Presenters
         {
             this.dataProvider = dataProvider;
 
-            this.View.MyInit += View_MyInit;
+            this.View.MyInit += View_MyInit;                     
         }
 
         private void View_MyInit(object sender, EventArgs e)
