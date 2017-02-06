@@ -15,7 +15,7 @@ namespace SlienGames.Tests.SlienGames.Data.Models.Tests.CommentTests
     public class AuthorShould
     {
         [Test] 
-        public void Be_TypeOfIdentityUser()
+        public void Be_TypeOfUser()
         {
             var comment = new Comment();
             var user = new User();

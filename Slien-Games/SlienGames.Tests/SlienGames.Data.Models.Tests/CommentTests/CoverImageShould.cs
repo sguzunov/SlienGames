@@ -12,7 +12,7 @@ namespace SlienGames.Tests.SlienGames.Data.Models.Tests.CommentTests
     public class CoverImageShould
     {
         [Test]
-        public void Be_TypeOfIdentityUser()
+        public void Be_TypeOfCoverImage()
         {
             var gameProfile = new GameProfile();
             var coverImage = new CoverImage();

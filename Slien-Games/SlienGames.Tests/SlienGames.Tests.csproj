@@ -95,6 +95,9 @@
     <Compile Include="SlienGames.Data.Models.Tests\GameProfileTests\IsPublishedShould.cs" />
     <Compile Include="SlienGames.Data.Models.Tests\GameProfileTests\NameShould.cs" />
     <Compile Include="SlienGames.Data.Models.Tests\GameProfileTests\RatingShould.cs" />
+    <Compile Include="SlienGames.Data.Models.Tests\UserTests\ConstructorShould.cs" />
+    <Compile Include="SlienGames.Data.Models.Tests\UserTests\ProfileImageShould.cs" />
+    <Compile Include="SlienGames.Data.Models.Tests\UserTests\ScoreShould.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

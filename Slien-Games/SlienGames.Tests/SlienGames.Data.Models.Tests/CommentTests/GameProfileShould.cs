@@ -13,7 +13,7 @@ namespace SlienGames.Tests.SlienGames.Data.Models.Tests.CommentTests
     public  class GameProfileShould
     {
         [Test]
-        public void Be_TypeOfIdentityUser()
+        public void Be_TypeOfGameProfile()
         {
             var comment = new Comment();
             var gameProfile = new GameProfile();
