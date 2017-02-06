@@ -75,6 +75,7 @@
     <Compile Include="SlienGames.Data.Models.Tests\CommentTests\AuthorShould.cs" />
     <Compile Include="SlienGames.Data.Models.Tests\CommentTests\CommentType.cs" />
     <Compile Include="SlienGames.Data.Models.Tests\CommentTests\ContentShould.cs" />
+    <Compile Include="SlienGames.Data.Models.Tests\CommentTests\CoverImageShould.cs" />
     <Compile Include="SlienGames.Data.Models.Tests\CommentTests\GameProfileIdShould.cs" />
     <Compile Include="SlienGames.Data.Models.Tests\CommentTests\GameProfileShould.cs" />
     <Compile Include="SlienGames.Data.Models.Tests\CommentTests\PostedOnShould.cs" />
@@ -86,6 +87,14 @@
     <Compile Include="SlienGames.Data.Models.Tests\FileInfoTests\FileNameShould.cs" />
     <Compile Include="SlienGames.Data.Models.Tests\FileInfoTests\FileSystemUrlPathShould.cs" />
     <Compile Include="SlienGames.Data.Models.Tests\FileInfoTests\IdShould.cs" />
+    <Compile Include="SlienGames.Data.Models.Tests\GameProfileTests\ConstructorShould.cs" />
+    <Compile Include="SlienGames.Data.Models.Tests\GameProfileTests\CreatedOnShould.cs" />
+    <Compile Include="SlienGames.Data.Models.Tests\GameProfileTests\DescriptionShould.cs" />
+    <Compile Include="SlienGames.Data.Models.Tests\GameProfileTests\GameProfileType.cs" />
+    <Compile Include="SlienGames.Data.Models.Tests\GameProfileTests\IdShould.cs" />
+    <Compile Include="SlienGames.Data.Models.Tests\GameProfileTests\IsPublishedShould.cs" />
+    <Compile Include="SlienGames.Data.Models.Tests\GameProfileTests\NameShould.cs" />
+    <Compile Include="SlienGames.Data.Models.Tests\GameProfileTests\RatingShould.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

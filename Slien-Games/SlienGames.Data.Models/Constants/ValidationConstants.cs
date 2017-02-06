@@ -15,5 +15,13 @@ namespace SlienGames.Data.Models.Constants
 
         public const int FileInfoFileExtensionMinLength = 3;
         public const int FileInfoFileExtensionMaxLength = 10;
+
+        public const int GameProfileNameMinLength = 3;
+        public const int GameProfileNameMaxLength = 10;
+
+        public const int GameProfileDescriptionMinLength = 10;
+        public const int GameProfileDescriptionMaxLength = 300;
+
+
     }
 }

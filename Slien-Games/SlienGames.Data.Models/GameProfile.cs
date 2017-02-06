@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 using SlienGames.Data.Models.Contracts;
+using SlienGames.Data.Models.Constants;
 
 namespace SlienGames.Data.Models
 {
@@ -24,13 +25,13 @@ namespace SlienGames.Data.Models
 
         [Required]
         [Index(IsUnique = true)]
-        [MinLength(3)]
-        [MaxLength(30)]
+        [MinLength(ValidationConstants.GameProfileNameMinLength)]
+        [MaxLength(ValidationConstants.GameProfileNameMaxLength)]
         public string Name { get; set; }
 
         [Required]
-        [MinLength(10)]
-        [MaxLength(300)]
+        [MinLength(ValidationConstants.GameProfileDescriptionMinLength)]
+        [MaxLength(ValidationConstants.GameProfileDescriptionMaxLength)]
         public string Description { get; set; }
 
         public bool IsPublished { get; set; }
