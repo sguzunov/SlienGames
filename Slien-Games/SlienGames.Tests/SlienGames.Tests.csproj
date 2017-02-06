@@ -78,6 +78,9 @@
     <Compile Include="SlienGames.Data.Models.Tests\CommentTests\GameProfileIdShould.cs" />
     <Compile Include="SlienGames.Data.Models.Tests\CommentTests\GameProfileShould.cs" />
     <Compile Include="SlienGames.Data.Models.Tests\CommentTests\PostedOnShould.cs" />
+    <Compile Include="SlienGames.Data.Models.Tests\CoverImageTests\CoverImageType.cs" />
+    <Compile Include="SlienGames.Data.Models.Tests\CoverImageTests\GameIdShould.cs" />
+    <Compile Include="SlienGames.Data.Models.Tests\CoverImageTests\GameShould.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
