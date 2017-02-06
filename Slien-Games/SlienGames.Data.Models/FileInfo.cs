@@ -1,21 +1,22 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
 using SlienGames.Data.Models.Contracts;
+using SlienGames.Data.Models.Constants;
 
 namespace SlienGames.Data.Models
 {
-    public abstract class FileInfo : IDbModel
+    public class FileInfo : IDbModel
     {
         [Key]
         public int Id { get; set; }
 
         [Required]
-        [MaxLength(50)]
+        [MaxLength(ValidationConstants.FileInfoFileNameMaxLength)]
         public string FileName { get; set; }
 
         [Required]
-        [MinLength(3)]
-        [MaxLength(10)]
+        [MinLength(ValidationConstants.FileInfoFileExtensionMinLength)]
+        [MaxLength(ValidationConstants.FileInfoFileExtensionMaxLength)]
         public string FileExtension { get; set; }
 
         public string FileSystemUrlPath { get; set; }
