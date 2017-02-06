@@ -74,14 +74,17 @@
     <Compile Include="SlienGames.Data.Models.Tests\CommentTests\AuthorIdShould.cs" />
     <Compile Include="SlienGames.Data.Models.Tests\CommentTests\AuthorShould.cs" />
     <Compile Include="SlienGames.Data.Models.Tests\CommentTests\CommentType.cs" />
+    <Compile Include="SlienGames.Data.Models.Tests\CommentTests\ConstructorShould.cs" />
     <Compile Include="SlienGames.Data.Models.Tests\CommentTests\ContentShould.cs" />
     <Compile Include="SlienGames.Data.Models.Tests\CommentTests\CoverImageShould.cs" />
     <Compile Include="SlienGames.Data.Models.Tests\CommentTests\GameProfileIdShould.cs" />
     <Compile Include="SlienGames.Data.Models.Tests\CommentTests\GameProfileShould.cs" />
     <Compile Include="SlienGames.Data.Models.Tests\CommentTests\PostedOnShould.cs" />
+    <Compile Include="SlienGames.Data.Models.Tests\CoverImageTests\ConstructorShould.cs" />
     <Compile Include="SlienGames.Data.Models.Tests\CoverImageTests\CoverImageType.cs" />
     <Compile Include="SlienGames.Data.Models.Tests\CoverImageTests\GameIdShould.cs" />
     <Compile Include="SlienGames.Data.Models.Tests\CoverImageTests\GameShould.cs" />
+    <Compile Include="SlienGames.Data.Models.Tests\FileInfoTests\ConstructorShould.cs" />
     <Compile Include="SlienGames.Data.Models.Tests\FileInfoTests\FileExtensionShould.cs" />
     <Compile Include="SlienGames.Data.Models.Tests\FileInfoTests\FileInfoType.cs" />
     <Compile Include="SlienGames.Data.Models.Tests\FileInfoTests\FileNameShould.cs" />
@@ -95,6 +98,7 @@
     <Compile Include="SlienGames.Data.Models.Tests\GameProfileTests\IsPublishedShould.cs" />
     <Compile Include="SlienGames.Data.Models.Tests\GameProfileTests\NameShould.cs" />
     <Compile Include="SlienGames.Data.Models.Tests\GameProfileTests\RatingShould.cs" />
+    <Compile Include="SlienGames.Data.Models.Tests\ProfileImageTests\ConstructorShould.cs" />
     <Compile Include="SlienGames.Data.Models.Tests\ProfileImageTests\UserIdShould.cs" />
     <Compile Include="SlienGames.Data.Models.Tests\ProfileImageTests\UserShould.cs" />
     <Compile Include="SlienGames.Data.Models.Tests\UserTests\ConstructorShould.cs" />
