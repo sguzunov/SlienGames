@@ -2,6 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 
 using SlienGames.Data.Models.Contracts;
+using SlienGames.Data.Models.Constants;
 
 namespace SlienGames.Data.Models
 {
@@ -10,8 +11,8 @@ namespace SlienGames.Data.Models
         public int Id { get; set; }
 
         [Required]
-        [MinLength(10)]
-        [MaxLength(200)]
+        [MinLength(ValidationConstants.CommentContentMinLength)]
+        [MaxLength(ValidationConstants.CommentContentMaxLength)]
         public string Content { get; set; }
 
         public int AuthorId { get; set; }
