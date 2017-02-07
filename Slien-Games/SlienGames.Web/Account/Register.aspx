@@ -2,24 +2,31 @@
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
     <div class="row ">
-        <div class="col-md-4 col-md-offset-4">
-            <h2><%: Title %>.</h2>
+        <div class="col-md-5 col-md-offset-4">
+            <h2><%: Title %></h2>
             <p class="text-danger">
                 <asp:Literal runat="server" ID="ErrorMessage" />
             </p>
-                <div class="form-background">
-
-            <div class="form-horizontal">
-                <h4>Create a new account</h4>
+            <div class="form-background">
+                <div class="form-horizontal">
+                    <h4>Create a new account</h4>
                     <asp:ValidationSummary runat="server" CssClass="text-danger" />
                     <div class="form-group">
+                        <asp:Label runat="server" AssociatedControlID="Username" CssClass="col-md-2 control-label">Username</asp:Label>
+                        <div class="col-md-10">
+                            <asp:TextBox runat="server" ID="Username" CssClass="form-control" />
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="Username"
+                                CssClass="text-danger" ErrorMessage="The username field is required." />
+                        </div>
+                    </div>
+                    <%--<div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="Email" CssClass="col-md-2 control-label">Email</asp:Label>
                         <div class="col-md-10">
                             <asp:TextBox runat="server" ID="Email" CssClass="form-control" TextMode="Email" />
                             <asp:RequiredFieldValidator runat="server" ControlToValidate="Email"
                                 CssClass="text-danger" ErrorMessage="The email field is required." />
                         </div>
-                    </div>
+                    </div>--%>
                     <div class="form-group">
                         <asp:Label runat="server" AssociatedControlID="Password" CssClass="col-md-2 control-label">Password</asp:Label>
                         <div class="col-md-10">
