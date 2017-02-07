@@ -23,7 +23,6 @@ namespace SlienGames.Web.App_Start
             manager.UserValidator = new UserValidator<User>(manager)
             {
                 AllowOnlyAlphanumericUserNames = false,
-                RequireUniqueEmail = true
             };
 
             // Configure validation logic for passwords
@@ -35,18 +34,6 @@ namespace SlienGames.Web.App_Start
                 RequireLowercase = false,
                 RequireUppercase = false,
             };
-
-            // Register two factor authentication providers. This application uses Phone and Emails as a step of receiving a code for verifying the user
-            // You can write your own provider and plug it in here.
-            manager.RegisterTwoFactorProvider("Phone Code", new PhoneNumberTokenProvider<User>
-            {
-                MessageFormat = "Your security code is {0}"
-            });
-            manager.RegisterTwoFactorProvider("Email Code", new EmailTokenProvider<User>
-            {
-                Subject = "Security Code",
-                BodyFormat = "Your security code is {0}"
-            });
 
             // Configure user lockout defaults
             manager.UserLockoutEnabledByDefault = true;
