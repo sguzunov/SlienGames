@@ -107,6 +107,7 @@
     <Compile Include="SlienGames.Data.Models.Tests\VoteTests\ConstructorShould.cs" />
     <Compile Include="SlienGames.Data.Models.Tests\VoteTests\IdShould.cs" />
     <Compile Include="SlienGames.Data.Models.Tests\VoteTests\ValueShould.cs" />
+    <Compile Include="SlienGames.Data.Tests\SlienGamesDbContextTests\ConstructorShould.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -116,6 +117,10 @@
     <ProjectReference Include="..\SlienGames.Data.Models\SlienGames.Data.Models.csproj">
       <Project>{ad2774fc-9410-4c86-b293-95fb02f70f43}</Project>
       <Name>SlienGames.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SlienGames.Data\SlienGames.Data.csproj">
+      <Project>{8c257009-eef1-46ba-8d5c-638d3c42b634}</Project>
+      <Name>SlienGames.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\SlienGames.Web\SlienGames.Web.csproj">
       <Project>{9b6774b9-87bb-427f-ad51-3987fa89ce1c}</Project>
