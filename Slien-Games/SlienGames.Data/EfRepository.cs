@@ -6,10 +6,11 @@ using System.Linq;
 using System.Linq.Expressions;
 
 using SlienGames.Data.Contracts;
+using SlienGames.Data.Models.Contracts;
 
 namespace SlienGames.Data
 {
-    public class EfRepository<TEntity> : IRepository<TEntity> where TEntity : class
+    public class EfRepository<TEntity> : IRepository<TEntity> where TEntity : class, IDbModel
     {
         private readonly ISlienGamesDbContext dbContext;
         private readonly IDbSet<TEntity> dbSet;
@@ -23,6 +24,11 @@ namespace SlienGames.Data
 
             this.dbContext = dbContext;
             this.dbSet = this.dbContext.Set<TEntity>();
+
+            if (this.dbSet == null)
+            {
+                throw new ArgumentException($"DbContext does not contain DbSet<{nameof(TEntity)}>");
+            }
         }
 
         public TEntity GetById(object id)
