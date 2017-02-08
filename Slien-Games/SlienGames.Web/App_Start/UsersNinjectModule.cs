@@ -15,6 +15,7 @@ namespace SlienGames.Web.App_Start
             this.Bind<IDataProvider>().To<DataProvider>();
 
             this.Bind<UserPresenter>().ToSelf();
+            this.Bind<CurrentUserPresenter>().ToSelf();
         }
     }
 }

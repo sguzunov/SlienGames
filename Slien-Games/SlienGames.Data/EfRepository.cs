@@ -6,6 +6,7 @@ using System.Linq;
 using System.Linq.Expressions;
 
 using SlienGames.Data.Contracts;
+using SlienGames.Data.Models.Contracts;
 
 namespace SlienGames.Data
 {
@@ -31,6 +32,11 @@ namespace SlienGames.Data
 
             this.dbContext = dbContext;
             this.dbSet = this.dbContext.Set<TEntity>();
+
+            if (this.dbSet == null)
+            {
+                throw new ArgumentException($"DbContext does not contain DbSet<{nameof(TEntity)}>");
+            }
         }
 
         public TEntity GetById(object id)

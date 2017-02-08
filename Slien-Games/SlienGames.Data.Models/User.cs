@@ -50,5 +50,6 @@ namespace SlienGames.Data.Models
         {
             return Task.FromResult(GenerateUserIdentity(manager));
         }
+        
     }
 }

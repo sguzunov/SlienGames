@@ -14,7 +14,7 @@ namespace SlienGames.Web
 {
     [PresenterBinding(typeof(UserPresenter))]
     public partial class _Default : MvpPage<UserViewModel>, IUserView
-    {
+    {   
         public event EventHandler MyInit;
 
         protected void Page_Load(object sender, EventArgs e)
