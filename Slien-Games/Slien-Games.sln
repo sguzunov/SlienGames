@@ -17,6 +17,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{76964A9F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlienGames.Tests", "SlienGames.Tests\SlienGames.Tests.csproj", "{D8A2AB55-CC0F-4285-98BF-9212AE5C3408}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{402477EE-4C5F-4E65-81CF-F178924A63D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlienGames.Data.Services", "SlienGames.Data.Services\SlienGames.Data.Services.csproj", "{36969CBE-152E-40A5-8F38-126E8EA62C87}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,10 @@ Global
 		{D8A2AB55-CC0F-4285-98BF-9212AE5C3408}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8A2AB55-CC0F-4285-98BF-9212AE5C3408}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8A2AB55-CC0F-4285-98BF-9212AE5C3408}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36969CBE-152E-40A5-8F38-126E8EA62C87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36969CBE-152E-40A5-8F38-126E8EA62C87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36969CBE-152E-40A5-8F38-126E8EA62C87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36969CBE-152E-40A5-8F38-126E8EA62C87}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,5 +56,6 @@ Global
 		{9B6774B9-87BB-427F-AD51-3987FA89CE1C} = {88EA6705-5F77-4132-99E8-E80FDF7EDAAD}
 		{8C257009-EEF1-46BA-8D5C-638D3C42B634} = {6D226BA6-D717-42BE-A992-EF4EED376A7E}
 		{D8A2AB55-CC0F-4285-98BF-9212AE5C3408} = {76964A9F-06BC-489A-8329-390DB848CA49}
+		{36969CBE-152E-40A5-8F38-126E8EA62C87} = {402477EE-4C5F-4E65-81CF-F178924A63D6}
 	EndGlobalSection
 EndGlobal

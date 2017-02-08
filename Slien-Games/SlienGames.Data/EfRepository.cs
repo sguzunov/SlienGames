@@ -15,6 +15,14 @@ namespace SlienGames.Data
         private readonly ISlienGamesDbContext dbContext;
         private readonly IDbSet<TEntity> dbSet;
 
+        public IQueryable<TEntity> All
+        {
+            get
+            {
+                return this.dbSet;
+            }
+        }
+
         public EfRepository(ISlienGamesDbContext dbContext)
         {
             if (dbContext == null)
