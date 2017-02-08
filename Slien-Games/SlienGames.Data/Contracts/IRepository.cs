@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 
 namespace SlienGames.Data.Contracts
@@ -7,6 +8,8 @@ namespace SlienGames.Data.Contracts
     public interface IRepository<TEntity> where TEntity : class
     {
         TEntity GetById(object id);
+
+        IQueryable<TEntity> All { get; }
 
         IEnumerable<TEntity> GetAll();
 
