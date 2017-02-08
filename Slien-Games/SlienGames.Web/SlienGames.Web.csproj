@@ -330,6 +330,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\UsersNinjectModule.cs" />
+    <Compile Include="CustomEventArgs\CurrentUserEventArgs.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -343,7 +344,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Identity\IdentityHelper.cs" />
+    <Compile Include="Models\CurrentUserModel.cs" />
     <Compile Include="Models\UserViewModel.cs" />
+    <Compile Include="Presenters\CurrentUserPresenter.cs" />
     <Compile Include="Presenters\UserPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DataProvider.cs" />
@@ -370,11 +373,13 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Views\ICurrentUserView.cs" />
     <Compile Include="Views\IUserView.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Account\ViewModels\" />
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Avatars\" />
     <Folder Include="Content\style\images\" />
     <Folder Include="GameInfo\" />
   </ItemGroup>

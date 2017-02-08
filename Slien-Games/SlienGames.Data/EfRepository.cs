@@ -10,7 +10,7 @@ using SlienGames.Data.Models.Contracts;
 
 namespace SlienGames.Data
 {
-    public class EfRepository<TEntity> : IRepository<TEntity> where TEntity : class, IDbModel
+    public class EfRepository<TEntity> : IRepository<TEntity> where TEntity : class
     {
         private readonly ISlienGamesDbContext dbContext;
         private readonly IDbSet<TEntity> dbSet;

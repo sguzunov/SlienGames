@@ -20,11 +20,11 @@ a img {
 
 a {
     color: #a0a0a0;
-    text-decoration: underline;
+    text-decoration: none;
 }
 
     a:hover {
-        text-decoration: none;
+        text-decoration: underline;
     }
 
 .left {

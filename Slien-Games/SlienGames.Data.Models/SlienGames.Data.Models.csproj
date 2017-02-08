@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Comment.cs" />
+    <Compile Include="Constants\DefaultValueConstants.cs" />
     <Compile Include="Constants\ValidationConstants.cs" />
     <Compile Include="Contracts\IDbModel.cs" />
     <Compile Include="CoverImage.cs" />
