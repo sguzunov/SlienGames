@@ -10,7 +10,7 @@
 namespace SlienGames.Web.Account {
     
     
-    public partial class Manage {
+    public partial class AllFavorites {
         
         /// <summary>
         /// ListViewFavorites control.

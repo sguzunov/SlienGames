@@ -18,7 +18,7 @@
                     <div class="col-md-11">
                         <div class="dropdown pull-right">
                             <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-                                <span class="glyphicon glyphicon-cog"></span> Edit profile
+                                <span class="glyphicon glyphicon-cog"></span>Edit profile
                                 <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu">
@@ -26,6 +26,37 @@
                                 <li><a href="/Account/ManagePassword">Change password</a></li>
                                 <li><a href="#">JavaScript</a></li>
                             </ul>
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <div class="block">
+                    <div class="block-bot">
+                        <div class="head">
+                            <div class="head-cnt">
+                                <a href="/Account/AllFavorites" class="view-all">See all</a>
+                                <h3>FavoriteGames</h3>
+                                <div class="cl">&nbsp;</div>
+                            </div>
+                        </div>
+                        <div class="col-articles articles flexed">                                                 
+                            
+                            <asp:ListView ID="ListViewFavorites" runat="server"
+                                ItemType="SlienGames.Data.Models.GameProfile">
+                                <ItemTemplate>
+                                    <div class="article">
+                                <div class="image">
+                                    <a href="#">
+                                        <img src="<%#: Item.CoverImage!= null?
+                          Item.CoverImage.FileSystemUrlPath 
+                              + Item.CoverImage.FileName : "/Content/Avatars/default.png" %>"
+                                                    alt="" /></a>
+                                </div>
+                                <h4><a href="#"><%#: Item.Name %></a></h4>
+                                <p class="console"><strong><%#: Item.Rating %></strong></p>
+                            </div>
+                                </ItemTemplate>
+                            </asp:ListView>
                         </div>
                     </div>
                 </div>

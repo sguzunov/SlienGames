@@ -783,3 +783,10 @@ a {
     width: 920px;
     margin: auto;
 }
+
+.flexed {
+    overflow: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

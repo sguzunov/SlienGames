@@ -187,6 +187,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Account\AllFavorites.aspx" />
     <Content Include="Account\Lockout.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Manage.aspx" />
@@ -258,6 +259,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account\AllFavorites.aspx.cs">
+      <DependentUpon>AllFavorites.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\AllFavorites.aspx.designer.cs">
+      <DependentUpon>AllFavorites.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Account\Lockout.aspx.cs">
       <DependentUpon>Lockout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
