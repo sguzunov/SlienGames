@@ -311,7 +311,6 @@ a {
         position: relative;
         background-repeat: no-repeat;
         background-position: 0 bottom;
-        
     }
 
     .block .block-cnt {
@@ -774,8 +773,13 @@ a {
                 }
 
 .form-background {
-     background: url(images/bg-2.jpg);
-    margin:15px;
-    border-radius:15px;
-    padding:10px;
+    background: url(images/bg-2.jpg);
+    margin: 15px;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.separator-holder hr {
+    width: 920px;
+    margin: auto;
 }

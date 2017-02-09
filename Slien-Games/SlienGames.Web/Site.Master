@@ -13,9 +13,9 @@
     </asp:PlaceHolder>
     <webopt:BundleReference runat="server" Path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    <link rel="stylesheet" href="~/Content/bootstrap.min.css" type="text/css" media="all"/>
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css" type="text/css" media="all" />
 
-    <link rel="stylesheet" href="~/Content/style/style.css" type="text/css" media="all" />    
+    <link rel="stylesheet" href="~/Content/style/style.css" type="text/css" media="all" />
 
 </head>
 <body>
@@ -45,8 +45,8 @@
                 <!-- Top Navigation -->
                 <div id="top-nav">
                     <ul>
-                       
-                        <li class="home"><a  href="#">play</a></li>
+
+                        <li class="home"><a href="#">play</a></li>
                         <asp:LoginView runat="server" ViewStateMode="Disabled">
                             <AnonymousTemplate>
                                 <li><a runat="server" href="~/Account/Register">Register</a></li>
@@ -85,10 +85,11 @@
                 <!-- / Main Navigation -->
             </header>
         </div>
-        <div class="container body-content" >
+        <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
             <hr />
+
             <footer>
                 <p class="corp-name">&copy; <%: DateTime.Now.Year %> - SlienGames</p>
             </footer>
