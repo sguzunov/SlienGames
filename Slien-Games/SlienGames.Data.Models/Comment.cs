@@ -15,14 +15,14 @@ namespace SlienGames.Data.Models
         [MaxLength(ValidationConstants.CommentContentMaxLength)]
         public string Content { get; set; }
 
-        public int AuthorId { get; set; }
+        public virtual int AuthorId { get; set; }
 
         [Required]
-        public User Author { get; set; }
+        public virtual User Author { get; set; }
 
         public DateTime PostedOn { get; set; }
 
-        public int GameProfileId { get; set; }
+        public virtual int GameProfileId { get; set; }
 
         [Required]
         public virtual GameProfile GameProfile { get; set; }

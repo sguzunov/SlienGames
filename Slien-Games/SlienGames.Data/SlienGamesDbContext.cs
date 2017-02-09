@@ -42,10 +42,10 @@ namespace SlienGames.Data
             return base.Entry<TEntity>(entity);
         }
 
-        public new int SaveChanges()
-        {
-            return this.SaveChanges();
-        }
+        //public new int SaveChanges()
+        //{
+        //    return this.SaveChanges();
+        //}
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

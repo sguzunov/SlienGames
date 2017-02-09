@@ -70,11 +70,12 @@ namespace SlienGames.Web.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<ISlienGamesData>().To<SlienGamesData>();
-            kernel.Bind<ISlienGamesDbContext>().To<SlienGamesDbContext>();
+            kernel.Bind<ISlienGamesDbContext>().To<SlienGamesDbContext>().InSingletonScope();
             kernel.Bind(typeof(IRepository<>)).To(typeof(EfRepository<>));
 
             kernel.Load(new MvpNinjectModule());
             kernel.Load(new UsersNinjectModule());
+            kernel.Load(new ServicesNinjectModule());
             PresenterBinder.Factory = kernel.Get<IPresenterFactory>();
         }
     }

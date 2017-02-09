@@ -251,7 +251,10 @@
                                         <div class="cl">&nbsp;</div>
                                         <div class="image">
                                             <a href="#">
-                                                <img src="<%#:Item.ProfileImage %>" alt="" /></a>
+                                                <img src="<%#: Item.ProfileImage!= null?
+                          Item.ProfileImage.FileSystemUrlPath 
+                              + Item.ProfileImage.FileName : "/Content/Avatars/default.png" %>"
+                                                    alt="" /></a>
                                         </div>
                                         <div class="cnt">
                                             <h4><a href="#"><%#: Item.UserName %></a></h4>

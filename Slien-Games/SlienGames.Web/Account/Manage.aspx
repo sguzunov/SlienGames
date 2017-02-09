@@ -10,11 +10,23 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-2 col-md-offset-5">
-                        <img src="<%#: 
+                        <img src="<%#: this.CurrentUser.ProfileImage!= null?
                           this.CurrentUser.ProfileImage.FileSystemUrlPath 
-                              + this.CurrentUser.ProfileImage.FileName + "." + 
-                              this.CurrentUser.ProfileImage.FileExtension %>"
-                            class="img-responsive" width="304" height="236" />
+                              + this.CurrentUser.ProfileImage.FileName : "/Content/Avatars/default.png" %>"
+                            class="img-responsive img-thumbnail" width="304" height="236" />
+                    </div>
+                    <div class="col-md-11">
+                        <div class="dropdown pull-right">
+                            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                                <span class="glyphicon glyphicon-cog"></span> Edit profile
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a href="/Account/ManageAvatar">Change avatar</a></li>
+                                <li><a href="/Account/ManagePassword">Change password</a></li>
+                                <li><a href="#">JavaScript</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
