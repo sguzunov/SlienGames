@@ -1,4 +1,6 @@
-﻿using SlienGames.Web.Services;
+﻿using SlienGames.Data.Contracts;
+using SlienGames.Data.Models;
+using SlienGames.Web.Services;
 using SlienGames.Web.Views;
 using System;
 using System.Collections.Generic;
@@ -10,9 +12,9 @@ namespace SlienGames.Web.Presenters
 {
     public class UserPresenter : Presenter<IUserView>
     {
-        private readonly IDataProvider dataProvider; 
+        private readonly IRepository<User> dataProvider; 
 
-        public UserPresenter(IUserView view, IDataProvider dataProvider) : base(view)
+        public UserPresenter(IUserView view, IRepository<User> dataProvider) : base(view)
         {
             this.dataProvider = dataProvider;
 
@@ -21,7 +23,7 @@ namespace SlienGames.Web.Presenters
 
         private void View_MyInit(object sender, EventArgs e)
         {
-            this.View.Model.Users = this.dataProvider.GetTopUsers(5);
+            this.View.Model.Users = this.dataProvider.GetAll(null,x=>x.Score).Take(5);
         }
     }
 }

@@ -3,10 +3,7 @@ using SlienGames.Data.Models;
 using SlienGames.Web.Services.Contracts;
 using SlienGames.Web.Views;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Web;
 using WebFormsMvp;
 
 namespace SlienGames.Web.Presenters
@@ -17,10 +14,10 @@ namespace SlienGames.Web.Presenters
         private readonly IFileSaver fileSaver;
         private readonly ISlienGamesData unitOfWork;
         public UploadAvatarPresenter(
-            IUploadAvatarView view, 
-            IRepository<User> dataProvider, 
+            IUploadAvatarView view,
+            IRepository<User> dataProvider,
             IFileSaver fileSaver,
-            ISlienGamesData unitOfWork) 
+            ISlienGamesData unitOfWork)
             : base(view)
         {
             this.dataProvider = dataProvider;
@@ -33,7 +30,7 @@ namespace SlienGames.Web.Presenters
 
         private void View_SetNewAvatar(object sender, CustomEventArgs.UploadAvatarEventArgs e)
         {
-            var allowedExtensions = new string[] { ".gif", ".tif", ".png", ".jpg", ".jpeg" };           
+            var allowedExtensions = new string[] { ".gif", ".tif", ".png", ".jpg", ".jpeg" };
             if (Array.IndexOf(allowedExtensions, e.FileExtension) < 0)
             {
                 throw new InvalidDataException();

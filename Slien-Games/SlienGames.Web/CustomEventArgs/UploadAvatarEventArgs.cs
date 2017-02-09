@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace SlienGames.Web.CustomEventArgs
 {
     public class UploadAvatarEventArgs : EventArgs
     {
-        public UploadAvatarEventArgs(string fileName, string fileExtension,string filePath, byte[] allBytes, object userId)
+        public UploadAvatarEventArgs(string fileName, string fileExtension, string filePath, byte[] allBytes, object userId)
         {
             this.FileName = fileName;
             this.FileExtension = fileExtension;

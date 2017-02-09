@@ -1,7 +1,6 @@
 ﻿using SlienGames.Web.Services.Contracts;
 using System;
 using System.IO;
-using System.Reflection;
 
 namespace SlienGames.Web.Services
 {
