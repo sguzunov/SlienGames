@@ -208,6 +208,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Profiles\Profile.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\fns.js" />
@@ -367,6 +368,13 @@
     <Compile Include="Presenters\CurrentUserPresenter.cs" />
     <Compile Include="Presenters\UploadAvatarPresenter.cs" />
     <Compile Include="Presenters\UserPresenter.cs" />
+    <Compile Include="Profiles\Profile.aspx.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Profiles\Profile.aspx.designer.cs">
+      <DependentUpon>Profile.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\Contracts\IFileSaver.cs" />
     <Compile Include="Services\DataProvider.cs" />

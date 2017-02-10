@@ -250,14 +250,14 @@
                                     <div class="article">
                                         <div class="cl">&nbsp;</div>
                                         <div class="image">
-                                            <a href="#">
+                                            <a href="/Profiles/Profile?id=<%#:Item.Id %>">
                                                 <img src="<%#: Item.ProfileImage!= null?
                           Item.ProfileImage.FileSystemUrlPath 
                               + Item.ProfileImage.FileName : "/Content/Avatars/default.png" %>"
                                                     alt="" /></a>
                                         </div>
                                         <div class="cnt">
-                                            <h4><a href="#"><%#: Item.UserName %></a></h4>
+                                            <h4><a href="/Profiles/Profile?id=<%#:Item.Id %>"><%#: Item.UserName %></a></h4>
                                             <p><%# Item.Score %></p>
                                         </div>
                                         <div class="cl">&nbsp;</div>
