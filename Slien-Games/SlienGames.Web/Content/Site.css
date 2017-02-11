@@ -41,3 +41,56 @@ input[type="select"] {
 footer p.corp-name {
     text-align: center;
 }
+
+img.cover-image {
+    float: left;
+    width: auto;
+    max-height: 300px;
+    max-width: 420px;
+}
+
+h1.game-name {
+    /*float: left;*/
+}
+
+p.game-description {
+    display: inline-block;
+    max-width: 480px;
+    text-align: justify;
+    font-size: 14px;
+    background-color: #313131;
+    margin-left: 20px;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.clearfix:after {
+    content: ".";
+    visibility: hidden;
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+.comments-section {
+    clear: both;
+}
+
+footer.comment-footer a {
+    text-decoration: none;
+    color: #ccc;
+}
+
+footer.comment-footer span.date {
+    color: #ccc;
+}
+
+article.game-comment-box {
+    background-color: #484848;
+    margin-top: 1px;
+    padding: 5px;
+}
+
+.comments-section {
+    margin-top: 50px;
+}

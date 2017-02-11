@@ -208,6 +208,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="GameInfo\GameInfo.aspx" />
     <Content Include="Profiles\Profile.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -349,6 +350,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\UsersNinjectModule.cs" />
     <Compile Include="CustomEventArgs\CurrentUserEventArgs.cs" />
+    <Compile Include="CustomEventArgs\GetGameInfoEventArgs.cs" />
     <Compile Include="CustomEventArgs\UploadAvatarEventArgs.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -359,13 +361,22 @@
     </Compile>
     <Compile Include="Factories\ICustomPresenterFactory.cs" />
     <Compile Include="Factories\WebFormsMvpPresenterFactory.cs" />
+    <Compile Include="GameInfo\GameInfo.aspx.cs">
+      <DependentUpon>GameInfo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GameInfo\GameInfo.aspx.designer.cs">
+      <DependentUpon>GameInfo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Identity\IdentityHelper.cs" />
     <Compile Include="Models\CurrentUserModel.cs" />
+    <Compile Include="Models\GameInfoModel.cs" />
     <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="Presenters\CurrentUserPresenter.cs" />
+    <Compile Include="Presenters\GameInfoPresenter.cs" />
     <Compile Include="Presenters\UploadAvatarPresenter.cs" />
     <Compile Include="Presenters\UserPresenter.cs" />
     <Compile Include="Profiles\Profile.aspx.cs">
@@ -403,6 +414,7 @@
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
     <Compile Include="Views\ICurrentUserView.cs" />
+    <Compile Include="Views\IGameInfoView.cs" />
     <Compile Include="Views\IUploadAvatarView.cs" />
     <Compile Include="Views\IUserView.cs" />
   </ItemGroup>
@@ -411,12 +423,16 @@
     <Folder Include="App_Data\" />
     <Folder Include="Content\Avatars\" />
     <Folder Include="Content\style\images\" />
-    <Folder Include="GameInfo\" />
+    <Folder Include="Uploaded_Images\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SlienGames.Data.Models\SlienGames.Data.Models.csproj">
       <Project>{ad2774fc-9410-4c86-b293-95fb02f70f43}</Project>
       <Name>SlienGames.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SlienGames.Data.Services\SlienGames.Data.Services.csproj">
+      <Project>{36969CBE-152E-40A5-8F38-126E8EA62C87}</Project>
+      <Name>SlienGames.Data.Services</Name>
     </ProjectReference>
     <ProjectReference Include="..\SlienGames.Data\SlienGames.Data.csproj">
       <Project>{8c257009-eef1-46ba-8d5c-638d3c42b634}</Project>
