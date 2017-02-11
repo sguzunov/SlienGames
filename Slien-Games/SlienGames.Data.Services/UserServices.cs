@@ -1,20 +1,18 @@
 ﻿using System;
-using System.Linq;
 using SlienGames.Data.Contracts;
 using SlienGames.Data.Models;
-using SlienGames.Data.Models.Contracts;
 using SlienGames.Data.Services.Contracts;
 
 namespace SlienGames.Data.Services
 {
-    public class UsersServices : IUsersServices
+    public class UserServices : IUsersServices
     {
         private const string NullDependencyErrorMessage = "{0} is null in UsersServices!";
 
         private readonly IRepository<User> usersRepository;
         private readonly ISlienGamesData uow;
 
-        public UsersServices(IRepository<User> usersRepository, ISlienGamesData unitOfWork)
+        public UserServices(IRepository<User> usersRepository, ISlienGamesData unitOfWork)
         {
             if (usersRepository == null)
             {
