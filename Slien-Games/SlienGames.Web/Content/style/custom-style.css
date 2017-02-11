@@ -1,0 +1,26 @@
+﻿.page-not-found-container img {
+    padding: 20px;
+    display: inline-block;
+}
+
+.page-not-found-container h1 {
+    display: inline-block;
+}
+
+.page-not-found-container .righ-not-found {
+    display: inline-block;
+    text-align: center;
+}
+
+    .page-not-found-container .righ-not-found ul{
+        list-style-type:none;
+    }
+    .page-not-found-container .righ-not-found ul li {
+        font-size: 1.2em;
+        padding: 5px;
+    }
+
+        .page-not-found-container .righ-not-found ul li a {
+            color: cyan;
+        }
+        
