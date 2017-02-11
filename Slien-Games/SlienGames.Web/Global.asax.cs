@@ -16,5 +16,26 @@ namespace SlienGames.Web
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             DbConfig.InitDatabase();
         }
+        protected void Application_Error(object sender, EventArgs e)
+        {
+            var serverError = Server.GetLastError() as HttpException;
+
+            if (null != serverError)
+            {
+                int errorCode = serverError.GetHttpCode();
+
+                if (404 == errorCode)
+                {
+                    Server.ClearError();
+                    Server.Transfer("/Errors/PageNotFound.aspx");
+                }
+                else
+                {
+                    Server.ClearError();
+                    Server.Transfer("/Errors/ErrorPage.aspx");
+                }
+            }
+        }
+
     }
 }

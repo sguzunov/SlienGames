@@ -200,8 +200,11 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\style\custom-style.css" />
     <Content Include="Content\style\ie6-style.css" />
     <Content Include="Content\style\style.css" />
+    <Content Include="Errors\ErrorPage.aspx" />
+    <Content Include="Errors\PageNotFound.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -359,6 +362,20 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Errors\ErrorPage.aspx.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Errors\ErrorPage.aspx.designer.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Errors\PageNotFound.aspx.cs">
+      <DependentUpon>PageNotFound.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Errors\PageNotFound.aspx.designer.cs">
+      <DependentUpon>PageNotFound.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Factories\ICustomPresenterFactory.cs" />
     <Compile Include="Factories\WebFormsMvpPresenterFactory.cs" />
     <Compile Include="GameInfo\GameInfo.aspx.cs">
@@ -423,8 +440,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Content\Avatars\" />
     <Folder Include="Content\style\images\" />
-    <Folder Include="Uploaded_Images\" />
-  </ItemGroup>
+    <Folder Include="GameInfo\" />  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SlienGames.Data.Models\SlienGames.Data.Models.csproj">
       <Project>{ad2774fc-9410-4c86-b293-95fb02f70f43}</Project>
