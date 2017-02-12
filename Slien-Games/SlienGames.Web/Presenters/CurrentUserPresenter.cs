@@ -1,5 +1,4 @@
-﻿using SlienGames.Data.Contracts;
-using SlienGames.Data.Models;
+﻿using SlienGames.Data.Services.Contracts;
 using SlienGames.Web.CustomEventArgs;
 using SlienGames.Web.Views;
 using WebFormsMvp;
@@ -8,18 +7,18 @@ namespace SlienGames.Web.Presenters
 {
     public class CurrentUserPresenter : Presenter<ICurrentUserView>
     {
-        private IRepository<User> dataProvider;
+        private IUsersService usersService;
 
-        public CurrentUserPresenter(ICurrentUserView view, IRepository<User> dataProvider)
+        public CurrentUserPresenter(ICurrentUserView view, IUsersService usersService)
             : base(view)
         {
-            this.dataProvider = dataProvider;
+            this.usersService = usersService;
             this.View.MyInit += View_MyInit;
         }
 
         private void View_MyInit(object sender, CurrentUserEventArgs e)
         {
-            this.View.Model.User = this.dataProvider.GetById(e.Id);
+            this.View.Model.User = this.usersService.GetUserById(e.Id);
         }
     }
 }

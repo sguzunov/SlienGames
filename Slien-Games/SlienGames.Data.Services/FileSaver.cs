@@ -1,8 +1,8 @@
-﻿using SlienGames.Web.Services.Contracts;
+﻿using SlienGames.Data.Services.Contracts;
 using System;
 using System.IO;
 
-namespace SlienGames.Web.Services
+namespace SlienGames.Data.Services
 {
     public class FileSaver : IFileSaver
     {

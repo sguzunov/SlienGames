@@ -40,10 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IFileSaver.cs" />
     <Compile Include="Contracts\IGameProfileServices.cs" />
-    <Compile Include="Contracts\IUsersServices.cs" />
+    <Compile Include="Contracts\IUsersService.cs" />
+    <Compile Include="FileSaver.cs" />
     <Compile Include="GameProfileServices.cs" />
-    <Compile Include="UserServices.cs" />
+    <Compile Include="UserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

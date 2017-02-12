@@ -1,5 +1,5 @@
 ﻿
-namespace SlienGames.Web.Services.Contracts
+namespace SlienGames.Data.Services.Contracts
 {
     public interface IFileSaver
     {

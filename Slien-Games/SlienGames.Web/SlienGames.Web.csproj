@@ -404,11 +404,6 @@
       <DependentUpon>Profile.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\Contracts\IFileSaver.cs" />
-    <Compile Include="Services\Contracts\IUsersService.cs" />
-    <Compile Include="Services\DataProvider.cs" />
-    <Compile Include="Services\Contracts\IDataProvider.cs" />
-    <Compile Include="Services\FileSaver.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -441,7 +436,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Content\Avatars\" />
     <Folder Include="Content\style\images\" />
-    <Folder Include="GameInfo\" />  </ItemGroup>
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\SlienGames.Data.Models\SlienGames.Data.Models.csproj">
       <Project>{ad2774fc-9410-4c86-b293-95fb02f70f43}</Project>
