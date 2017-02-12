@@ -11,7 +11,9 @@ namespace SlienGames.Web.Errors
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Response.TrySkipIisCustomErrors = true;
+            Response.StatusCode = 404;
+            Response.StatusDescription = "Page not found";
         }
     }
 }

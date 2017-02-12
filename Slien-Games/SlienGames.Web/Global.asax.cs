@@ -29,11 +29,6 @@ namespace SlienGames.Web
                     Server.ClearError();
                     Server.Transfer("/Errors/PageNotFound.aspx");
                 }
-                else
-                {
-                    Server.ClearError();
-                    Server.Transfer("/Errors/ErrorPage.aspx");
-                }
             }
         }
 
