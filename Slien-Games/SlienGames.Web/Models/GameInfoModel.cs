@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+
 using SlienGames.Data.Models;
 
 namespace SlienGames.Web.Models

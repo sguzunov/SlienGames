@@ -49,10 +49,6 @@ img.cover-image {
     max-width: 420px;
 }
 
-h1.game-name {
-    /*float: left;*/
-}
-
 p.game-description {
     display: inline-block;
     max-width: 480px;
@@ -70,6 +66,10 @@ p.game-description {
     display: block;
     height: 0;
     clear: both;
+}
+
+div.play-btn-panel {
+    margin-top: 15px;
 }
 
 .comments-section {
@@ -93,4 +93,25 @@ article.game-comment-box {
 
 .comments-section {
     margin-top: 50px;
+}
+
+div.play-btn-panel {
+    clear: both;
+}
+
+a.play-btn {
+    font-size: 16px;
+    padding-left: 35px;
+    background-image: url(/Content/Images/play-game-image.png);
+    background-repeat: no-repeat;
+    background-position-x: 5px;
+    background-position-y: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+.visilble {
+    display: block;
 }

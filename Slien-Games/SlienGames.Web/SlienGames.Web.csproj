@@ -215,6 +215,7 @@
     <Content Include="Profiles\Profile.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\comments-panel.js" />
     <Content Include="Scripts\fns.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -435,6 +436,7 @@
     <Folder Include="Account\ViewModels\" />
     <Folder Include="App_Data\" />
     <Folder Include="Content\Avatars\" />
+    <Folder Include="Content\Images\" />
     <Folder Include="Content\style\images\" />
   </ItemGroup>
   <ItemGroup>
