@@ -9,6 +9,8 @@
                         <h1 class="game-name"><%# this.Model.GameName %></h1>
                         <asp:Image runat="server" ID="ImageCover" ImageUrl="<%# this.Model.CoverImageFileSystemPath %>" CssClass="cover-image" />
                         <p class="game-description"><%#: this.Model.GameDescription %></p>
+                        <div class="miniclip-game-embed" data-game-name="flip-diving" data-theme="0" data-width="488" data-height="670" data-language="en"><a href="http://www.miniclip.com/games/flip-diving/">Play Flip Diving</a></div>
+<p style="text-align:center;"><a href="http://www.miniclip.com/games/flip-diving/" target="_blank">Play Flip Diving</a> / More <a href="http://www.miniclip.com/games/genre-1194/" target="_blank">iPhone games</a></p>
                     </section>
                     <div class="comments-section block">
                         <div class="block-bot">
@@ -39,4 +41,5 @@
             </div>
         </div>
     </div>
+    <script src="//static.miniclipcdn.com/js/game-embed.js"></script>
 </asp:Content>
