@@ -67,7 +67,7 @@
 
                 <!-- Logo -->
                 <div id="logo">
-                    <h1><a href="/Default.aspx">Slien<span>Games</span></a></h1>
+                    <h1><a href="/">Slien<span>Games</span></a></h1>
                     <p class="description">your game zone</p>
                 </div>
                 <!-- / Logo -->
