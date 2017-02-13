@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace SlienGames.Data.Models
 {
-    class EmbeddedGame : IDbModel
+    public class EmbeddedGame : IDbModel
     {
         private ICollection<Comment> comments;
         private ICollection<Vote> votes;

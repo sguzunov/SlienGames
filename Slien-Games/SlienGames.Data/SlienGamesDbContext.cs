@@ -30,6 +30,7 @@ namespace SlienGames.Data
 
         public IDbSet<CoverImage> CoverImages { get; set; }
 
+        public IDbSet<EmbeddedGame> EmbeddedGames { get; set; }
         public new IDbSet<T> Set<T>()
             where T : class
         {

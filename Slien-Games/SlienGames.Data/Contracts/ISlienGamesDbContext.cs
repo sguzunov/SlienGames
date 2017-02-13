@@ -19,6 +19,8 @@ namespace SlienGames.Data.Contracts
 
         IDbSet<Vote> Votes { get; set; }
 
+        IDbSet<EmbeddedGame> EmbeddedGames { get; set; }
+
         IDbSet<T> Set<T>() where T : class;
 
         DbEntityEntry<TEntity> Entry<TEntity>(TEntity entity) where TEntity : class;

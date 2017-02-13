@@ -65,6 +65,7 @@
     <Compile Include="Constants\ValidationConstants.cs" />
     <Compile Include="Contracts\IDbModel.cs" />
     <Compile Include="CoverImage.cs" />
+    <Compile Include="EmbeddedGame.cs" />
     <Compile Include="FileInfo.cs" />
     <Compile Include="GameProfile.cs" />
     <Compile Include="ProfileImage.cs" />

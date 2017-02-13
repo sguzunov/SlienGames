@@ -435,6 +435,7 @@
     <Folder Include="Account\ViewModels\" />
     <Folder Include="App_Data\" />
     <Folder Include="Content\Avatars\" />
+    <Folder Include="Content\EmbeddedGames\Images\" />
     <Folder Include="Content\style\images\" />
   </ItemGroup>
   <ItemGroup>
