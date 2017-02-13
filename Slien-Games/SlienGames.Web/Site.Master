@@ -78,7 +78,7 @@
                         <div class="bg-left">
                             <ul>
                                 <li><a href="#">Home</a><span class="sep">&nbsp;</span></li>
-                                <li><a href="#">Games</a><span class="sep">&nbsp;</span></li>
+                                <li><a href="/Games/AllGames">Games</a><span class="sep">&nbsp;</span></li>
                             </ul>
                             <div class="cl">&nbsp;</div>
                         </div>

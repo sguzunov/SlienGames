@@ -397,9 +397,11 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Identity\IdentityHelper.cs" />
+    <Compile Include="Models\AllGamesModel.cs" />
     <Compile Include="Models\CurrentUserModel.cs" />
     <Compile Include="Models\GameInfoModel.cs" />
     <Compile Include="Models\UserViewModel.cs" />
+    <Compile Include="Presenters\AllGamesPresenter.cs" />
     <Compile Include="Presenters\CurrentUserPresenter.cs" />
     <Compile Include="Presenters\GameInfoPresenter.cs" />
     <Compile Include="Presenters\UploadAvatarPresenter.cs" />
@@ -434,6 +436,7 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Views\IAllGamesView.cs" />
     <Compile Include="Views\ICurrentUserView.cs" />
     <Compile Include="Views\IGameInfoView.cs" />
     <Compile Include="Views\IUploadAvatarView.cs" />
