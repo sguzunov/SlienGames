@@ -12,15 +12,23 @@
     text-align: center;
 }
 
-    .page-not-found-container .righ-not-found ul{
-        list-style-type:none;
-    }
-    .page-not-found-container .righ-not-found ul li {
-        font-size: 1.2em;
-        padding: 5px;
-    }
+.page-not-found-container .righ-not-found ul {
+    list-style-type: none;
+}
 
-        .page-not-found-container .righ-not-found ul li a {
-            color: cyan;
-        }
-        
+.page-not-found-container .righ-not-found ul li {
+    font-size: 1.2em;
+    padding: 5px;
+}
+
+.page-not-found-container .righ-not-found ul li a {
+    color: cyan;
+}
+
+.games-list {
+    display: flex;
+}
+
+.listing-games-template {
+    padding-top:20px;
+}
