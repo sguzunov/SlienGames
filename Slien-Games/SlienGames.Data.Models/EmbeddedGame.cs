@@ -23,13 +23,10 @@ namespace SlienGames.Data.Models
 
         public int Id { get; set; }
 
-        [Required]
-        [Index(IsUnique = true)]
-        [MinLength(ValidationConstants.GameProfileNameMinLength)]
-        [MaxLength(ValidationConstants.GameProfileNameMaxLength)]
+        [Required]       
         public string Name { get; set; }
 
-        public virtual CoverImage CoverImage { get; set; }
+        public string ImagePath { get; set; }
 
         public string GameContent { get; set; }
 
