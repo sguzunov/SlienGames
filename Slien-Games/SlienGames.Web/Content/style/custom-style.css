@@ -12,23 +12,49 @@
     text-align: center;
 }
 
-.page-not-found-container .righ-not-found ul {
-    list-style-type: none;
-}
+    .page-not-found-container .righ-not-found ul {
+        list-style-type: none;
+    }
 
-.page-not-found-container .righ-not-found ul li {
-    font-size: 1.2em;
-    padding: 5px;
-}
+        .page-not-found-container .righ-not-found ul li {
+            font-size: 1.2em;
+            padding: 5px;
+        }
 
-.page-not-found-container .righ-not-found ul li a {
-    color: cyan;
-}
+            .page-not-found-container .righ-not-found ul li a {
+                color: cyan;
+            }
 
 .games-list {
     display: flex;
 }
 
 .listing-games-template {
-    padding-top:20px;
+   padding:25px;
+}
+
+.page-button {
+    color: lightgray;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+}
+
+.clicked-page{
+     color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border: 1px solid #ddd;
+    background-color: #808080;
+    color: white;
+    border: 1px solid #808080;
+}
+.pager-container{
+    padding:10px;
+    display:flex;
+    justify-content:center;
 }

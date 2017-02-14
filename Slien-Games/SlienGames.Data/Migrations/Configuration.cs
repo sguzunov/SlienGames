@@ -41,7 +41,7 @@ namespace SlienGames.Data.Migrations
                 new EmbeddedGame
                 {
                     Id = 4,
-                    Name = "Bow Master Halloween",
+                    Name = "Bow Master",
                     GameContent = "<div class='miniclip - game - embed' data-game-name='bow - master - halloween' data-theme='0'  data-width='680' data-height='510' data-language='en'><a href='http://www.miniclip.com/games/bow-master-halloween/'>Play Bow Master Halloween</a></div>",
                     ImagePath = "/Content/EmbeddedGames/Images/bowmaster.jpg"
                 },
@@ -69,7 +69,7 @@ namespace SlienGames.Data.Migrations
                 new EmbeddedGame
                 {
                     Id = 8,
-                    Name = "Basketball Jam Shots",
+                    Name = "Basketball Jam",
                     GameContent = "<div class='miniclip-game-embed' data-game-name='basketball-jam-shots' data-theme='0' data-width='750' data-height='580' data-language='en'><a href='http://www.miniclip.com/games/basketball-jam-shots/'>Play Basketball Jam Shots</a></div>",
                     ImagePath = "/Content/EmbeddedGames/Images/basketballjamshots.jpg"
                 },
@@ -83,7 +83,7 @@ namespace SlienGames.Data.Migrations
                 new EmbeddedGame
                 {
                     Id = 10,
-                    Name = "Western Front 1914",
+                    Name = "Western Front",
                     GameContent = "<div class='miniclip-game-embed' data-game-name='western-front-1914' data-theme='0' data-width='680' data-height='520' data-language='en'><a href='http://www.miniclip.com/games/western-front-1914/'>Play Western Front 1914</a></div>",
                     ImagePath = "/Content/EmbeddedGames/Images/westernfront1914.jpg"
                 },
@@ -170,6 +170,20 @@ namespace SlienGames.Data.Migrations
                     Name = "Forest Siege",
                     GameContent = "<div class='miniclip-game-embed' data-game-name='forest-siege' data-theme='0' data-width='700' data-height='440' data-language='en'><a href='http://www.miniclip.com/games/forest-siege/'>Play Forest Siege</a></div>",
                     ImagePath = "/Content/EmbeddedGames/Images/forestsiegemedicon.jpg"
+                },
+                new EmbeddedGame
+                {
+                    Id = 23,
+                    Name = "Assault Course 2",
+                    GameContent = "<div class='miniclip-game-embed' data-game-name='assault-course-2' data-theme='0' data-width='680' data-height='510' data-language='en'><a href='http://www.miniclip.com/games/assault-course-2/'>Play Assault Course 2</a></div>",
+                    ImagePath = "/Content/EmbeddedGames/Images/assaultcourse2.jpg"
+                },
+                new EmbeddedGame
+                {
+                    Id = 24,
+                    Name = "Saloon Brawl 2",
+                    GameContent = "<div class='miniclip-game-embed' data-game-name='saloon-brawl-2' data-theme='0' data-width='680' data-height='510' data-language='en'><a href='http://www.miniclip.com/games/saloon-brawl-2/'>Play Saloon Brawl 2</a></div>",
+                    ImagePath = "/Content/EmbeddedGames/Images/saloonbrawl2.jpg"
                 }
                 );
             

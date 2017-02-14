@@ -16,13 +16,12 @@
                             </div>
                         </div>
                         <div class="col-articles articles flexed">
-
                             <asp:ListView ID="ListGames" runat="server"
                                 ItemType="SlienGames.Data.Models.EmbeddedGame">
                                 <ItemTemplate>
                                     <div class="listing-games-template">
 
-                                        <div class="article">
+                                        <div class="span4">
                                             <div class="image">
                                                 <a href="#">
                                                     <img src="<%# Item.ImagePath %>" alt="" /></a>
@@ -32,20 +31,28 @@
                                     </div>
                                 </ItemTemplate>
                             </asp:ListView>
-                            <div class="">
-
-                                <asp:DataPager ID="DataPagerCustomers" runat="server"
-                                    PagedControlID="ListGames" PageSize="9"
-                                    QueryStringField="page">
-                                    <Fields>
-                                        <asp:NextPreviousPagerField ShowFirstPageButton="true"
-                                            ShowNextPageButton="false" ShowPreviousPageButton="false" />
-                                        <asp:NumericPagerField />
-                                        <asp:NextPreviousPagerField ShowLastPageButton="true"
-                                            ShowNextPageButton="false" ShowPreviousPageButton="false" />
-                                    </Fields>
-                                </asp:DataPager>
-                            </div>
+                        </div>
+                        <div class="pager-container">
+                            <asp:DataPager ID="DataPagerCustomers" runat="server"
+                                PagedControlID="ListGames" PageSize="8"
+                                QueryStringField="page">
+                                <Fields>
+                                    <asp:NextPreviousPagerField 
+                                        ShowFirstPageButton="true" 
+                                        ShowLastPageButton="false" 
+                                        ShowNextPageButton="false"
+                                         ShowPreviousPageButton="false"
+                                         ButtonCssClass="page-button"/>
+                                    <asp:NumericPagerField NumericButtonCssClass="page-button"
+                                         CurrentPageLabelCssClass="clicked-page" />
+                                     <asp:NextPreviousPagerField 
+                                        ShowFirstPageButton="false" 
+                                        ShowLastPageButton="true" 
+                                        ShowNextPageButton="false"
+                                         ShowPreviousPageButton="false"
+                                         ButtonCssClass="page-button"/>
+                                </Fields>
+                            </asp:DataPager>
                         </div>
                     </div>
                 </div>
