@@ -1,0 +1,9 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PlayedGame.master.cs" Inherits="SlienGames.Web.PlayedGame.PlayedGame" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <div id="game-panel">
+        <asp:ContentPlaceHolder runat="server" ID="GamePlaceholder"></asp:ContentPlaceHolder>
+    </div>
+    <div id="chat-panel"></div>
+    <input type="hidden" id="InputUsername" runat="server" />
+</asp:Content>
