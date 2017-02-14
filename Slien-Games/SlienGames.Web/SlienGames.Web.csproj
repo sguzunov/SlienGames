@@ -217,6 +217,7 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="GameInfo\GameInfo.aspx" />
     <Content Include="Games\AllGames.aspx" />
+    <Content Include="Games\Game.aspx" />
     <Content Include="Profiles\Profile.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -396,6 +397,13 @@
     </Compile>
     <Compile Include="Games\AllGames.aspx.designer.cs">
       <DependentUpon>AllGames.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Games\Game.aspx.cs">
+      <DependentUpon>Game.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Games\Game.aspx.designer.cs">
+      <DependentUpon>Game.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
