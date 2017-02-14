@@ -207,6 +207,7 @@
     <Content Include="Content\style\custom-style.css" />
     <Content Include="Content\style\ie6-style.css" />
     <Content Include="Content\style\style.css" />
+    <Content Include="CustomControlls\Chat\ChatController.ascx" />
     <Content Include="Errors\ErrorPage.aspx" />
     <Content Include="Errors\PageNotFound.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -358,6 +359,12 @@
     <Compile Include="App_Start\ServicesNinjectModule.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\UsersNinjectModule.cs" />
+    <Compile Include="CustomControlls\Chat\ChatController.ascx.cs">
+      <DependentUpon>ChatController.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="CustomControlls\Chat\ChatController.ascx.designer.cs">
+      <DependentUpon>ChatController.ascx</DependentUpon>
+    </Compile>
     <Compile Include="CustomEventArgs\CurrentUserEventArgs.cs" />
     <Compile Include="CustomEventArgs\GetGameInfoEventArgs.cs" />
     <Compile Include="CustomEventArgs\UploadAvatarEventArgs.cs" />
