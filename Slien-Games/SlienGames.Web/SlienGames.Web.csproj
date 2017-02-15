@@ -212,6 +212,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Content\style\chat-styles.css" />
     <Content Include="Content\style\custom-style.css" />
     <Content Include="Content\style\ie6-style.css" />
     <Content Include="Content\style\style.css" />
@@ -230,6 +231,7 @@
     <Content Include="Profiles\Profile.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\Chat\chat.js" />
     <Content Include="Scripts\fns.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -371,6 +373,7 @@
     <Compile Include="App_Start\UsersNinjectModule.cs" />
     <Compile Include="CustomControlls\Chat\ChatController.ascx.cs">
       <DependentUpon>ChatController.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="CustomControlls\Chat\ChatController.ascx.designer.cs">
       <DependentUpon>ChatController.ascx</DependentUpon>
