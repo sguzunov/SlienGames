@@ -228,6 +228,7 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="GameInfo\GameInfo.aspx" />
     <Content Include="Games\AllGames.aspx" />
+    <Content Include="PlayedGame\TicTacToe.aspx" />
     <Content Include="Profiles\Profile.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -267,6 +268,8 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
+    <Content Include="Uploaded_Images\Covers\1.jpg" />
+    <Content Include="Uploaded_Images\Covers\tic-tac-toe.png" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -508,6 +511,10 @@
     <ProjectReference Include="..\SlienGames.Data\SlienGames.Data.csproj">
       <Project>{8c257009-eef1-46ba-8d5c-638d3c42b634}</Project>
       <Name>SlienGames.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TicTacToeGame\TicTacToeGame.csproj">
+      <Project>{97a9cf83-f3fa-4633-8e2c-e950b788daef}</Project>
+      <Name>TicTacToeGame</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

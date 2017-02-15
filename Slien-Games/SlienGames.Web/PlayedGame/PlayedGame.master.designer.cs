@@ -13,6 +13,15 @@ namespace SlienGames.Web.PlayedGame {
     public partial class PlayedGame {
         
         /// <summary>
+        /// GameScriptsPlaceholder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder GameScriptsPlaceholder;
+        
+        /// <summary>
         /// GamePlaceholder control.
         /// </summary>
         /// <remarks>
@@ -20,14 +29,5 @@ namespace SlienGames.Web.PlayedGame {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder GamePlaceholder;
-        
-        /// <summary>
-        /// InputUsername control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputHidden InputUsername;
     }
 }
