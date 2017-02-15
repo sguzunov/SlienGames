@@ -10,7 +10,7 @@ namespace SlienGames.Web.ChatHubs
     {
         public void SendMessage(string message, string groupName, string senderName, string senderPictureUrl)
         {
-            Clients.Group(groupName).accesptMessage(message, senderName, senderPictureUrl);
+            Clients.Group(groupName, new string[] {this.Context.ConnectionId }).accesptMessage(message, senderName, senderPictureUrl);
         }
 
         public void JoinGroup(string room)
