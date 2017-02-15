@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IPlayer.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="TicTacToe.cs" />
     <Compile Include="Contracts\IGame.cs" />
     <Compile Include="Contracts\IMultiplayerGame.cs" />
