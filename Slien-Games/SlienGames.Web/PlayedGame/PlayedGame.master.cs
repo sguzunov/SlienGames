@@ -1,8 +1,10 @@
-﻿using System.Web.UI;
+﻿using System;
+using System.Web.UI;
 
 namespace SlienGames.Web.PlayedGame
 {
     public partial class PlayedGame : MasterPage
     {
+
     }
 }
