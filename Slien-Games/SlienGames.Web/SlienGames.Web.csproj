@@ -365,6 +365,7 @@
     <Compile Include="App_Start\DbConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\MvpNinjectModule.cs" />
+    <Compile Include="App_Start\NinjectModules\GamesNinjectModule.cs" />
     <Compile Include="App_Start\NinjectWeb.cs" />
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -404,6 +405,8 @@
     <Compile Include="GameInfo\GameInfo.aspx.designer.cs">
       <DependentUpon>GameInfo.aspx</DependentUpon>
     </Compile>
+    <Compile Include="GamesHubs\States\ITicTacToeHubState.cs" />
+    <Compile Include="GamesHubs\States\TicTacToeHubState.cs" />
     <Compile Include="GamesHubs\TicTacToeHub.cs" />
     <Compile Include="Games\AllGames.aspx.cs">
       <DependentUpon>AllGames.aspx</DependentUpon>
