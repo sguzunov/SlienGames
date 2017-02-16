@@ -20,7 +20,7 @@ namespace TicTacToeGame
             this.name = name == null ? "Default(No name)" : name;
         }
 
-        public string ConnectionId => this.name;
+        public string ConnectionId => this.connectionId;
 
         public bool IsPlayingNow { get; set; }
 

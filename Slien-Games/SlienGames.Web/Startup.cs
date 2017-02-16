@@ -11,7 +11,16 @@ namespace SlienGames.Web
         {
             ConfigureAuth(app);
 
-            app.MapSignalR("/signalr", new HubConfiguration());
+            var config = new HubConfiguration
+            {
+                Resolver = GlobalHost.DependencyResolver
+            };
+            this.ConfigureSignalR(app, config);
+        }
+
+        public void ConfigureSignalR(IAppBuilder app, HubConfiguration config)
+        {
+            app.MapSignalR(config);
         }
     }
 }

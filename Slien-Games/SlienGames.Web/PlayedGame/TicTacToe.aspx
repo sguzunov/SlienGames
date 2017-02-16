@@ -8,17 +8,19 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="GamePlaceholder" runat="server">
     <asp:HiddenField ID="InputUsername" runat="server" />
 
-    <input type="image" src="<%= ResolveUrl("~/Uploaded_Images/Covers/tic-tac-toe.png") %>" />
+    <input id="game-cover" type="image" src="<%= ResolveUrl("~/Uploaded_Images/Covers/tic-tac-toe.png") %>" />
     <input id="find-opponent" type="button" value="Find Opponent" class="btn btn-default" />
-    <div id="game"></div>
+    <div id="game-field" class="clearfix"></div>
     <p id="messages"></p>
 
     <%-- TicTacToe game client logic --%>
     <script>
         $(function () {
-            function initGame() {
+            function initGameFiled() {
+                var $gameField = $('#game-field');
                 for (var i = 0; i < 9; i++) {
-
+                    var $markerBox = $('<div />').addClass('marker-box');
+                    $gameField.append($markerBox);
                 }
             }
 
@@ -32,8 +34,9 @@
             };
 
             gameProxy.client.playGame = function (opponentName) {
-                $("#messages").show();
-                $("#messages").text('Your opponent is ' + opponentName);
+                $("#game-cover").hide();
+                $("#find-opponent").hide();
+                $("#game-field").show();
                 initGameFiled();
             };
 

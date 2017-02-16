@@ -4,13 +4,17 @@
 namespace SlienGames.Web.App_Start
 {
     using System;
+    using System.Collections.Generic;
+    using System.Linq;
     using System.Web;
     using Data;
     using Data.Contracts;
+    using Microsoft.AspNet.SignalR;
     using Microsoft.Web.Infrastructure.DynamicModuleHelper;
 
     using Ninject;
     using Ninject.Web.Common;
+    using NinjectModules;
     using WebFormsMvp.Binder;
 
     public static class NinjectWebCommon
@@ -48,6 +52,8 @@ namespace SlienGames.Web.App_Start
                 Kernel.Bind<IHttpModule>().To<HttpApplicationInitializationHttpModule>();
 
                 RegisterServices(Kernel);
+                RegisterSignalr(Kernel);
+
                 return Kernel;
             }
             catch
@@ -63,6 +69,11 @@ namespace SlienGames.Web.App_Start
             private set;
         }
 
+        private static void RegisterSignalr(IKernel kernel)
+        {
+            GlobalHost.DependencyResolver = new NinjectSignalRDependencyResolver(kernel);
+        }
+
         /// <summary>
         /// Load your modules or register your services here!
         /// </summary>
@@ -76,7 +87,27 @@ namespace SlienGames.Web.App_Start
             kernel.Load(new MvpNinjectModule());
             kernel.Load(new UsersNinjectModule());
             kernel.Load(new ServicesNinjectModule());
+            kernel.Load(new GamesNinjectModule());
             PresenterBinder.Factory = kernel.Get<IPresenterFactory>();
+        }
+    }
+
+    internal class NinjectSignalRDependencyResolver : DefaultDependencyResolver
+    {
+        private readonly IKernel kernel;
+        public NinjectSignalRDependencyResolver(IKernel kernel)
+        {
+            this.kernel = kernel;
+        }
+
+        public override object GetService(Type serviceType)
+        {
+            return kernel.TryGet(serviceType) ?? base.GetService(serviceType);
+        }
+
+        public override IEnumerable<object> GetServices(Type serviceType)
+        {
+            return kernel.GetAll(serviceType).Concat(base.GetServices(serviceType));
         }
     }
 }
