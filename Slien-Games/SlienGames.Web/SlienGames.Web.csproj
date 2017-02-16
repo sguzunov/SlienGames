@@ -371,6 +371,7 @@
     <Compile Include="App_Start\ServicesNinjectModule.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\UsersNinjectModule.cs" />
+    <Compile Include="ChatHubs\ChatHub.cs" />
     <Compile Include="CustomControlls\Chat\ChatController.ascx.cs">
       <DependentUpon>ChatController.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
