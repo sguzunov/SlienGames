@@ -224,8 +224,9 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
-    <Content Include="PlayedGame\EmbeddedGame.aspx" />
+    <Content Include="PlayedGame\CurrentGame.aspx" />
     <Content Include="PlayedGame\PlayedGame.master" />
+    <Content Include="PlayedGame\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="GameInfo\GameInfo.aspx" />
     <Content Include="Games\AllGames.aspx" />
@@ -384,7 +385,7 @@
     <Compile Include="CustomControlls\Chat\ChatController.ascx.designer.cs">
       <DependentUpon>ChatController.ascx</DependentUpon>
     </Compile>
-    <Compile Include="CustomEventArgs\CurrentUserEventArgs.cs" />
+    <Compile Include="CustomEventArgs\IdEventArgs.cs" />
     <Compile Include="CustomEventArgs\GetGameInfoEventArgs.cs" />
     <Compile Include="CustomEventArgs\UploadAvatarEventArgs.cs" />
     <Compile Include="Default.aspx.cs">
@@ -436,12 +437,12 @@
     <Compile Include="Models\GameInfoModel.cs" />
     <Compile Include="Models\PlayedGameModel.cs" />
     <Compile Include="Models\UserViewModel.cs" />
-    <Compile Include="PlayedGame\EmbeddedGame.aspx.cs">
-      <DependentUpon>EmbeddedGame.aspx</DependentUpon>
+    <Compile Include="PlayedGame\CurrentGame.aspx.cs">
+      <DependentUpon>CurrentGame.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="PlayedGame\EmbeddedGame.aspx.designer.cs">
-      <DependentUpon>EmbeddedGame.aspx</DependentUpon>
+    <Compile Include="PlayedGame\CurrentGame.aspx.designer.cs">
+      <DependentUpon>CurrentGame.aspx</DependentUpon>
     </Compile>
     <Compile Include="PlayedGame\PlayedGame.master.cs">
       <DependentUpon>PlayedGame.master</DependentUpon>

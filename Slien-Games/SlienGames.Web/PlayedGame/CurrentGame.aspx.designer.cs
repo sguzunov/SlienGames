@@ -10,7 +10,7 @@
 namespace SlienGames.Web.PlayedGame {
     
     
-    public partial class EmbeddedGame {
+    public partial class CurrentGame {
         
         /// <summary>
         /// ChatController control.

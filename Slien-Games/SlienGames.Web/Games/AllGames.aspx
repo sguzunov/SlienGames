@@ -23,7 +23,7 @@
 
                                         <div class="span4">
                                             <div class="image">
-                                                <a href="#">
+                                                <a href="/PlayedGame/CurrentGame?id=<%#: Item.Id %>">
                                                     <img src="<%# Item.ImagePath %>" alt="" /></a>
                                             </div>
                                             <h4><a href="#"><%#: Item.Name %></a></h4>
