@@ -115,3 +115,17 @@ a.play-btn {
 .visilble {
     display: block;
 }
+
+
+/* Games */
+#game-field {
+    max-width: 320px;
+}
+
+.marker-box {
+    margin-left: 1px;
+    float: left;
+    width: 100px;
+    height: 100px;
+    background-image: url(/Uploaded_Images/Covers/tic-tac-toe.png);
+}
