@@ -17,6 +17,7 @@
 
     <link rel="stylesheet" href="~/Content/style/style.css" type="text/css" media="all" />
     <link rel="stylesheet" href="~/Content/style/custom-style.css" type="text/css" media="all" />
+    <link href="Content/style/chat-styles.css" rel="stylesheet" />
     <asp:ContentPlaceHolder runat="server" ID="StylesContent">
     </asp:ContentPlaceHolder>    
 </head>
