@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\IPlayer.cs" />
+    <Compile Include="Factories\IGameFactory.cs" />
+    <Compile Include="Factories\IPlayerFactory.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="TicTacToe.cs" />
     <Compile Include="Contracts\IGame.cs" />
