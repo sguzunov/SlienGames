@@ -224,6 +224,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
+    <Content Include="PlayedGame\EmbeddedGame.aspx" />
     <Content Include="PlayedGame\PlayedGame.master" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="GameInfo\GameInfo.aspx" />
@@ -433,7 +434,15 @@
     <Compile Include="Models\AllGamesModel.cs" />
     <Compile Include="Models\CurrentUserModel.cs" />
     <Compile Include="Models\GameInfoModel.cs" />
+    <Compile Include="Models\PlayedGameModel.cs" />
     <Compile Include="Models\UserViewModel.cs" />
+    <Compile Include="PlayedGame\EmbeddedGame.aspx.cs">
+      <DependentUpon>EmbeddedGame.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PlayedGame\EmbeddedGame.aspx.designer.cs">
+      <DependentUpon>EmbeddedGame.aspx</DependentUpon>
+    </Compile>
     <Compile Include="PlayedGame\PlayedGame.master.cs">
       <DependentUpon>PlayedGame.master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -451,6 +460,7 @@
     <Compile Include="Presenters\AllGamesPresenter.cs" />
     <Compile Include="Presenters\CurrentUserPresenter.cs" />
     <Compile Include="Presenters\GameInfoPresenter.cs" />
+    <Compile Include="Presenters\PlayedGamePresenter.cs" />
     <Compile Include="Presenters\UploadAvatarPresenter.cs" />
     <Compile Include="Presenters\UserPresenter.cs" />
     <Compile Include="Profiles\Profile.aspx.cs">
@@ -486,6 +496,7 @@
     <Compile Include="Views\IAllGamesView.cs" />
     <Compile Include="Views\ICurrentUserView.cs" />
     <Compile Include="Views\IGameInfoView.cs" />
+    <Compile Include="Views\IPlayedGameView.cs" />
     <Compile Include="Views\IUploadAvatarView.cs" />
     <Compile Include="Views\IUserView.cs" />
   </ItemGroup>

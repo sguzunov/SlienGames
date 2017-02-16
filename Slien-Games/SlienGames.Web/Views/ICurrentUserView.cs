@@ -7,6 +7,6 @@ namespace SlienGames.Web.Views
 {
     public interface ICurrentUserView : IView<CurrentUserModel>
     {
-        event EventHandler<CurrentUserEventArgs> MyInit;
+        event EventHandler<IdEventArgs> MyInit;
     }
 }

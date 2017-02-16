@@ -17,12 +17,12 @@ namespace SlienGames.Web.Account
     {
         public User CurrentUser { get; set; }
 
-        public event EventHandler<CurrentUserEventArgs> GetCurrentUser;
+        public event EventHandler<IdEventArgs> GetCurrentUser;
         public event EventHandler<UploadAvatarEventArgs> SetNewAvatar;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.GetCurrentUser?.Invoke(sender, new CurrentUserEventArgs(this.User.Identity.GetUserId()));
+            this.GetCurrentUser?.Invoke(sender, new IdEventArgs(this.User.Identity.GetUserId()));
             this.CurrentUser = this.Model.User;
         }
 

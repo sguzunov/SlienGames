@@ -1,8 +1,5 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ChatController.ascx.cs" Inherits="SlienGames.Web.CustomControlls.Chat.ChatController" %>
 
-<input type="hidden" id="username" value=""/>
-<input type="hidden" id="userPictureUrl" value=""/>
-<input type="hidden" id="groupName" value=""/>
 
 <div class="chat">
   <div class="chat-title">
@@ -18,3 +15,4 @@
 
 </div>
 <div class="bg"></div>
+<script src="../../Scripts/Chat/chat.js"></script>
