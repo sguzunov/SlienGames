@@ -21,11 +21,11 @@ namespace SlienGames.Web.Account
     {
         public User CurrentUser { get; private set; }
 
-        public event EventHandler<CurrentUserEventArgs> MyInit;
+        public event EventHandler<IdEventArgs> MyInit;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.MyInit?.Invoke(sender, new CurrentUserEventArgs(this.User.Identity.GetUserId()));
+            this.MyInit?.Invoke(sender, new IdEventArgs(this.User.Identity.GetUserId()));
             this.CurrentUser = this.Model.User;
 
             if (this.CurrentUser.Favorites.Count>0)

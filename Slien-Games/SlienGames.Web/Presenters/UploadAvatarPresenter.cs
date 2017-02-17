@@ -47,7 +47,7 @@ namespace SlienGames.Web.Presenters
             fileSaver.SaveFile(e.FilePath + e.FileName, e.AllBytes);
         }
 
-        private void View_GetCurrentUser(object sender, CustomEventArgs.CurrentUserEventArgs e)
+        private void View_GetCurrentUser(object sender, CustomEventArgs.IdEventArgs e)
         {
             this.View.Model.User = this.usersService.GetUserById(e.Id);
         }

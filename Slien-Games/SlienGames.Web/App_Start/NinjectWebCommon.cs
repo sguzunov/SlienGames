@@ -81,7 +81,7 @@ namespace SlienGames.Web.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<ISlienGamesData>().To<SlienGamesData>();
-            kernel.Bind<ISlienGamesDbContext>().To<SlienGamesDbContext>().InSingletonScope();
+            kernel.Bind<ISlienGamesDbContext>().To<SlienGamesDbContext>().InRequestScope();
             kernel.Bind(typeof(IRepository<>)).To(typeof(EfRepository<>));
 
             kernel.Load(new MvpNinjectModule());
