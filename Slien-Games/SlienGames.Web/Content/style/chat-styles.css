@@ -17,14 +17,13 @@
 Chat
 --------------------*/
 .chat {
-  position: absolute;
-  top: 70%;
-  left: 72%;
+    position:relative;
+    top: 250px;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   width: 300px;
   height: 80vh;
-  max-height: 500px;
+  max-height: 400px;
   z-index: 2;
   overflow: hidden;
   box-shadow: 0 5px 30px rgba(0, 0, 0, 0.2);

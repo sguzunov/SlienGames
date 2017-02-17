@@ -16,11 +16,10 @@
     </div>
     <div class="message-box">
         <textarea type="text" class="message-input" placeholder="Type message..."></textarea>
-        <button type="submit" class="message-submit">Send</button>
+        <span class="message-submit">Send</span>
     </div>
 
 </div>
-<div class="bg"></div>
 <script src="../../Scripts/Chat/chat.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.concat.min.js"></script>
 

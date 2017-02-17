@@ -9,12 +9,19 @@
 </asp:Content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="GamePlaceholder" runat="server">
-    <div id="game-container" style="padding-left:100px">
-        <%# this.Game.GameContent %>
-    </div>
-    <input type="hidden" id="username" value="" />
-    <input type="hidden" id="userPictureUrl" value="" />
-    <input type="hidden" id="groupName" value="" />
-    <uc1:ChatController runat="server" ID="ChatController" />
+        <div class="current-game-content" style="display:flex; width:800px; margin:auto;">
+            <div id="game-container"  style="display:flex; justify-content:flex-start" >
+                <%# this.Game.GameContent %>
+
+            </div>
+            <div class="chat-container" style="padding-left:160px;">
+                <uc1:ChatController runat="server" ID="ChatController" />
+            </div>
+            <input type="hidden" id="username" value="<%#: this.CurrentUser.UserName %>" />
+            <input type="hidden" id="userPictureUrl" value="<%#: this.CurrentUser.ProfileImage!= null?
+                          this.CurrentUser.ProfileImage.FileSystemUrlPath 
+                              + this.CurrentUser.ProfileImage.FileName : "/Content/Avatars/default.png" %>" />
+            <input type="hidden" id="groupName" value="<%#: this.Request.QueryString["id"] %>" />
+        </div>
     <script src="//static.miniclipcdn.com/js/game-embed.js"></script>
 </asp:Content>
