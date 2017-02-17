@@ -12,7 +12,7 @@ namespace SlienGames.Web.App_Start.NinjectModules
     {
         public override void Load()
         {
-            this.Bind<IGame>().To<TicTacToe>();
+            this.Bind<IMultiplayerGame>().To<TicTacToe>();
             this.Bind<IPlayer>().To<Player>();
             this.Bind<IPlayerFactory>().ToFactory().InSingletonScope();
             this.Bind<IGameFactory>().ToFactory().InSingletonScope();
