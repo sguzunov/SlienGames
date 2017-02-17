@@ -9,7 +9,7 @@
 </asp:Content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="GamePlaceholder" runat="server">
-    <div id="game-container">
+    <div id="game-container" style="padding-left:100px">
         <%# this.Game.GameContent %>
     </div>
     <input type="hidden" id="username" value="" />

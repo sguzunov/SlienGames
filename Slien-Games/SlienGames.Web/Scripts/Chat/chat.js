@@ -1,6 +1,5 @@
 ﻿$(document).ready(function () {
 
-    $.connection.hub.start();
 
     var chat = $.connection.chatHub;
 
@@ -25,24 +24,30 @@
     function setName(name) {
         $('<div class="timestamp">' + ' ' + name + '</div>').appendTo($('.message:last'));
     }
-    function insertMessage() {
-        msg = $('.message-input').val();
-        if ($.trim(msg) == '') {
-            return false;
-        }
-        $('<div class="message message-personal">' + msg + '</div>').appendTo($('.mCSB_container')).addClass('new');
-        setDate();
-        $('.message-input').val(null);
-        updateScrollbar();
-        chat.server.sendMessage(msg,
-            $('#username').attr('value'),
-            $('#groupName').attr('value'),
-            $('#userPictureUrl').attr('value'))
-    }
 
-    $('.message-submit').click(function () {
-        insertMessage();
-    });
+    $.connection.hub.start().done(function () {
+
+        $('.message-submit').click(function () {
+            insertMessage();
+        });
+
+        function insertMessage() {
+            msg = $('.message-input').val();
+            if ($.trim(msg) == '') {
+                return false;
+            }
+            $('<div class="message message-personal">' + msg + '</div>').appendTo($('.mCSB_container')).addClass('new');
+            setDate();
+            $('.message-input').val(null);
+            updateScrollbar();
+            chat.server.sendMessage(msg,
+                $('#username').attr('value'),
+                $('#groupName').attr('value'),
+                $('#userPictureUrl').attr('value'))
+        }
+    })
+
+
 
     $(window).on('keydown', function (e) {
         if (e.which == 13) {

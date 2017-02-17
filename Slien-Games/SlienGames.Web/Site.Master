@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="~/Content/style/style.css" type="text/css" media="all" />
     <link rel="stylesheet" href="~/Content/style/custom-style.css" type="text/css" media="all" />
     <link href="Content/style/chat-styles.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.3/jquery.mCustomScrollbar.min.css" rel="stylesheet" />
+
     <asp:ContentPlaceHolder runat="server" ID="StylesContent">
     </asp:ContentPlaceHolder>    
 </head>

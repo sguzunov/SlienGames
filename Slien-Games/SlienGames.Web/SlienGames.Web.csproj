@@ -217,6 +217,7 @@
     <Content Include="Content\style\ie6-style.css" />
     <Content Include="Content\style\style.css" />
     <Content Include="CustomControlls\Chat\ChatController.ascx" />
+    <Content Include="CustomControlls\Chat\HtmlPage1.html" />
     <Content Include="Errors\ErrorPage.aspx" />
     <Content Include="Errors\PageNotFound.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

@@ -30,8 +30,16 @@ namespace SlienGames.Web.PlayedGame
         {
             var gameId = Request.QueryString["id"];
             var userId = this.User.Identity.GetUserId();
+            if (gameId == null)
+            {
+                Server.Transfer("/Errors/PageNotFound.aspx");
 
+            }
             this.GetGame?.Invoke(sender, new IdEventArgs(int.Parse(gameId)));
+            if (this.Model.EmbeddedGame==null)
+            {
+                Server.Transfer("/Errors/PageNotFound.aspx");
+            }
             this.Game = this.Model.EmbeddedGame;
 
             this.GetUser?.Invoke(sender, new IdEventArgs(userId));
