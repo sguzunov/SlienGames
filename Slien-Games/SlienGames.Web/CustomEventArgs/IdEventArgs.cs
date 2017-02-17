@@ -2,9 +2,9 @@
 
 namespace SlienGames.Web.CustomEventArgs
 {
-    public class CurrentUserEventArgs : EventArgs
+    public class IdEventArgs : EventArgs
     {
-        public CurrentUserEventArgs(object id)
+        public IdEventArgs(object id)
         {
             this.Id = id;
         }

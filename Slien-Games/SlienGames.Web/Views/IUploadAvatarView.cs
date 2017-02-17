@@ -7,7 +7,7 @@ namespace SlienGames.Web.Views
 {
     public interface IUploadAvatarView : IView<CurrentUserModel>
     {
-        event EventHandler<CurrentUserEventArgs> GetCurrentUser;
+        event EventHandler<IdEventArgs> GetCurrentUser;
 
         event EventHandler<UploadAvatarEventArgs> SetNewAvatar;
 

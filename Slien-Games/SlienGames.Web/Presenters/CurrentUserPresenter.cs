@@ -16,7 +16,7 @@ namespace SlienGames.Web.Presenters
             this.View.MyInit += View_MyInit;
         }
 
-        private void View_MyInit(object sender, CurrentUserEventArgs e)
+        private void View_MyInit(object sender, IdEventArgs e)
         {
             this.View.Model.User = this.usersService.GetUserById(e.Id);
         }

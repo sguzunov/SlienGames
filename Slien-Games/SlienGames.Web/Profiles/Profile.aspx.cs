@@ -20,7 +20,7 @@ namespace SlienGames.Web.Profiles
     {
         public User CurrentUser { get; private set; }
 
-        public event EventHandler<CurrentUserEventArgs> MyInit;
+        public event EventHandler<IdEventArgs> MyInit;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -29,7 +29,7 @@ namespace SlienGames.Web.Profiles
             {
                 Response.Redirect("/Account/Manage");
             }
-            MyInit?.Invoke(sender, new CurrentUserEventArgs(usersProfileId));
+            MyInit?.Invoke(sender, new IdEventArgs(usersProfileId));
             this.CurrentUser = this.Model.User;
         }
     }

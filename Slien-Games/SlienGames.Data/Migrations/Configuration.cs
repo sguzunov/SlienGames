@@ -20,14 +20,14 @@ namespace SlienGames.Data.Migrations
                 {
                     Id = 1,
                     Name = "Flip Diving",
-                    GameContent = "<div class='miniclip - game - embed' data-game-name='flip - diving' data-theme='0' data-width='488' data-height='670' data-language='en'><a href='http://www.miniclip.com/games/flip-diving/'>Play Flip Diving</a></div>",
+                    GameContent = "<div class='miniclip-game-embed' data-game-name='flip-diving' data-theme='0' data-width='488' data-height='670' data-language='en'><a href='http://www.miniclip.com/games/flip-diving/'>Play Flip Diving</a></div>",
                     ImagePath = "/Content/EmbeddedGames/Images/flipdiving.jpg"
                 },
                 new EmbeddedGame
                 {
                     Id = 2,
                     Name = "Basketball Stars",
-                    GameContent = "<div class='miniclip - game - embed' data-game-name='basketball - stars' data-theme='0' data-width='365' data-height='650' data-language='en'><a href='http://www.miniclip.com/games/basketball-stars/'>Play Basketball Stars</a></div>",
+                    GameContent = "<div class='miniclip-game-embed' data-game-name='basketball-stars' data-theme='0' data-width='365' data-height='650' data-language='en'><a href='http://www.miniclip.com/games/basketball-stars/'>Play Basketball Stars</a></div>",
                     ImagePath = "/Content/EmbeddedGames/Images/basketballstars.png"
                 }
                 ,
@@ -35,21 +35,21 @@ namespace SlienGames.Data.Migrations
                 {
                     Id = 3,
                     Name = "8 Ball Pool",
-                    GameContent = "<div class='miniclip - game - embed' data-game-name='8 - ball - pool - multiplayer' data-theme='0' data-width='750' data-height='520' data-language='en'><a href='http://www.miniclip.com/games/8-ball-pool-multiplayer/'>Play 8 Ball Pool</a></div>",
+                    GameContent = "<div class='miniclip-game-embed' data-game-name='8-ball-pool-multiplayer' data-theme='0' data-width='750' data-height='520' data-language='en'><a href='http://www.miniclip.com/games/8-ball-pool-multiplayer/'>Play 8 Ball Pool</a></div>",
                     ImagePath = "/Content/EmbeddedGames/Images/8ballpool.jpg"
                 },
                 new EmbeddedGame
                 {
                     Id = 4,
                     Name = "Bow Master",
-                    GameContent = "<div class='miniclip - game - embed' data-game-name='bow - master - halloween' data-theme='0'  data-width='680' data-height='510' data-language='en'><a href='http://www.miniclip.com/games/bow-master-halloween/'>Play Bow Master Halloween</a></div>",
+                    GameContent = "<div class='miniclip-game-embed' data-game-name='bow-master-halloween' data-theme='0'  data-width='680' data-height='510' data-language='en'><a href='http://www.miniclip.com/games/bow-master-halloween/'>Play Bow Master Halloween</a></div>",
                     ImagePath = "/Content/EmbeddedGames/Images/bowmaster.jpg"
                 },
                 new EmbeddedGame
                 {
                     Id = 5,
                     Name = "Stealth Sniper",
-                    GameContent = "<div class='miniclip - game - embed' data-game-name='stealth - sniper' data-theme='0' data-width='680' data-height='510' data-language='en'><a href='http://www.miniclip.com/games/stealth-sniper/'>Play Stealth Sniper</a></div>",
+                    GameContent = "<div class='miniclip-game-embed' data-game-name='stealth-sniper' data-theme='0' data-width='680' data-height='510' data-language='en'><a href='http://www.miniclip.com/games/stealth-sniper/'>Play Stealth Sniper</a></div>",
                     ImagePath = "/Content/EmbeddedGames/Images/stealthsniper.jpg"
                 },
                 new EmbeddedGame
