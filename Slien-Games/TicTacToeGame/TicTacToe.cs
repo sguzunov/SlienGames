@@ -4,7 +4,7 @@ using TicTacToeGame.Contracts;
 
 namespace TicTacToeGame
 {
-    public class TicTacToe : IGame, IMultiplayerGame
+    public class TicTacToe : IMultiplayerGame, IGame
     {
         private const int BoardSize = 3;
         private const char FirstPlayerMarker = 'x';
@@ -21,6 +21,7 @@ namespace TicTacToeGame
             this.firstPlayer = firstPlayer;
             this.secondPlayer = secondPlayer;
 
+            // Setting games's initial state.
             this.board = new char[BoardSize, BoardSize];
             this.IsDraw = false;
             this.IsOver = false;
@@ -38,7 +39,7 @@ namespace TicTacToeGame
 
         public bool HasWinner { get; private set; }
 
-        public bool PlayTurn(IPlayer player, int positionX, int positionY)
+        public bool PlayTurn(IPlayer player, int position)
         {
             if (this.IsOver) return false;
 
@@ -53,7 +54,7 @@ namespace TicTacToeGame
             }
 
             // We cannot place at that position.
-            if (!this.PlaceMarker(playerMarker, positionX, positionY))
+            if (!this.PlaceMarker(playerMarker, position))
             {
                 return false;
             }
@@ -93,8 +94,11 @@ namespace TicTacToeGame
             return winsByLeftDiagonal || winsByRightDiagonal;
         }
 
-        private bool PlaceMarker(char playerMarker, int positionX, int positionY)
+        private bool PlaceMarker(char playerMarker, int position)
         {
+            int positionX = position / BoardSize;
+            int positionY = position % BoardSize;
+
             if (positionX < 0 || BoardSize <= positionX)
             {
                 throw new ArgumentException($"{positionX} is invalid position for x!");

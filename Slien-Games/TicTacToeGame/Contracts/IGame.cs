@@ -1,8 +1,8 @@
 ﻿namespace TicTacToeGame.Contracts
 {
-    public interface IGame : IMultiplayerGame
+    public interface IGame
     {
-        bool PlayTurn(IPlayer player, int positionX, int positionY);
+        bool PlayTurn(IPlayer player, int position);
 
         bool IsDraw { get; }
 
