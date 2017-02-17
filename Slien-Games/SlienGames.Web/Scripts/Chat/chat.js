@@ -6,7 +6,7 @@
     chat.client.acceptMessage = function (message, senderName, senderPictureUrl) {
         console.log("tuka")
         $('<div class="message new"><figure class="avatar"><img src="' + senderPictureUrl + '" /></figure>' + message + '</div>').appendTo($('.mCSB_container')).addClass('new');
-      
+
         setName(senderName);
         updateScrollbar();
     }
@@ -31,11 +31,11 @@
             if ($.trim(msg) == '') {
                 return false;
             }
-            $('<div class="message message-personal">' + msg + '</div>').appendTo($('.mCSB_container')).addClass('new');
-           
+            $('<div class="message message-personal">' + escapeHtml(msg) + '</div>').appendTo($('.mCSB_container')).addClass('new');
+
             $('.message-input').val(null);
             updateScrollbar();
-            chat.server.sendMessage(msg,
+            chat.server.sendMessage(escapeHtml(msg),
                 $('#groupName').attr('value'),
                 $('#username').attr('value'),
                 $('#userPictureUrl').attr('value'))
@@ -69,6 +69,15 @@
 
     function setName(name) {
         $('<div class="timestamp">' + ' ' + name + '</div>').appendTo($('.message:last'));
+    }
+
+    function escapeHtml(unsafe) {
+        return unsafe
+             .replace(/&/g, "&amp;")
+             .replace(/</g, "&lt;")
+             .replace(/>/g, "&gt;")
+             .replace(/"/g, "&quot;")
+             .replace(/'/g, "&#039;");
     }
 
 })
