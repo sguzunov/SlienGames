@@ -13,7 +13,7 @@
 
     $.connection.hub.start().done(function () {
 
-        chat.server.joinGroup(getQueryStringValue("id"))
+        chat.server.joinGroup($('#groupName').attr('value'));
 
         $('.message-submit').click(function () {
             insertMessage();
