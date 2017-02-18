@@ -1,24 +1,21 @@
 ﻿using SlienGames.Data.Models;
-using SlienGames.Web.Models;
-using SlienGames.Web.Presenters;
-using SlienGames.Web.Views;
 using System;
 using System.Web.UI.WebControls;
 using WebFormsMvp;
 using WebFormsMvp.Web;
-using SlienGames.Web.CustomEventArgs;
 using Microsoft.AspNet.Identity;
 using System.IO;
+using SlienGames.MVP.Manage.ManageAvatar;
 
 namespace SlienGames.Web.Account
 {
-    [PresenterBinding(typeof(UploadAvatarPresenter))]
-    public partial class ManageAvatar : MvpPage<CurrentUserModel>, IUploadAvatarView
+    [PresenterBinding(typeof(ManageAvatarPresenter))]
+    public partial class ManageAvatar : MvpPage<ManageAvatarModel>, IManageAvatarView
     {
         public User CurrentUser { get; set; }
 
         public event EventHandler<IdEventArgs> GetCurrentUser;
-        public event EventHandler<UploadAvatarEventArgs> SetNewAvatar;
+        public event EventHandler<ManageAvatarEventArgs> SetNewAvatar;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -32,22 +29,13 @@ namespace SlienGames.Web.Account
             {
                 try
                 {
-                    //var allowedExtensions = new string[] { ".gif", ".tif", ".png", ".jpg", ".jpeg" };
-                    //var fileExtension = Path.GetExtension(FileUpload.FileName);
-                    //if (Array.IndexOf(allowedExtensions,fileExtension)<0)
-                    //{
-                    //    throw new InvalidDataException();
-                    //}
-                    //string fileName = Path.GetFileName(FileUpload.FileName);
-                    //FileUpload.SaveAs(Server.MapPath("~/Content/Avatars/") + fileName);
-                    //ErrorMessage.Text = "Avatar uploaded!"; 
                     var bytes = FileUpload.FileBytes;
                     var fileExtension = Path.GetExtension(FileUpload.FileName);
                     var fileName = this.User.Identity.GetUserName() + DateTime.Now.Ticks+ Path.GetFileName(FileUpload.FileName);
                     var filePath = @"\Content\Avatars\";
 
 
-                    this.SetNewAvatar?.Invoke(sender, new UploadAvatarEventArgs(
+                    this.SetNewAvatar?.Invoke(sender, new ManageAvatarEventArgs(
                                                              fileName,
                                                              fileExtension,
                                                              filePath,
@@ -56,7 +44,7 @@ namespace SlienGames.Web.Account
                                                              ));
                     ErrorMessage.Text = "Avatar uploaded!";
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
 
                     ErrorMessage.Text = "Only allowed jpg, tif, png, and gif formats!";

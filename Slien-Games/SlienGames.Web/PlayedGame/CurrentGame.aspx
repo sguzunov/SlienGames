@@ -9,8 +9,8 @@
 </asp:Content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="GamePlaceholder" runat="server">
-    <div class="current-game-content" style="display: flex; width: 800px; margin: auto;">
-        <div id="game-container" style="display: flex; justify-content: flex-start">
+    <div class="current-game-content" style="display: flex; padding-left:180px">
+        <div id="game-container" style="">
             <%# this.Game.GameContent %>
         </div>
         <div class="chat-container" style="padding-left: 160px;">

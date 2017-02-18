@@ -1,31 +1,23 @@
 ﻿using System;
-using System.Web;
 using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-
-using SlienGames.Web.App_Start;
 using WebFormsMvp;
-using SlienGames.Web.Presenters;
 using SlienGames.Data.Models;
 using WebFormsMvp.Web;
-using SlienGames.Web.Models;
-using SlienGames.Web.Views;
-using SlienGames.Web.CustomEventArgs;
-using System.Collections.Generic;
 using System.Linq;
+using SlienGames.MVP.Manage;
 
 namespace SlienGames.Web.Account
 {
-    [PresenterBinding(typeof(CurrentUserPresenter))]
-    public partial class Manage : MvpPage<CurrentUserModel>, ICurrentUserView
+    [PresenterBinding(typeof(ManagePresenter))]
+    public partial class Manage : MvpPage<ManageModel>, IManageView
     {
         public User CurrentUser { get; private set; }
 
-        public event EventHandler<IdEventArgs> MyInit;
+        public event EventHandler<ManageEventArgs> GetCurrentUser;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.MyInit?.Invoke(sender, new IdEventArgs(this.User.Identity.GetUserId()));
+            this.GetCurrentUser?.Invoke(sender, new ManageEventArgs(this.User.Identity.GetUserId()));
             this.CurrentUser = this.Model.User;
 
             if (this.CurrentUser.Favorites.Count>0)

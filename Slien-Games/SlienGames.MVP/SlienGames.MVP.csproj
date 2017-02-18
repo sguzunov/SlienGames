@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9908D3C9-AC92-460C-AE3A-1C1CFE3109E0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SlienGames.MVP</RootNamespace>
+    <AssemblyName>SlienGames.MVP</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WebFormsMvp, Version=1.4.5.0, Culture=neutral, PublicKeyToken=537f18701145dff0, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebFormsMvp.1.4.5.0\lib\WebFormsMvp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="GameInfo\GameInfoModel.cs" />
+    <Compile Include="GameInfo\GameInfoPresenter.cs" />
+    <Compile Include="GameInfo\GetGameInfoEventArgs.cs" />
+    <Compile Include="GameInfo\IGameInfoView.cs" />
+    <Compile Include="Games\AllGamesModel.cs" />
+    <Compile Include="Games\AllGamesPresenter.cs" />
+    <Compile Include="Games\IAllGamesView.cs" />
+    <Compile Include="Home\HomeModel.cs" />
+    <Compile Include="Home\IHomeView.cs" />
+    <Compile Include="Home\HomePresenter.cs" />
+    <Compile Include="Manage\ManageAvatar\IdEventArgs.cs" />
+    <Compile Include="Manage\ManageAvatar\IManageAvatarView.cs" />
+    <Compile Include="Manage\ManageAvatar\ManageAvatarEventArgs.cs" />
+    <Compile Include="Manage\ManageAvatar\ManageAvatarModel.cs" />
+    <Compile Include="Manage\ManageAvatar\ManageAvatarPresenter.cs" />
+    <Compile Include="Manage\ManagePresenter.cs" />
+    <Compile Include="Manage\IManageView.cs" />
+    <Compile Include="Manage\ManageEventArgs.cs" />
+    <Compile Include="Manage\ManageModel.cs" />
+    <Compile Include="PlayedGame\CurrentGame\CurrentGameEventArgs.cs" />
+    <Compile Include="PlayedGame\CurrentGame\ICurrentGameView.cs" />
+    <Compile Include="PlayedGame\CurrentGame\CurrentGameModel.cs" />
+    <Compile Include="PlayedGame\CurrentGame\CurrentGamePresenter.cs" />
+    <Compile Include="Profiles\AllFavorites\IAllFavoritesView.cs" />
+    <Compile Include="Profiles\AllFavorites\AllFavoritesEventArgs.cs" />
+    <Compile Include="Profiles\AllFavorites\AllFavoritesModel.cs" />
+    <Compile Include="Profiles\AllFavorites\AllFavoritesPresenter.cs" />
+    <Compile Include="Profiles\Profile\IProfileView.cs" />
+    <Compile Include="Profiles\Profile\ProfileEventArgs.cs" />
+    <Compile Include="Profiles\Profile\ProfileModel.cs" />
+    <Compile Include="Profiles\Profile\ProfilePresenter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SlienGames.Data.Models\SlienGames.Data.Models.csproj">
+      <Project>{ad2774fc-9410-4c86-b293-95fb02f70f43}</Project>
+      <Name>SlienGames.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SlienGames.Data.Services\SlienGames.Data.Services.csproj">
+      <Project>{36969cbe-152e-40a5-8f38-126e8ea62c87}</Project>
+      <Name>SlienGames.Data.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SlienGames.Data\SlienGames.Data.csproj">
+      <Project>{8C257009-EEF1-46BA-8D5C-638D3C42B634}</Project>
+      <Name>SlienGames.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
