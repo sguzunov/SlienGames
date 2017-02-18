@@ -2,8 +2,12 @@
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <asp:ContentPlaceHolder runat="server" ID="GameScriptsPlaceholder"></asp:ContentPlaceHolder>
-    <div id="game-panel">
-        <asp:ContentPlaceHolder runat="server" ID="GamePlaceholder"></asp:ContentPlaceHolder>
+    <div id="main">
+        <div id="main-bot">
+            <div id="game-panel">
+                <asp:ContentPlaceHolder runat="server" ID="GamePlaceholder"></asp:ContentPlaceHolder>
+            </div>
+            <div id="chat-panel"></div>
+        </div>
     </div>
-    <div id="chat-panel"></div>
 </asp:Content>

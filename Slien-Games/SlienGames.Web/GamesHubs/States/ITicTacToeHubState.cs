@@ -8,6 +8,6 @@ namespace SlienGames.Web.GamesHubs.States
     {
         ICollection<IPlayer> Clients { get; }
 
-        ICollection<IGame> Games { get; }
+        ICollection<IMultiplayerGame> Games { get; }
     }
 }

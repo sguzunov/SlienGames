@@ -29,5 +29,7 @@ namespace TicTacToeGame
         public string Name => this.name;
 
         public IPlayer Opponent { get; set; }
+
+        public bool IsOnTurn { get; set; }
     }
 }

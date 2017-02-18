@@ -11,5 +11,7 @@
         bool LookingForOpponent { get; set; }
 
         bool IsPlayingNow { get; set; }
+
+        bool IsOnTurn { get; set; }
     }
 }

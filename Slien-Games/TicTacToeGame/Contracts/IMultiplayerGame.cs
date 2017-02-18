@@ -1,8 +1,6 @@
-﻿using TicTacToeGame.Contracts;
-
-namespace TicTacToeGame
+﻿namespace TicTacToeGame.Contracts
 {
-    public interface IMultiplayerGame
+    public interface IMultiplayerGame : IGame
     {
         IPlayer FirstPlayer { get; }
 
