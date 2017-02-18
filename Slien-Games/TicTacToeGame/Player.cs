@@ -6,6 +6,7 @@ namespace TicTacToeGame
 {
     public class Player : IPlayer
     {
+        private const string DefaultPlayerName = "Default(No name)";
         private readonly string connectionId;
         private readonly string name;
 
@@ -13,18 +14,21 @@ namespace TicTacToeGame
         {
             if (connectionId == null)
             {
-                throw new ArgumentNullException($"Players should be created with {connectionId}!");
+                throw new ArgumentNullException($"Players cannot be created with null value for {connectionId}!");
+            }
+
+            if (connectionId == string.Empty)
+            {
+                throw new ArgumentException($"Players cannot be created with empty string value for {connectionId}!");
             }
 
             this.connectionId = connectionId;
-            this.name = name == null ? "Default(No name)" : name;
+            this.name = name == null ? DefaultPlayerName : name;
         }
 
         public string ConnectionId => this.connectionId;
 
         public bool IsPlayingNow { get; set; }
-
-        public bool LookingForOpponent { get; set; }
 
         public string Name => this.name;
 
