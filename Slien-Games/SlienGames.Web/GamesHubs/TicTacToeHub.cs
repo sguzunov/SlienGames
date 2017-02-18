@@ -68,7 +68,7 @@ namespace SlienGames.Web.GamesHubs
             if (!isPlayed) return;
 
             var opponent = game.FirstPlayer == player ? game.SecondtPlayer : game.FirstPlayer;
-            player.IsOnTurn = false;    
+            player.IsOnTurn = false;
             opponent.IsOnTurn = true;
 
             this.Clients.Client(playerConnectionId).addMarker(markerPosition, player.Name);
