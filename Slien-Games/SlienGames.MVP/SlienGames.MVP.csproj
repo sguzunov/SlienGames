@@ -68,6 +68,10 @@
     <Compile Include="PlayedGame\CurrentGame\ICurrentGameView.cs" />
     <Compile Include="PlayedGame\CurrentGame\CurrentGameModel.cs" />
     <Compile Include="PlayedGame\CurrentGame\CurrentGamePresenter.cs" />
+    <Compile Include="PlayedGame\TicTacToe\TicTacToeEventArgs.cs" />
+    <Compile Include="PlayedGame\TicTacToe\TicTacToeModel.cs" />
+    <Compile Include="PlayedGame\TicTacToe\TicTacToePresenter.cs" />
+    <Compile Include="PlayedGame\TicTacToe\ITicTacToeView.cs" />
     <Compile Include="Profiles\AllFavorites\IAllFavoritesView.cs" />
     <Compile Include="Profiles\AllFavorites\AllFavoritesEventArgs.cs" />
     <Compile Include="Profiles\AllFavorites\AllFavoritesModel.cs" />
