@@ -25,7 +25,6 @@ namespace TicTacToeGame
             this.board = new char[BoardSize, BoardSize];
             this.IsDraw = false;
             this.IsOver = false;
-            this.HasWinner = false;
             this.markersLeft = BoardSize * BoardSize;
         }
 
@@ -37,10 +36,13 @@ namespace TicTacToeGame
 
         public bool IsOver { get; private set; }
 
-        public bool HasWinner { get; private set; }
-
         public bool PlayTurn(IPlayer player, int position)
         {
+            if (!(player == this.FirstPlayer || player == this.SecondtPlayer))
+            {
+                throw new PlayerNotPlayingGameException("Cannot play with player not in the game!");
+            }
+
             if (this.IsOver) return false;
 
             char playerMarker;
@@ -53,7 +55,7 @@ namespace TicTacToeGame
                 playerMarker = SecondPlayerMarker;
             }
 
-            // We cannot place at that position.
+            // We cannot place at this position.
             if (!this.PlaceMarker(playerMarker, position))
             {
                 return false;
@@ -61,7 +63,6 @@ namespace TicTacToeGame
 
             if (CheckIfPlayerWins(playerMarker))
             {
-                this.HasWinner = true;
                 this.IsOver = true;
             }
             else
@@ -96,18 +97,13 @@ namespace TicTacToeGame
 
         private bool PlaceMarker(char playerMarker, int position)
         {
+            if (position < 0 || BoardSize * BoardSize <= position)
+            {
+                throw new ArgumentOutOfRangeException($"{position} is out of the board!");
+            }
+
             int positionX = position / BoardSize;
             int positionY = position % BoardSize;
-
-            if (positionX < 0 || BoardSize <= positionX)
-            {
-                throw new ArgumentException($"{positionX} is invalid position for x!");
-            }
-
-            if (positionY < 0 || BoardSize <= positionY)
-            {
-                throw new ArgumentException($"{positionY} is invalid position for y!");
-            }
 
             // If already used position is choosen.
             if (this.board[positionX, positionY] != '\0')
