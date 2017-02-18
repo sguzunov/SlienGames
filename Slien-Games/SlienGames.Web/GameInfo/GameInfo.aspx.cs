@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Linq;
-using SlienGames.Data.Models;
-using SlienGames.Web.CustomEventArgs;
-using SlienGames.Web.Models;
-using SlienGames.Web.Presenters;
-using SlienGames.Web.Views;
 
 using WebFormsMvp;
 using WebFormsMvp.Web;
+using SlienGames.MVP.GameInfo;
 
 namespace SlienGames.Web.GameInfo
 {

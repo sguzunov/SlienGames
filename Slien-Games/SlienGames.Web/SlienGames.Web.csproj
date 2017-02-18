@@ -199,7 +199,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
-    <Content Include="Account\AllFavorites.aspx" />
+    <Content Include="Profiles\AllFavorites.aspx" />
     <Content Include="Account\Lockout.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Manage.aspx" />
@@ -289,11 +289,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Account\AllFavorites.aspx.cs">
+    <Compile Include="Profiles\AllFavorites.aspx.cs">
       <DependentUpon>AllFavorites.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Account\AllFavorites.aspx.designer.cs">
+    <Compile Include="Profiles\AllFavorites.aspx.designer.cs">
       <DependentUpon>AllFavorites.aspx</DependentUpon>
     </Compile>
     <Compile Include="Account\Lockout.aspx.cs">
@@ -386,9 +386,6 @@
     <Compile Include="CustomControlls\Chat\ChatController.ascx.designer.cs">
       <DependentUpon>ChatController.ascx</DependentUpon>
     </Compile>
-    <Compile Include="CustomEventArgs\IdEventArgs.cs" />
-    <Compile Include="CustomEventArgs\GetGameInfoEventArgs.cs" />
-    <Compile Include="CustomEventArgs\UploadAvatarEventArgs.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -433,11 +430,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Identity\IdentityHelper.cs" />
-    <Compile Include="Models\AllGamesModel.cs" />
-    <Compile Include="Models\CurrentUserModel.cs" />
-    <Compile Include="Models\GameInfoModel.cs" />
-    <Compile Include="Models\PlayedGameModel.cs" />
-    <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="PlayedGame\CurrentGame.aspx.cs">
       <DependentUpon>CurrentGame.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -459,12 +451,6 @@
     <Compile Include="PlayedGame\TicTacToe.aspx.designer.cs">
       <DependentUpon>TicTacToe.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Presenters\AllGamesPresenter.cs" />
-    <Compile Include="Presenters\CurrentUserPresenter.cs" />
-    <Compile Include="Presenters\GameInfoPresenter.cs" />
-    <Compile Include="Presenters\PlayedGamePresenter.cs" />
-    <Compile Include="Presenters\UploadAvatarPresenter.cs" />
-    <Compile Include="Presenters\UserPresenter.cs" />
     <Compile Include="Profiles\Profile.aspx.cs">
       <DependentUpon>Profile.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -495,12 +481,6 @@
     <Compile Include="ViewSwitcher.ascx.designer.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>
     </Compile>
-    <Compile Include="Views\IAllGamesView.cs" />
-    <Compile Include="Views\ICurrentUserView.cs" />
-    <Compile Include="Views\IGameInfoView.cs" />
-    <Compile Include="Views\IPlayedGameView.cs" />
-    <Compile Include="Views\IUploadAvatarView.cs" />
-    <Compile Include="Views\IUserView.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Account\ViewModels\" />
@@ -521,6 +501,10 @@
     <ProjectReference Include="..\SlienGames.Data\SlienGames.Data.csproj">
       <Project>{8c257009-eef1-46ba-8d5c-638d3c42b634}</Project>
       <Name>SlienGames.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SlienGames.MVP\SlienGames.MVP.csproj">
+      <Project>{9908D3C9-AC92-460C-AE3A-1C1CFE3109E0}</Project>
+      <Name>SlienGames.MVP</Name>
     </ProjectReference>
     <ProjectReference Include="..\TicTacToeGame\TicTacToeGame.csproj">
       <Project>{97a9cf83-f3fa-4633-8e2c-e950b788daef}</Project>

@@ -1,26 +1,18 @@
 ﻿using SlienGames.Data.Models;
-using SlienGames.Web.Models;
-using SlienGames.Web.Presenters;
-using SlienGames.Web.Views;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using WebFormsMvp;
 using WebFormsMvp.Web;
-using SlienGames.Web.CustomEventArgs;
 using Microsoft.AspNet.Identity;
+using SlienGames.MVP.Profiles.Profile;
 
 namespace SlienGames.Web.Profiles
 {
-    [PresenterBinding(typeof(CurrentUserPresenter))]
-    public partial class Profile : MvpPage<CurrentUserModel>, ICurrentUserView
+    [PresenterBinding(typeof(ProfilePresenter))]
+    public partial class Profile : MvpPage<ProfileModel>, IProfileView
     {
         public User CurrentUser { get; private set; }
 
-        public event EventHandler<IdEventArgs> MyInit;
+        public event EventHandler<ProfileEventArgs> GetCurrentUser;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -29,7 +21,7 @@ namespace SlienGames.Web.Profiles
             {
                 Response.Redirect("/Account/Manage");
             }
-            MyInit?.Invoke(sender, new IdEventArgs(usersProfileId));
+            GetCurrentUser?.Invoke(sender, new ProfileEventArgs(usersProfileId));
             this.CurrentUser = this.Model.User;
         }
     }

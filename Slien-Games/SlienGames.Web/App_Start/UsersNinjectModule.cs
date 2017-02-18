@@ -1,5 +1,5 @@
 ﻿using Ninject.Modules;
-using SlienGames.Web.Presenters;
+using SlienGames.MVP.Home;
 
 namespace SlienGames.Web.App_Start
 {
@@ -7,8 +7,8 @@ namespace SlienGames.Web.App_Start
     {
         public override void Load()
         {
-            this.Bind<UserPresenter>().ToSelf();
-            this.Bind<CurrentUserPresenter>().ToSelf();
+            this.Bind<HomePresenter>().ToSelf();
+            //this.Bind<CurrentUserPresenter>().ToSelf();
         }
     }
 }

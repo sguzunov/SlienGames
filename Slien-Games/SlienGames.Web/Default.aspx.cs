@@ -1,25 +1,20 @@
-﻿using SlienGames.Web.Models;
-using SlienGames.Web.Presenters;
-using SlienGames.Web.Views;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
 using System.Web.UI.WebControls;
 using WebFormsMvp;
 using WebFormsMvp.Web;
+using SlienGames.MVP.Home;
 
 namespace SlienGames.Web
 {
-    [PresenterBinding(typeof(UserPresenter))]
-    public partial class _Default : MvpPage<UserViewModel>, IUserView
+    [PresenterBinding(typeof(HomePresenter))]
+    public partial class _Default : MvpPage<HomeModel>, IHomeView
     {
-        public event EventHandler MyInit;
+        public event EventHandler GetTopUsers;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            this.MyInit?.Invoke(sender, e);
+            this.GetTopUsers?.Invoke(sender, e);
 
             this.ListViewTopPlayers.DataSource = this.Model.Users.ToList();
             this.ListViewTopPlayers.DataBind();
