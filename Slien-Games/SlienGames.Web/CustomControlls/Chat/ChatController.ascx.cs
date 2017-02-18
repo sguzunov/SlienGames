@@ -9,9 +9,14 @@ namespace SlienGames.Web.CustomControlls.Chat
 {
     public partial class ChatController : System.Web.UI.UserControl
     {
+        public string Username { get; set; }
+
+        public string UserPictureUrl { get; set; }
+
+        public string GroupId { get; set; }
+
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

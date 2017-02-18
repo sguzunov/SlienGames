@@ -44,6 +44,17 @@ namespace SlienGames.Web.PlayedGame
 
             this.GetUser?.Invoke(sender, new IdEventArgs(userId));
             this.CurrentUser = this.Model.User;
+
+        }
+
+        protected void Page_PreRender(object sender, EventArgs e)
+        {
+
+            this.ChatController.Username = this.CurrentUser.UserName;
+            this.ChatController.UserPictureUrl =
+                this.CurrentUser.ProfileImage == null ? "/Content/Avatars/default.png" : this.CurrentUser.ProfileImage.FileSystemUrlPath
+                              + this.CurrentUser.ProfileImage.FileName;
+            this.ChatController.GroupId = Request.QueryString["id"];
         }
     }
 }

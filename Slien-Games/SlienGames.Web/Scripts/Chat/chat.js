@@ -35,7 +35,7 @@
 
             $('.message-input').val(null);
             updateScrollbar();
-            chat.server.sendMessage(escapeHtml(msg),
+            chat.server.sendMessage(msg,
                 $('#groupName').attr('value'),
                 $('#username').attr('value'),
                 $('#userPictureUrl').attr('value'))
