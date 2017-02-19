@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.SignalR;
 using Microsoft.Owin;
+
 using Owin;
 
 [assembly: OwinStartupAttribute(typeof(SlienGames.Web.Startup))]
@@ -18,7 +19,7 @@ namespace SlienGames.Web
             this.ConfigureSignalR(app, config);
         }
 
-        public void ConfigureSignalR(IAppBuilder app, HubConfiguration config)
+        private void ConfigureSignalR(IAppBuilder app, HubConfiguration config)
         {
             app.MapSignalR(config);
         }

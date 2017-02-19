@@ -2,7 +2,7 @@
 using System.Web;
 using System.Web.UI;
 using Microsoft.AspNet.Identity.Owin;
-using SlienGames.Web.App_Start;
+using SlienGames.Auth;
 
 namespace SlienGames.Web.Account
 {

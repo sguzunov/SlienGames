@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
+using SlienGames.Auth;
 using SlienGames.Web.App_Start;
 
 namespace SlienGames.Web.Account

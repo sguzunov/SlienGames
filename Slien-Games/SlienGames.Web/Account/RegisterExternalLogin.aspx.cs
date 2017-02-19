@@ -3,6 +3,7 @@ using System.Web;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using SlienGames.Auth;
 using SlienGames.Data.Models;
 using SlienGames.Web.App_Start;
 

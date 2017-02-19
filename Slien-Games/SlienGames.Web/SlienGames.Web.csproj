@@ -359,7 +359,6 @@
     <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
       <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="App_Start\ApplicationUserManager.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -369,7 +368,6 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\DbConfig.cs" />
-    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\MvpNinjectModule.cs" />
     <Compile Include="App_Start\NinjectModules\GamesNinjectModule.cs" />
     <Compile Include="App_Start\NinjectWeb.cs" />
@@ -429,7 +427,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Identity\IdentityHelper.cs" />
     <Compile Include="PlayedGame\CurrentGame.aspx.cs">
       <DependentUpon>CurrentGame.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -490,6 +487,10 @@
     <Folder Include="Content\style\images\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SlienGames.Auth\SlienGames.Auth.csproj">
+      <Project>{4075ff4b-8e98-4be6-9a8f-90951d599c39}</Project>
+      <Name>SlienGames.Auth</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SlienGames.Data.Models\SlienGames.Data.Models.csproj">
       <Project>{ad2774fc-9410-4c86-b293-95fb02f70f43}</Project>
       <Name>SlienGames.Data.Models</Name>

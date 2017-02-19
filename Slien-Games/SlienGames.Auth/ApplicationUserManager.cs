@@ -1,4 +1,5 @@
 ﻿using System;
+
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
@@ -7,7 +8,7 @@ using Microsoft.Owin;
 using SlienGames.Data;
 using SlienGames.Data.Models;
 
-namespace SlienGames.Web.App_Start
+namespace SlienGames.Auth
 {
     public class ApplicationUserManager : UserManager<User>
     {
