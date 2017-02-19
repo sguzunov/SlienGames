@@ -12,6 +12,7 @@ namespace SlienGames.Web.App_Start
             this.Bind<IGameProfileServices>().To<GameProfileServices>();
             this.Bind<IUsersService>().To<UserService>();
             this.Bind<IGamesService>().To<GamesService>();
+            this.Bind<IReviewsService>().To<ReviewsService>();
 
         }
     }

@@ -63,8 +63,8 @@
 textarea {
     resize: none;
 }
-
-.form-group {
+ 
+fieldset .form-group {
     padding-top: 30px;
     padding-bottom:30px;  
 }

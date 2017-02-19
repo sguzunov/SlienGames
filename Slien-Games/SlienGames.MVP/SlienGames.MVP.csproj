@@ -85,6 +85,10 @@
     <Compile Include="Profiles\Profile\ProfileModel.cs" />
     <Compile Include="Profiles\Profile\ProfilePresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Review\IReviewView.cs" />
+    <Compile Include="Review\ReviewEventArgs.cs" />
+    <Compile Include="Review\ReviewModel.cs" />
+    <Compile Include="Review\ReviewPresenter.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

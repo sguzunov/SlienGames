@@ -21,7 +21,7 @@ namespace SlienGames.Data.Services
                 throw new ArgumentNullException(string.Format(NullDependencyErrorMessage, nameof(usersRepository)));
             }
 
-            if (usersRepository == null)
+            if (unitOfWork == null)
             {
                 throw new ArgumentNullException(string.Format(NullDependencyErrorMessage, nameof(unitOfWork)));
             }
@@ -73,7 +73,7 @@ namespace SlienGames.Data.Services
                 Author = user,
                 Description = description,
                 Title = title,
-                VideoUrl = videoUrl
+                VideoUrl = this.GetVideoId(videoUrl)
             };
             var coverPicture = new ReviewImage
             {
@@ -116,6 +116,12 @@ namespace SlienGames.Data.Services
             {
                 throw new InvalidOperationException();
             }
+        }
+
+        private string GetVideoId(string url)
+        {
+            var spltettedUrl = url.Split('=');
+            return spltettedUrl[1];
         }
     }
 }
