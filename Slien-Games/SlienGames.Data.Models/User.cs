@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -14,11 +13,13 @@ namespace SlienGames.Data.Models
         private ICollection<Comment> gamesComments;
         private ICollection<GameProfile> votedGames;
         private ICollection<GameProfile> favorites;
+        private ICollection<Review> reviews;
         public User()
         {
             this.gamesComments = new HashSet<Comment>();
             this.votedGames = new HashSet<GameProfile>();
             this.favorites = new HashSet<GameProfile>();
+            this.reviews = new HashSet<Review>();
         }
 
         public int Score { get; set; }
@@ -42,6 +43,12 @@ namespace SlienGames.Data.Models
             get { return this.favorites; }
             set { this.favorites = value; }
         }
+        public virtual ICollection<Review> Reviews
+        {
+            get { return this.reviews; }
+            set { this.reviews = value; }
+        }
+
 
         int IDbModel.Id { get; set; }
 

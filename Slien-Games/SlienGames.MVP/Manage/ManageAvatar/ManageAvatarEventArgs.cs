@@ -21,6 +21,6 @@ namespace SlienGames.MVP.Manage.ManageAvatar
 
         public string FilePath { get; private set; }
 
-        public object UserId { get; set; }
+        public object UserId { get;private set; }
     }
 }

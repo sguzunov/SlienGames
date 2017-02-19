@@ -5,7 +5,7 @@ namespace SlienGames.MVP.Profiles.Profile
 {
     public class ProfilePresenter : Presenter<IProfileView>
     {
-        private IUsersService usersService;
+        private readonly IUsersService usersService;
 
         public ProfilePresenter(IProfileView view, IUsersService usersService)
             : base(view)

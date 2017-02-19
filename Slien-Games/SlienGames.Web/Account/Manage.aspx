@@ -24,7 +24,7 @@
                             <ul class="dropdown-menu">
                                 <li><a href="/Account/ManageAvatar">Change avatar</a></li>
                                 <li><a href="/Account/ManagePassword">Change password</a></li>
-                                <li><a href="#">JavaScript</a></li>
+                                <li><a href="/Account/AddReview">Add new review</a></li>
                             </ul>
                         </div>
                     </div>

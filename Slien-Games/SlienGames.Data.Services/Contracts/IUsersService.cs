@@ -22,5 +22,14 @@ namespace SlienGames.Data.Services.Contracts
 
         void ChangeAvatar(string fileName, string fileExtension, string filePath, object userId);
 
+        void AddReview(
+            string coverImageName,
+            string coverImageExtension,
+            string coverImageFilePath,
+            object userId,
+            string title,
+            string videoUrl,
+            string description);
+
     }
 }

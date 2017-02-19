@@ -22,7 +22,7 @@ namespace SlienGames.Data
         public IDbSet<Comment> Comments { get; set; }
 
         public IDbSet<GameProfile> GamesProfiles { get; set; }
-       
+
 
         public IDbSet<Vote> Votes { get; set; }
 
@@ -31,6 +31,11 @@ namespace SlienGames.Data
         public IDbSet<CoverImage> CoverImages { get; set; }
 
         public IDbSet<EmbeddedGame> EmbeddedGames { get; set; }
+
+        public IDbSet<Review> Reviews { get; set; }
+
+        public IDbSet<ReviewImage> ReviewImages { get; set; }
+
         public new IDbSet<T> Set<T>()
             where T : class
         {
@@ -61,6 +66,10 @@ namespace SlienGames.Data
             modelBuilder.Entity<GameProfile>()
                 .HasOptional(x => x.CoverImage)
                 .WithRequired(x => x.Game);
+
+            modelBuilder.Entity<Review>()
+                .HasOptional(x => x.Picture)
+                .WithRequired(x => x.Review);
         }
     }
 }
