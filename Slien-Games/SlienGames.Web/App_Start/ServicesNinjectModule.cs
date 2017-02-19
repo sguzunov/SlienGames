@@ -12,6 +12,7 @@ namespace SlienGames.Web.App_Start
             this.Bind<IFileSaver>().To<FileSaver>();
             this.Bind<IUsersService>().To<UserService>();
             this.Bind<IGamesService>().To<GamesService>();
+            this.Bind<IReviewsService>().To<ReviewsService>();
         }
     }
 }

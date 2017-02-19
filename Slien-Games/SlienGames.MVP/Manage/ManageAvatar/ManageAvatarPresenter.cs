@@ -1,6 +1,4 @@
 ﻿using SlienGames.Data.Services.Contracts;
-using System;
-using System.IO;
 using WebFormsMvp;
 
 namespace SlienGames.MVP.Manage.ManageAvatar
@@ -21,13 +19,6 @@ namespace SlienGames.MVP.Manage.ManageAvatar
 
         private void View_SetNewAvatar(object sender, ManageAvatarEventArgs e)
         {
-
-            var allowedExtensions = new string[] { ".gif", ".tif", ".png", ".jpg", ".jpeg" };
-            if (Array.IndexOf(allowedExtensions, e.FileExtension) < 0)
-            {
-                throw new InvalidDataException();
-            }
-
             usersService.ChangeAvatar(e.FileName, e.FileExtension, e.FilePath, e.UserId);
             fileSaver.SaveFile(e.FilePath + e.FileName, e.AllBytes);
         }

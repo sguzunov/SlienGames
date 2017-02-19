@@ -30,7 +30,7 @@
 }
 
 .listing-games-template {
-   padding:25px;
+    padding: 25px;
 }
 
 .page-button {
@@ -42,8 +42,8 @@
     border: 1px solid #ddd;
 }
 
-.clicked-page{
-     color: black;
+.clicked-page {
+    color: black;
     float: left;
     padding: 8px 16px;
     text-decoration: none;
@@ -53,9 +53,18 @@
     color: white;
     border: 1px solid #808080;
 }
-.pager-container{
-    padding:10px;
-    display:flex;
-    justify-content:center;
+
+.pager-container {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
 }
 
+textarea {
+    resize: none;
+}
+ 
+fieldset .form-group {
+    padding-top: 30px;
+    padding-bottom:30px;  
+}

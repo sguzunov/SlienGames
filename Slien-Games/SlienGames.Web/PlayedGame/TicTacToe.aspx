@@ -1,5 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/PlayedGame/PlayedGame.master" AutoEventWireup="true" CodeBehind="TicTacToe.aspx.cs" Inherits="SlienGames.Web.PlayedGame.TicTacToe" %>
 
+<%@ Register Src="~/CustomControlls/Chat/ChatController.ascx" TagPrefix="uc1" TagName="ChatController" %>
+
+
 <asp:Content ContentPlaceHolderID="GameScriptsPlaceholder" runat="server">
     <script src="../Scripts/jquery.signalR-2.2.1.js"></script>
     <script src="<%= ResolveUrl("~/signalr/hubs") %>" type="text/javascript"></script>
@@ -8,9 +11,16 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="GamePlaceholder" runat="server">
     <asp:HiddenField ID="InputUsername" runat="server" />
 
-    <img id="game-cover" class="cover-image" src="<%= ResolveUrl("~/Uploaded_Images/Covers/tic-tac-toe.png") %>" />
-    <input id="find-opponent" type="button" value="Find Opponent" class="btn btn-default" />
-    <p id="messages"></p>
+    <div style="display:flex;">
+        <div style="padding-left:100px; padding-top:50px">
+            <img id="game-cover" class="cover-image" src="<%= ResolveUrl("~/Uploaded_Images/Covers/tic-tac-toe.png") %>" />
+            <input id="find-opponent" type="button" value="Find Opponent" class="btn btn-default" />
+            <p id="messages"></p>
+        </div>
+        <div style="padding-left: 200px; padding-bottom: 50px">
+            <uc1:ChatController runat="server" ID="ChatController" />
+        </div>
+    </div>
 
     <%-- TicTacToe game client logic --%>
     <script>

@@ -110,6 +110,10 @@
     <Compile Include="Home\HomeModel.cs" />
     <Compile Include="Home\IHomeView.cs" />
     <Compile Include="Home\HomePresenter.cs" />
+    <Compile Include="Manage\AddReview\AddReviewEventArgs.cs" />
+    <Compile Include="Manage\AddReview\AddReviewModel.cs" />
+    <Compile Include="Manage\AddReview\AddReviewPresenter.cs" />
+    <Compile Include="Manage\AddReview\IAddReviewView.cs" />
     <Compile Include="Manage\ManageAvatar\IdEventArgs.cs" />
     <Compile Include="Manage\ManageAvatar\IManageAvatarView.cs" />
     <Compile Include="Manage\ManageAvatar\ManageAvatarEventArgs.cs" />
@@ -123,6 +127,10 @@
     <Compile Include="PlayedGame\CurrentGame\ICurrentGameView.cs" />
     <Compile Include="PlayedGame\CurrentGame\CurrentGameModel.cs" />
     <Compile Include="PlayedGame\CurrentGame\CurrentGamePresenter.cs" />
+    <Compile Include="PlayedGame\TicTacToe\TicTacToeEventArgs.cs" />
+    <Compile Include="PlayedGame\TicTacToe\TicTacToeModel.cs" />
+    <Compile Include="PlayedGame\TicTacToe\TicTacToePresenter.cs" />
+    <Compile Include="PlayedGame\TicTacToe\ITicTacToeView.cs" />
     <Compile Include="Profiles\AllFavorites\IAllFavoritesView.cs" />
     <Compile Include="Profiles\AllFavorites\AllFavoritesEventArgs.cs" />
     <Compile Include="Profiles\AllFavorites\AllFavoritesModel.cs" />
@@ -132,6 +140,10 @@
     <Compile Include="Profiles\Profile\ProfileModel.cs" />
     <Compile Include="Profiles\Profile\ProfilePresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Review\IReviewView.cs" />
+    <Compile Include="Review\ReviewEventArgs.cs" />
+    <Compile Include="Review\ReviewModel.cs" />
+    <Compile Include="Review\ReviewPresenter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="GameDetails\" />
