@@ -2,9 +2,9 @@
 
 using SlienGames.Data.Models;
 
-namespace SlienGames.MVP.GameInfo
+namespace SlienGames.MVP.Games.Details
 {
-    public class GameInfoModel
+    public class GameDetailsViewModel
     {
         public string GameName { get; set; }
 

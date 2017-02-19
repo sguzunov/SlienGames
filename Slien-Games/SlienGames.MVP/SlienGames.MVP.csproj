@@ -100,10 +100,10 @@
     <Compile Include="Account\Register\RegisterPresenter.cs" />
     <Compile Include="Account\Register\RegisterEventArgs.cs" />
     <Compile Include="Account\Register\RegisterView.cs" />
-    <Compile Include="GameInfo\GameInfoModel.cs" />
-    <Compile Include="GameInfo\GameInfoPresenter.cs" />
-    <Compile Include="GameInfo\GetGameInfoEventArgs.cs" />
-    <Compile Include="GameInfo\IGameInfoView.cs" />
+    <Compile Include="Games\Details\GameDetailsViewModel.cs" />
+    <Compile Include="Games\Details\GameDetailsPresenter.cs" />
+    <Compile Include="Games\Details\GetGameDetailsEventArgs.cs" />
+    <Compile Include="Games\Details\IGameDetailsView.cs" />
     <Compile Include="Games\AllGamesModel.cs" />
     <Compile Include="Games\AllGamesPresenter.cs" />
     <Compile Include="Games\IAllGamesView.cs" />
@@ -133,7 +133,9 @@
     <Compile Include="Profiles\Profile\ProfilePresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="GameDetails\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
