@@ -5,43 +5,43 @@
         <div class="col-md-5 col-md-offset-4">
             <h2><%: Title %></h2>
             <p class="text-danger">
-                <asp:Literal runat="server" ID="ErrorMessage" />
+                <asp:Literal runat="server" ID="LiteralErrorMessage" />
             </p>
             <div class="form-background">
                 <div class="form-horizontal">
                     <h4>Create a new account</h4>
                     <asp:ValidationSummary runat="server" CssClass="text-danger" />
                     <div class="form-group">
-                        <asp:Label runat="server" AssociatedControlID="Username" CssClass="col-md-2 control-label">Username</asp:Label>
+                        <asp:Label runat="server" AssociatedControlID="TextBoxUsername" CssClass="col-md-2 control-label">Username</asp:Label>
                         <div class="col-md-10">
-                            <asp:TextBox runat="server" ID="Username" CssClass="form-control" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="Username"
+                            <asp:TextBox runat="server" ID="TextBoxUsername" CssClass="form-control" />
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="TextBoxUsername"
                                 CssClass="text-danger" ErrorMessage="The username field is required." />
                         </div>
                     </div>
-                    <%--<div class="form-group">
-                        <asp:Label runat="server" AssociatedControlID="Email" CssClass="col-md-2 control-label">Email</asp:Label>
+                    <div class="form-group">
+                        <asp:Label runat="server" AssociatedControlID="TextBoxEmail" CssClass="col-md-2 control-label">Email</asp:Label>
                         <div class="col-md-10">
-                            <asp:TextBox runat="server" ID="Email" CssClass="form-control" TextMode="Email" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="Email"
+                            <asp:TextBox runat="server" ID="TextBoxEmail" CssClass="form-control" TextMode="Email" />
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="TextBoxEmail"
                                 CssClass="text-danger" ErrorMessage="The email field is required." />
                         </div>
-                    </div>--%>
+                    </div>
                     <div class="form-group">
-                        <asp:Label runat="server" AssociatedControlID="Password" CssClass="col-md-2 control-label">Password</asp:Label>
+                        <asp:Label runat="server" AssociatedControlID="TextBoxPassword" CssClass="col-md-2 control-label">Password</asp:Label>
                         <div class="col-md-10">
-                            <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="form-control" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="Password"
+                            <asp:TextBox runat="server" ID="TextBoxPassword" TextMode="Password" CssClass="form-control" />
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="TextBoxPassword"
                                 CssClass="text-danger" ErrorMessage="The password field is required." />
                         </div>
                     </div>
                     <div class="form-group">
-                        <asp:Label runat="server" AssociatedControlID="ConfirmPassword" CssClass="col-md-2 control-label">Confirm password</asp:Label>
+                        <asp:Label runat="server" AssociatedControlID="TextBoxConfirmPassword" CssClass="col-md-2 control-label">Confirm password</asp:Label>
                         <div class="col-md-10">
-                            <asp:TextBox runat="server" ID="ConfirmPassword" TextMode="Password" CssClass="form-control" />
-                            <asp:RequiredFieldValidator runat="server" ControlToValidate="ConfirmPassword"
+                            <asp:TextBox runat="server" ID="TextBoxConfirmPassword" TextMode="Password" CssClass="form-control" />
+                            <asp:RequiredFieldValidator runat="server" ControlToValidate="TextBoxConfirmPassword"
                                 CssClass="text-danger" Display="Dynamic" ErrorMessage="The confirm password field is required." />
-                            <asp:CompareValidator runat="server" ControlToCompare="Password" ControlToValidate="ConfirmPassword"
+                            <asp:CompareValidator runat="server" ControlToCompare="TextBoxPassword" ControlToValidate="TextBoxConfirmPassword"
                                 CssClass="text-danger" Display="Dynamic" ErrorMessage="The password and confirmation password do not match." />
                         </div>
                     </div>

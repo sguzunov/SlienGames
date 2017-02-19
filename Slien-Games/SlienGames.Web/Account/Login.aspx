@@ -4,7 +4,6 @@
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
 
-
     <div class="row ">
         <div class="col-md-4 col-md-offset-4">
             <div class="block-cnt">
@@ -13,10 +12,7 @@
                 <div class="form-background">
                     <section id="loginForm">
                         <div class="form-horizontal">
-
                             <h3>Use a local account to log in.</h3>
-
-
                             <asp:PlaceHolder runat="server" ID="ErrorMessage" Visible="false">
                                 <p class="text-danger">
                                     <asp:Literal runat="server" ID="FailureText" />
@@ -24,25 +20,25 @@
                             </asp:PlaceHolder>
                             <div class="form-group">
                                 <div class="cl">&nbsp;</div>
-                                <asp:Label runat="server" AssociatedControlID="Email" CssClass="col-md-2 control-label">Email</asp:Label>
+                                <asp:Label runat="server" AssociatedControlID="TextBoxUsername" CssClass="col-md-2 control-label">Username</asp:Label>
                                 <div class="col-md-10">
-                                    <asp:TextBox runat="server" ID="Email" CssClass="form-control" TextMode="Email" />
-                                    <asp:RequiredFieldValidator runat="server" ControlToValidate="Email"
-                                        CssClass="text-danger" ErrorMessage="The email field is required." />
+                                    <asp:TextBox runat="server" ID="TextBoxUsername" CssClass="form-control" />
+                                    <asp:RequiredFieldValidator runat="server" ControlToValidate="TextBoxUsername"
+                                        CssClass="text-danger" ErrorMessage="The username field is required." />
                                 </div>
                             </div>
                             <div class="form-group">
-                                <asp:Label runat="server" AssociatedControlID="Password" CssClass="col-md-2 control-label">Password</asp:Label>
+                                <asp:Label runat="server" AssociatedControlID="TextBoxPassword" CssClass="col-md-2 control-label">Password</asp:Label>
                                 <div class="col-md-10">
-                                    <asp:TextBox runat="server" ID="Password" TextMode="Password" CssClass="form-control" />
-                                    <asp:RequiredFieldValidator runat="server" ControlToValidate="Password" CssClass="text-danger" ErrorMessage="The password field is required." />
+                                    <asp:TextBox runat="server" ID="TextBoxPassword" TextMode="Password" CssClass="form-control" />
+                                    <asp:RequiredFieldValidator runat="server" ControlToValidate="TextBoxPassword" CssClass="text-danger" ErrorMessage="The password field is required." />
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="col-md-offset-2 col-md-10">
                                     <div class="checkbox">
-                                        <asp:CheckBox runat="server" ID="RememberMe" />
-                                        <asp:Label runat="server" AssociatedControlID="RememberMe">Remember me?</asp:Label>
+                                        <asp:CheckBox runat="server" ID="CheckBoxRememberMe" />
+                                        <asp:Label runat="server" AssociatedControlID="CheckBoxRememberMe">Remember me?</asp:Label>
                                     </div>
                                 </div>
                             </div>
@@ -55,19 +51,9 @@
                         <p>
                             <asp:HyperLink runat="server" ID="RegisterHyperLink" ViewStateMode="Disabled">Register as a new user</asp:HyperLink>
                         </p>
-                        <p>
-                            <%-- Enable this once you have account confirmation enabled for password reset functionality
-                    <asp:HyperLink runat="server" ID="ForgotPasswordHyperLink" ViewStateMode="Disabled">Forgot your password?</asp:HyperLink>
-                            --%>
-                        </p>
                     </section>
                 </div>
             </div>
         </div>
-        <%--<div class="col-md-4">
-            <section id="socialLoginForm">
-                <uc:OpenAuthProviders runat="server" ID="OpenAuthLogin" />
-            </section>
-        </div>--%>
     </div>
 </asp:Content>
