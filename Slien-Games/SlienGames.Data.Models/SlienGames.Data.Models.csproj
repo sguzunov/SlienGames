@@ -69,6 +69,7 @@
     <Compile Include="FileInfo.cs" />
     <Compile Include="GameProfile.cs" />
     <Compile Include="ProfileImage.cs" />
+    <Compile Include="Review.cs" />
     <Compile Include="User.cs" />
     <Compile Include="Vote.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

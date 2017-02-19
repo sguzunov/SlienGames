@@ -22,7 +22,7 @@ namespace SlienGames.Data
         public IDbSet<Comment> Comments { get; set; }
 
         public IDbSet<GameProfile> GamesProfiles { get; set; }
-       
+
 
         public IDbSet<Vote> Votes { get; set; }
 
@@ -31,6 +31,9 @@ namespace SlienGames.Data
         public IDbSet<CoverImage> CoverImages { get; set; }
 
         public IDbSet<EmbeddedGame> EmbeddedGames { get; set; }
+
+        public IDbSet<Review> Reviews { get; set; }
+
         public new IDbSet<T> Set<T>()
             where T : class
         {

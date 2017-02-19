@@ -199,6 +199,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Account\AddReview.aspx" />
     <Content Include="Profiles\AllFavorites.aspx" />
     <Content Include="Account\Lockout.aspx" />
     <Content Include="Account\Login.aspx" />
@@ -289,6 +290,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account\AddReview.aspx.cs">
+      <DependentUpon>AddReview.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\AddReview.aspx.designer.cs">
+      <DependentUpon>AddReview.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Profiles\AllFavorites.aspx.cs">
       <DependentUpon>AllFavorites.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
