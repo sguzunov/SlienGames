@@ -199,6 +199,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Games\GameDetails.aspx" />
     <Content Include="Profiles\AllFavorites.aspx" />
     <Content Include="Account\Lockout.aspx" />
     <Content Include="Account\Login.aspx" />
@@ -289,6 +290,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Games\GameDetails.aspx.cs">
+      <DependentUpon>GameDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Games\GameDetails.aspx.designer.cs">
+      <DependentUpon>GameDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Profiles\AllFavorites.aspx.cs">
       <DependentUpon>AllFavorites.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

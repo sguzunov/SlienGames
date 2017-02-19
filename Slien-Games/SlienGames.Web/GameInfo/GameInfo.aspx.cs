@@ -1,24 +1,24 @@
 ﻿using System;
 
+using SlienGames.MVP.Games.Details;
+
 using WebFormsMvp;
 using WebFormsMvp.Web;
-using SlienGames.MVP.GameInfo;
 
 namespace SlienGames.Web.GameInfo
 {
-    [PresenterBinding(typeof(GameInfoPresenter))]
-    public partial class GameInfo : MvpPage<GameInfoModel>, IGameInfoView
+    [PresenterBinding(typeof(GameDetailsPresenter))]
+    public partial class GameInfo : MvpPage<GameDetailsViewModel>, IGameInfoView
     {
-        public event EventHandler<GetGameInfoEventArgs> MyInit;
+        public event EventHandler<GetGameDetailsEventArgs> GetGameDetails;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            // Check if event has methods subscribed!!!
+            var gameName = this.Request.QueryString["name"];
 
-            string gameName = this.Request.Params["name"];
-            this.MyInit(this, new GetGameInfoEventArgs(gameName));
+            var gameArgs = new GetGameDetailsEventArgs(gameName);
 
-
+            this.GetGameDetails(this, gameArgs);
         }
     }
 }

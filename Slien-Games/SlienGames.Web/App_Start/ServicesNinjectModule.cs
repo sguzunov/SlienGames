@@ -10,10 +10,8 @@ namespace SlienGames.Web.App_Start
         public override void Load()
         {
             this.Bind<IFileSaver>().To<FileSaver>();
-            this.Bind<IGameProfileServices>().To<GameProfileServices>();
             this.Bind<IUsersService>().To<UserService>();
             this.Bind<IGamesService>().To<GamesService>();
-
         }
     }
 }
