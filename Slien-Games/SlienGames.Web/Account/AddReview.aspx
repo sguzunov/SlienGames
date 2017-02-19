@@ -12,13 +12,16 @@
                     <div class="form-group">
                         <label for="inputTitle" class="col-lg-2 control-label">Title</label>
                         <div class="col-lg-10">
-                            <input type="text" runat="server" class="form-control" id="inputTitle" placeholder="Title">
+                            <asp:TextBox ID="TextBoxTitle" runat="server" CssClass="form-control" placeholder="Title"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" ForeColor="Red" ControlToValidate="TextBoxTitle" runat="server" ErrorMessage="Title is required!"></asp:RequiredFieldValidator>
+                            <%--<asp:RangeValidator ID="RangeValidator1" runat="server" ForeColor="Red" ControlToValidate="TextBoxTitle" MinimumValue="2" MaximumValue="50" ErrorMessage="Title must be between 2 and 50 characters!"></asp:RangeValidator>--%>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="inputVideoUrl" class="col-lg-2 control-label">Video Url</label>
                         <div class="col-lg-10">
-                            <input type="text" runat="server" class="form-control" id="inputVideoUrl" placeholder="Video URL">
+                            <asp:TextBox ID="TextBoxVideoUrl" CssClass="form-control" placeholder="Video url" runat="server"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ForeColor="Red" ControlToValidate="TextBoxVideoUrl" runat="server" ErrorMessage="Video URL is required"></asp:RequiredFieldValidator>
                         </div>
                     </div>
                     <div class="form-group">
@@ -33,6 +36,7 @@
                         <label class="col-lg-2 control-label">Cover Picture</label>
                         <div class="col-lg-10 ">
                             <asp:FileUpload runat="server" ID="PictureUpload" />
+                            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ForeColor="Red" runat="server" ControlToValidate="PictureUpload" ErrorMessage="Cover picture is required!"></asp:RequiredFieldValidator>
                         </div>
                     </div>
                     <div class="form-group">

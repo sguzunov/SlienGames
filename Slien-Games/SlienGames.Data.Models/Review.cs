@@ -24,7 +24,7 @@ namespace SlienGames.Data.Models
 
         public virtual User Author { get; set; }
         
-        public virtual FileInfo Picture { get; set; }
+        public virtual ReviewImage Picture { get; set; }
 
         public virtual ICollection<Vote> Votes
         {

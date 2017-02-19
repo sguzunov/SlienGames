@@ -68,20 +68,23 @@ namespace SlienGames.Data.Services
         {
             this.CheckIfValidExtension(coverImageExtension);
             var user = this.usersRepository.GetById(userId);
-            var coverPicture = new FileInfo
-            {
-                FileExtension = coverImageExtension,
-                FileName = coverImageName,
-                FileSystemUrlPath = coverImageFilePath
-            };
-            user.Reviews.Add(new Review
+            var review = new Review
             {
                 Author = user,
-                Picture = coverPicture,
                 Description = description,
                 Title = title,
                 VideoUrl = videoUrl
-            });
+            };
+            var coverPicture = new ReviewImage
+            {
+                FileExtension = coverImageExtension,
+                FileName = coverImageName,
+                FileSystemUrlPath = coverImageFilePath,
+                Review = review
+
+            };
+            review.Picture = coverPicture;
+            user.Reviews.Add(review);
 
             this.usersRepository.Update(user);
             this.uow.Commit();

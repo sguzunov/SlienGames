@@ -18,10 +18,10 @@ namespace SlienGames.MVP.Manage.AddReview
             string videoUrl,
             string description)
         {
-            this.CoverImageName = coverImagePath;
+            this.CoverImageName = coverImageName;
             this.CoverImageExtension = coverImageExtension;
             this.CoverImagePath = coverImagePath;
-            this.CoverImageAllBytes = CoverImageAllBytes;
+            this.CoverImageAllBytes = coverImageallBytes;
             this.UserId = userId;
             this.Title = title;
             this.VideoUrl = videoUrl;
