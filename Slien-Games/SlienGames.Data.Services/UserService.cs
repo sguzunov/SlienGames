@@ -42,6 +42,9 @@ namespace SlienGames.Data.Services
 
         public void ChangeAvatar(string fileName, string fileExtension, string filePath, object userId)
         {
+
+            this.CheckIfValidExtension(fileExtension);
+
             var user = this.usersRepository.GetById(userId);
             if (user.ProfileImage == null)
             {
@@ -53,6 +56,37 @@ namespace SlienGames.Data.Services
             this.usersRepository.Update(user);
             this.uow.Commit();
         }
+
+        public void AddReview(
+            string coverImageName,
+            string coverImageExtension,
+            string coverImageFilePath,
+            object userId,
+            string title,
+            string videoUrl,
+            string description)
+        {
+            this.CheckIfValidExtension(coverImageExtension);
+            var user = this.usersRepository.GetById(userId);
+            var coverPicture = new FileInfo
+            {
+                FileExtension = coverImageExtension,
+                FileName = coverImageName,
+                FileSystemUrlPath = coverImageFilePath
+            };
+            user.Reviews.Add(new Review
+            {
+                Author = user,
+                Picture = coverPicture,
+                Description = description,
+                Title = title,
+                VideoUrl = videoUrl
+            });
+
+            this.usersRepository.Update(user);
+            this.uow.Commit();
+        }
+
         public IEnumerable<User> GetAll()
         {
             return this.usersRepository.GetAll();
@@ -70,6 +104,15 @@ namespace SlienGames.Data.Services
         public IEnumerable<T2> GetAll<T1, T2>(Expression<Func<User, bool>> filterExpression, Expression<Func<User, T1>> sortExpression, Expression<Func<User, T2>> selectExpression)
         {
             return this.usersRepository.GetAll(filterExpression, sortExpression, selectExpression);
+        }
+
+        private void CheckIfValidExtension(string extension)
+        {
+            var allowedExtensions = new string[] { ".gif", ".tif", ".png", ".jpg", ".jpeg" };
+            if (Array.IndexOf(allowedExtensions, extension) < 0)
+            {
+                throw new InvalidOperationException();
+            }
         }
     }
 }

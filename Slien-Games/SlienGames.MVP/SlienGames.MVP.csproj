@@ -55,6 +55,10 @@
     <Compile Include="Home\HomeModel.cs" />
     <Compile Include="Home\IHomeView.cs" />
     <Compile Include="Home\HomePresenter.cs" />
+    <Compile Include="Manage\AddReview\AddReviewEventArgs.cs" />
+    <Compile Include="Manage\AddReview\AddReviewModel.cs" />
+    <Compile Include="Manage\AddReview\AddReviewPresenter.cs" />
+    <Compile Include="Manage\AddReview\IAddReviewView.cs" />
     <Compile Include="Manage\ManageAvatar\IdEventArgs.cs" />
     <Compile Include="Manage\ManageAvatar\IManageAvatarView.cs" />
     <Compile Include="Manage\ManageAvatar\ManageAvatarEventArgs.cs" />
