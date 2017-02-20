@@ -14,12 +14,15 @@ namespace SlienGames.Data.Models
         private ICollection<GameProfile> votedGames;
         private ICollection<GameProfile> favorites;
         private ICollection<Review> reviews;
+        private ICollection<Review> favoriteReviews;
+
         public User()
         {
             this.gamesComments = new HashSet<Comment>();
             this.votedGames = new HashSet<GameProfile>();
-            this.favorites = new HashSet<GameProfile>();
+            this.favorites = new HashSet<GameProfile>();            
             this.reviews = new HashSet<Review>();
+            this.favoriteReviews = new HashSet<Review>();
         }
 
         public int Score { get; set; }
@@ -48,6 +51,13 @@ namespace SlienGames.Data.Models
             get { return this.reviews; }
             set { this.reviews = value; }
         }
+
+        public virtual ICollection<Review> FavoriteReviews
+        {
+            get { return this.favoriteReviews; }
+            set { this.favoriteReviews = value; }
+        }
+
 
 
         int IDbModel.Id { get; set; }
