@@ -21,8 +21,9 @@ namespace SlienGames.Data
 
         public IDbSet<Comment> Comments { get; set; }
 
-        public IDbSet<GameProfile> GamesProfiles { get; set; }
+        public IDbSet<GameDetails> GamesDetails { get; set; }
 
+        public IDbSet<ExternalGameResource> ExternalGameResources { get; set; }
 
         public IDbSet<Vote> Votes { get; set; }
 
@@ -48,11 +49,6 @@ namespace SlienGames.Data
             return base.Entry<TEntity>(entity);
         }
 
-        //public new int SaveChanges()
-        //{
-        //    return this.SaveChanges();
-        //}
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -70,6 +66,11 @@ namespace SlienGames.Data
             modelBuilder.Entity<Review>()
                 .HasOptional(x => x.Picture)
                 .WithRequired(x => x.Review);
+
+            // GameDetails - ExternalGameResource (one-to-one or zero)
+            modelBuilder.Entity<GameDetails>()
+                .HasOptional(x => x.ExternalResource)
+                .WithRequired(x => x.Game);
         }
     }
 }

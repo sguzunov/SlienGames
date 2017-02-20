@@ -1,9 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using SlienGames.Data.Models.Contracts;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace SlienGames.Data.Models
 {
-    public class EmbeddedGame
+    public class EmbeddedGame : IDbModel
     {
         private ICollection<Comment> comments;
         private ICollection<Vote> votes;

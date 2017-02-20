@@ -8,13 +8,13 @@ using SlienGames.Data.Models.Contracts;
 
 namespace SlienGames.Data.Models
 {
-    public class GameProfile : IDbModel
+    public class GameDetails : IDbModel
     {
         private ICollection<Vote> votes;
         private ICollection<Comment> comments;
         private ICollection<User> usersVotedThisGame;
 
-        public GameProfile()
+        public GameDetails()
         {
             this.votes = new HashSet<Vote>();
             this.comments = new HashSet<Comment>();
@@ -41,6 +41,8 @@ namespace SlienGames.Data.Models
         public DateTime CreatedOn { get; set; }
 
         public virtual CoverImage CoverImage { get; set; }
+
+        public virtual ExternalGameResource ExternalResource { get; set; }
 
         public virtual ICollection<Vote> Votes
         {

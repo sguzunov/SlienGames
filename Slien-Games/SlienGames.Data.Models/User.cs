@@ -1,13 +1,15 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using SlienGames.Data.Models.Contracts;
 
 namespace SlienGames.Data.Models
 {
-    public class User : IdentityUser
+    public class User : IdentityUser, IDbModel
     {
         private ICollection<Comment> gamesComments;
         private ICollection<GameProfile> votedGames;
@@ -56,6 +58,8 @@ namespace SlienGames.Data.Models
             get { return this.favoriteReviews; }
             set { this.favoriteReviews = value; }
         }
+
+        int IDbModel.Id { get; set; }
 
         public ClaimsIdentity GenerateUserIdentity(UserManager<User> manager)
         {

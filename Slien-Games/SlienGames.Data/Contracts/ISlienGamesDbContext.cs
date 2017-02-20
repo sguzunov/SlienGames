@@ -11,7 +11,9 @@ namespace SlienGames.Data.Contracts
 
         IDbSet<Comment> Comments { get; set; }
 
-        IDbSet<GameProfile> GamesProfiles { get; set; }
+        IDbSet<GameDetails> GamesDetails { get; set; }
+
+        IDbSet<ExternalGameResource> ExternalGameResources { get; set; }
 
         IDbSet<ProfileImage> ProfileImages { get; set; }
 
@@ -19,7 +21,7 @@ namespace SlienGames.Data.Contracts
 
         IDbSet<Vote> Votes { get; set; }
 
-        IDbSet<EmbeddedGame> EmbeddedGames { get; set; }
+        IDbSet<EmbeddedGame> EmbeddedGames { get; set; } // TODO: Delete
 
         IDbSet<T> Set<T>() where T : class;
 
