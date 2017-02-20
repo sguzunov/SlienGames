@@ -3,12 +3,11 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-using SlienGames.Data.Models.Contracts;
 using SlienGames.Data.Models.Constants;
 
 namespace SlienGames.Data.Models
 {
-    public class GameProfile : IDbModel
+    public class GameProfile
     {
         private ICollection<Vote> votes;
         private ICollection<Comment> comments;

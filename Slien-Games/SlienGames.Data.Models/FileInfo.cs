@@ -1,11 +1,10 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-using SlienGames.Data.Models.Contracts;
 using SlienGames.Data.Models.Constants;
 
 namespace SlienGames.Data.Models
 {
-    public class FileInfo : IDbModel
+    public class FileInfo 
     {
         [Key]
         public int Id { get; set; }

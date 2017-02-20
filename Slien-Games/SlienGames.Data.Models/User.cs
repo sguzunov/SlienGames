@@ -1,14 +1,13 @@
 ﻿using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
+
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-using SlienGames.Data.Models.Contracts;
-
 namespace SlienGames.Data.Models
 {
-    public class User : IdentityUser, IDbModel
+    public class User : IdentityUser
     {
         private ICollection<Comment> gamesComments;
         private ICollection<GameProfile> votedGames;
@@ -20,7 +19,7 @@ namespace SlienGames.Data.Models
         {
             this.gamesComments = new HashSet<Comment>();
             this.votedGames = new HashSet<GameProfile>();
-            this.favorites = new HashSet<GameProfile>();            
+            this.favorites = new HashSet<GameProfile>();
             this.reviews = new HashSet<Review>();
             this.favoriteReviews = new HashSet<Review>();
         }
@@ -58,10 +57,6 @@ namespace SlienGames.Data.Models
             set { this.favoriteReviews = value; }
         }
 
-
-
-        int IDbModel.Id { get; set; }
-
         public ClaimsIdentity GenerateUserIdentity(UserManager<User> manager)
         {
             // Note the authenticationType must match the one defined in CookieAuthenticationOptions.AuthenticationType
@@ -74,6 +69,6 @@ namespace SlienGames.Data.Models
         {
             return Task.FromResult(GenerateUserIdentity(manager));
         }
-        
+
     }
 }

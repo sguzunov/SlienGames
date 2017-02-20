@@ -1,12 +1,11 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-using SlienGames.Data.Models.Contracts;
 using SlienGames.Data.Models.Constants;
 
 namespace SlienGames.Data.Models
 {
-    public class Comment : IDbModel
+    public class Comment
     {
         public int Id { get; set; }
 

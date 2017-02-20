@@ -1,9 +1,8 @@
-﻿using SlienGames.Data.Models.Contracts;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace SlienGames.Data.Models
 {
-    public class Review : IDbModel
+    public class Review
     {
         private ICollection<Comment> comments;
 
@@ -23,9 +22,9 @@ namespace SlienGames.Data.Models
         public string VideoUrl { get; set; }
 
         public virtual User Author { get; set; }
-        
+
         public virtual ReviewImage Picture { get; set; }
-        
+
         public virtual ICollection<Comment> Comments
         {
             get { return this.comments; }
