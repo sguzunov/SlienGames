@@ -82,6 +82,7 @@
                             <ul>
                                 <li><a href="#">Home</a><span class="sep">&nbsp;</span></li>
                                 <li><a href="/Games/AllGames">Games</a><span class="sep">&nbsp;</span></li>
+                                <li><a href="/Games/GameDetails?name=TicTacToe">Tic Tac Toe</a><span class="sep">&nbsp;</span></li>
                             </ul>
                             <div class="cl">&nbsp;</div>
                         </div>

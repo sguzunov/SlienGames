@@ -36,7 +36,7 @@
                                                     <p><%#: Item.Content %></p>
                                                     <hr />
                                                     <footer class="comment-footer">
-                                                        <i>Posted on: </i><span class="date"><%#: Item.PostedOn.ToString("dd.MM.yyyy") %></span>
+                                                        <%--<i>Posted on: </i><span class="date"><%#: Item.PostedOn.ToString("dd.MM.yyyy") %></span>--%>
                                                         <i>by </i>
                                                         <a href="../Profiles/Profile.aspx?id=<%# Item.AuthorId %>">
                                                             <%#: Item.Author.UserName %>
