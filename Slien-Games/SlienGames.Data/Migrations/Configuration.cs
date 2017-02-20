@@ -184,9 +184,7 @@ namespace SlienGames.Data.Migrations
                     Name = "Saloon Brawl 2",
                     GameContent = "<div class='miniclip-game-embed' data-game-name='saloon-brawl-2' data-theme='0' data-width='680' data-height='510' data-language='en'><a href='http://www.miniclip.com/games/saloon-brawl-2/'>Play Saloon Brawl 2</a></div>",
                     ImagePath = "/Content/EmbeddedGames/Images/saloonbrawl2.jpg"
-                }
-                );
-            
+                });
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Linq.Expressions;
 
 using SlienGames.Data.Contracts;
+using SlienGames.Data.Extensions;
 
 namespace SlienGames.Data
 {
@@ -50,12 +51,36 @@ namespace SlienGames.Data
 
         public IEnumerable<TEntity> GetAll(Expression<Func<TEntity, bool>> filterExpression)
         {
-            return this.GetAll<object>(filterExpression, null);
+            return this.GetAll<TEntity>(filterExpression, null);
         }
 
-        public IEnumerable<TEntity> GetAll<T1>(Expression<Func<TEntity, bool>> filterExpression, Expression<Func<TEntity, T1>> sortExpression)
+        public IEnumerable<T1> GetAll<T1>(Expression<Func<TEntity, bool>> filterExpression, Expression<Func<TEntity, T1>> selectExpression)
         {
-            return this.GetAll<T1, TEntity>(filterExpression, sortExpression, null);
+            return this.GetAll(filterExpression, selectExpression, null);
+        }
+
+        public IEnumerable<T1> GetAll<T1>(
+            Expression<Func<TEntity, bool>> filterExpression,
+            Expression<Func<TEntity, T1>> selectExpression,
+            params Expression<Func<TEntity, object>>[] includes)
+        {
+            IQueryable<TEntity> result = this.dbSet;
+
+            result.IncludeMultiple(includes);
+
+            if (filterExpression != null)
+            {
+                result = result.Where(filterExpression);
+            }
+
+            if (selectExpression != null)
+            {
+                return result.Select(selectExpression).ToList();
+            }
+            else
+            {
+                return result.OfType<T1>().ToList();
+            }
         }
 
         public IEnumerable<T2> GetAll<T1, T2>(
