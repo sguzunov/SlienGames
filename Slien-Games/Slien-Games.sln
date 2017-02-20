@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlienGames.MVP", "SlienGame
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicTacToeGame.Tests", "TicTacToeGame.Tests\TicTacToeGame.Tests.csproj", "{C07E6C15-17DE-4666-8159-1C5FF78549E6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SlienGames.Auth", "SlienGames.Auth\SlienGames.Auth.csproj", "{4075FF4B-8E98-4BE6-9A8F-90951D599C39}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -69,6 +71,10 @@ Global
 		{C07E6C15-17DE-4666-8159-1C5FF78549E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C07E6C15-17DE-4666-8159-1C5FF78549E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C07E6C15-17DE-4666-8159-1C5FF78549E6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4075FF4B-8E98-4BE6-9A8F-90951D599C39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4075FF4B-8E98-4BE6-9A8F-90951D599C39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4075FF4B-8E98-4BE6-9A8F-90951D599C39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4075FF4B-8E98-4BE6-9A8F-90951D599C39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,5 +88,6 @@ Global
 		{97A9CF83-F3FA-4633-8E2C-E950B788DAEF} = {5739FA66-0BBF-4226-974E-B5E633648F85}
 		{9908D3C9-AC92-460C-AE3A-1C1CFE3109E0} = {0D601347-1995-4F75-B1A1-9C8BB17AE3C1}
 		{C07E6C15-17DE-4666-8159-1C5FF78549E6} = {76964A9F-06BC-489A-8329-390DB848CA49}
+		{4075FF4B-8E98-4BE6-9A8F-90951D599C39} = {88EA6705-5F77-4132-99E8-E80FDF7EDAAD}
 	EndGlobalSection
 EndGlobal

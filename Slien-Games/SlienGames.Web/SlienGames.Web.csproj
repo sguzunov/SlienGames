@@ -199,6 +199,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Games\GameDetails.aspx" />
     <Content Include="Account\AddReview.aspx" />
     <Content Include="Profiles\AllFavorites.aspx" />
     <Content Include="Account\Lockout.aspx" />
@@ -291,6 +292,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Games\GameDetails.aspx.cs">
+      <DependentUpon>GameDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Games\GameDetails.aspx.designer.cs">
+      <DependentUpon>GameDetails.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Account\AddReview.aspx.cs">
       <DependentUpon>AddReview.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -368,7 +376,6 @@
     <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
       <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
     </Compile>
-    <Compile Include="App_Start\ApplicationUserManager.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
       <DependentUpon>About.aspx</DependentUpon>
@@ -378,7 +385,6 @@
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\DbConfig.cs" />
-    <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\MvpNinjectModule.cs" />
     <Compile Include="App_Start\NinjectModules\GamesNinjectModule.cs" />
     <Compile Include="App_Start\NinjectWeb.cs" />
@@ -438,7 +444,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Identity\IdentityHelper.cs" />
     <Compile Include="PlayedGame\CurrentGame.aspx.cs">
       <DependentUpon>CurrentGame.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -499,13 +504,16 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Account\ViewModels\" />
     <Folder Include="App_Data\" />
     <Folder Include="Content\Avatars\" />
     <Folder Include="Content\EmbeddedGames\Images\" />
     <Folder Include="Content\style\images\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SlienGames.Auth\SlienGames.Auth.csproj">
+      <Project>{4075ff4b-8e98-4be6-9a8f-90951d599c39}</Project>
+      <Name>SlienGames.Auth</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SlienGames.Data.Models\SlienGames.Data.Models.csproj">
       <Project>{ad2774fc-9410-4c86-b293-95fb02f70f43}</Project>
       <Name>SlienGames.Data.Models</Name>

@@ -1,19 +1,27 @@
 ﻿using System;
 using System.Web;
-using System.Web.UI;
+
 using Microsoft.AspNet.Identity.Owin;
-using SlienGames.Web.App_Start;
+
+using SlienGames.Auth;
+using SlienGames.MVP.Account.Login;
+
+using WebFormsMvp;
+using WebFormsMvp.Web;
 
 namespace SlienGames.Web.Account
 {
-    public partial class Login : Page
+    [PresenterBinding(typeof(LoginPresenter))]
+    public partial class Login : MvpPage<LoginViewModel>, ILoginView
     {
+        public event EventHandler<LoginEventArgs> LoginUser;
+
         protected void Page_Load(object sender, EventArgs e)
         {
             RegisterHyperLink.NavigateUrl = "Register";
             // Enable this once you have account confirmation enabled for password reset functionality
             //ForgotPasswordHyperLink.NavigateUrl = "Forgot";
-         //   OpenAuthLogin.ReturnUrl = Request.QueryString["ReturnUrl"];
+            //   OpenAuthLogin.ReturnUrl = Request.QueryString["ReturnUrl"];
             var returnUrl = HttpUtility.UrlEncode(Request.QueryString["ReturnUrl"]);
             if (!String.IsNullOrEmpty(returnUrl))
             {
@@ -25,33 +33,45 @@ namespace SlienGames.Web.Account
         {
             if (IsValid)
             {
-                // Validate the user password
-                var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
-                var signinManager = Context.GetOwinContext().GetUserManager<ApplicationSignInManager>();
+                string username = this.TextBoxUsername.Text;
+                string password = this.TextBoxPassword.Text;
+                bool rememberUser = this.CheckBoxRememberMe.Checked;
 
-                // This doen't count login failures towards account lockout
-                // To enable password failures to trigger lockout, change to shouldLockout: true
-                var result = signinManager.PasswordSignIn(Email.Text, Password.Text, RememberMe.Checked, shouldLockout: false);
+                var signInManager = Context.GetOwinContext().GetUserManager<ApplicationSignInManager>();
 
-                switch (result)
+                var loginArgs = new LoginEventArgs(username, password, isPersistent: rememberUser, shouldBeLockout: false, signInManager: signInManager);
+
+                this.LoginUser(this, loginArgs);
+
+                switch (this.Model.SignInStatus)
                 {
                     case SignInStatus.Success:
-                        IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
-                        break;
+                        {
+                            IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+                            break;
+                        }
                     case SignInStatus.LockedOut:
-                        Response.Redirect("/Account/Lockout");
-                        break;
+                        {
+                            Response.Redirect("/Account/Lockout");
+                            break;
+                        }
                     case SignInStatus.RequiresVerification:
-                        Response.Redirect(String.Format("/Account/TwoFactorAuthenticationSignIn?ReturnUrl={0}&RememberMe={1}",
-                                                        Request.QueryString["ReturnUrl"],
-                                                        RememberMe.Checked),
-                                          true);
-                        break;
+                        {
+                            Response.Redirect(
+                                    String.Format("/Account/TwoFactorAuthenticationSignIn?ReturnUrl={0}&RememberMe={1}",
+                                    Request.QueryString["ReturnUrl"],
+                                    rememberUser),
+                                true);
+                            break;
+                        }
+
                     case SignInStatus.Failure:
                     default:
-                        FailureText.Text = "Invalid login attempt";
-                        ErrorMessage.Visible = true;
-                        break;
+                        {
+                            FailureText.Text = "Invalid login attempt";
+                            ErrorMessage.Visible = true;
+                            break;
+                        }
                 }
             }
         }

@@ -46,7 +46,6 @@
     <Compile Include="Contracts\IReviewsService.cs" />
     <Compile Include="Contracts\IUsersService.cs" />
     <Compile Include="FileSaver.cs" />
-    <Compile Include="GameProfileServices.cs" />
     <Compile Include="GamesService.cs" />
     <Compile Include="ReviewsService.cs" />
     <Compile Include="UserService.cs" />

@@ -1,35 +1,41 @@
 ﻿using System;
-using System.Linq;
 using System.Web;
-using System.Web.UI;
-using Microsoft.AspNet.Identity;
+
 using Microsoft.AspNet.Identity.Owin;
-using SlienGames.Data.Models;
-using SlienGames.Web.App_Start;
+
+using SlienGames.Auth;
+using SlienGames.MVP.Account.Register;
+
+using WebFormsMvp;
+using WebFormsMvp.Web;
 
 namespace SlienGames.Web.Account
 {
-    public partial class Register : Page
+    [PresenterBinding(typeof(RegisterPresenter))]
+    public partial class Register : MvpPage<RegiserViewModel>, RegisterView
     {
+        public event EventHandler<RegisterEventArgs> CreateUser;
+
         protected void CreateUser_Click(object sender, EventArgs e)
         {
+            var username = this.TextBoxUsername.Text;
+            var password = this.TextBoxPassword.Text;
+            var email = this.TextBoxEmail.Text;
+
             var manager = Context.GetOwinContext().GetUserManager<ApplicationUserManager>();
             var signInManager = Context.GetOwinContext().Get<ApplicationSignInManager>();
-            var user = new User() { UserName = this.Username.Text };
-            IdentityResult result = manager.Create(user, Password.Text);
-            if (result.Succeeded)
-            {
-                // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
-                //string code = manager.GenerateEmailConfirmationToken(user.Id);
-                //string callbackUrl = IdentityHelper.GetUserConfirmationRedirectUrl(code, user.Id, Request);
-                //manager.SendEmail(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>.");
 
-                signInManager.SignIn(user, isPersistent: false, rememberBrowser: false);
+            var registerArgs = new RegisterEventArgs(username, password, email, manager, signInManager);
+
+            this.CreateUser(this, registerArgs);
+
+            if (this.Model.IsRegistered)
+            {
                 IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
             }
             else
             {
-                ErrorMessage.Text = result.Errors.FirstOrDefault();
+                LiteralErrorMessage.Text = this.Model.ErrorMessage;
             }
         }
     }

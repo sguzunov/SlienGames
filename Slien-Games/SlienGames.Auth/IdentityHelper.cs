@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Web;
 
-namespace SlienGames.Web
+namespace SlienGames.Auth
 {
     public static class IdentityHelper
     {
