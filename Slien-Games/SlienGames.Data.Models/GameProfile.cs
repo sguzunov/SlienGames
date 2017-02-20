@@ -39,7 +39,7 @@ namespace SlienGames.Data.Models
         public int Rating { get; set; }
 
         public DateTime CreatedOn { get; set; }
-        
+
         public virtual CoverImage CoverImage { get; set; }
 
         public virtual ICollection<Vote> Votes
