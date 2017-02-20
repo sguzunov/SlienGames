@@ -1,11 +1,9 @@
-﻿using SlienGames.Data.Services.Contracts;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using SlienGames.Data.Models;
+
 using SlienGames.Data.Contracts;
+using SlienGames.Data.Models;
+using SlienGames.Data.Services.Contracts;
 
 namespace SlienGames.Data.Services
 {
@@ -32,17 +30,12 @@ namespace SlienGames.Data.Services
             return this.gamesRepository.GetById(id);
         }
 
-        public GameProfile GetDetailsByName(string gameName)
+        public GameProfile GetDetailsWithComments(string gameName)
         {
-            var gameDetails = this.gameProfileRepository.GetAll<GameProfile, GameProfile>(
-                x => x.Name == gameName,
+            var gameDetails = this.gameProfileRepository.GetAll<GameProfile>(
+                x => x.Name == gameName && x.IsPublished,
                 null,
-                x => new GameProfile
-                {
-                    Name = x.Name,
-                    Description = x.Description,
-                    Comments = x.Comments,
-                }).FirstOrDefault();
+                x => x.Comments).FirstOrDefault();
 
             return gameDetails;
         }

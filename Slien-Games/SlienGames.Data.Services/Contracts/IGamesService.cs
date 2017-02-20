@@ -1,9 +1,6 @@
-﻿using SlienGames.Data.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+
+using SlienGames.Data.Models;
 
 namespace SlienGames.Data.Services.Contracts
 {
@@ -13,6 +10,6 @@ namespace SlienGames.Data.Services.Contracts
 
         EmbeddedGame GetById(object id);
 
-        GameProfile GetDetailsByName(string gameName);
+        GameProfile GetDetailsWithComments(string gameName);
     }
 }
