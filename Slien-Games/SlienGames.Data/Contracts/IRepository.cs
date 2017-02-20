@@ -16,8 +16,16 @@ namespace SlienGames.Data.Contracts
         IEnumerable<TEntity> GetAll(Expression<Func<TEntity, bool>> filterExpression);
 
         IEnumerable<T1> GetAll<T1>(Expression<Func<TEntity, bool>> filterExpression, Expression<Func<TEntity, T1>> selectExpression);
-        
-        IEnumerable<T2> GetAll<T1, T2>(Expression<Func<TEntity, bool>> filterExpression, Expression<Func<TEntity, T1>> sortExpression, Expression<Func<TEntity, T2>> selectExpression);
+
+        IEnumerable<T1> GetAll<T1>(
+            Expression<Func<TEntity, bool>> filterExpression,
+            Expression<Func<TEntity, T1>> selectExpression,
+            params Expression<Func<TEntity, object>>[] includes);
+
+        IEnumerable<T2> GetAll<T1, T2>(
+            Expression<Func<TEntity, bool>> filterExpression,
+            Expression<Func<TEntity, T1>> sortExpression,
+            Expression<Func<TEntity, T2>> selectExpression);
 
         void Add(TEntity entity);
 

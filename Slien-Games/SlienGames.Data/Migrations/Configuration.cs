@@ -1,5 +1,6 @@
-using SlienGames.Data.Models;
 using System.Data.Entity.Migrations;
+
+using SlienGames.Data.Models;
 
 namespace SlienGames.Data.Migrations
 {
