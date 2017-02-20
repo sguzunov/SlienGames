@@ -16,23 +16,23 @@ namespace SlienGames.Tests.SlienGames.Data.Models.Tests.CommentTests
         public void Be_TypeOfGameProfile()
         {
             var comment = new Comment();
-            var gameProfile = new GameProfile();
-            comment.GameProfile = gameProfile;
+            var gameProfile = new GameDetails();
+            comment.GameDetails = gameProfile;
 
-            var result = comment.GameProfile.GetType();
+            var result = comment.GameDetails.GetType();
 
-            Assert.True(result == typeof(GameProfile));
+            Assert.True(result == typeof(GameDetails));
         }
 
         [Test]
         public void GetAndSeT_ShouldBePublic()
         {
             var comment = new Comment();
-            var gameProfile = new GameProfile();
+            var gameProfile = new GameDetails();
 
-            comment.GameProfile = gameProfile;
+            comment.GameDetails = gameProfile;
 
-            Assert.True(comment.GameProfile == gameProfile);
+            Assert.True(comment.GameDetails == gameProfile);
         }
 
         [Test]

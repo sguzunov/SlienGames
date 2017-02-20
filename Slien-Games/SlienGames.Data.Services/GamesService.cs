@@ -10,10 +10,10 @@ namespace SlienGames.Data.Services
     public class GamesService : IGamesService
     {
         private readonly IRepository<EmbeddedGame> gamesRepository;
-        private readonly IRepository<GameProfile> gameProfileRepository;
+        private readonly IRepository<GameDetails> gameProfileRepository;
         private readonly ISlienGamesData unitOfWork;
 
-        public GamesService(IRepository<EmbeddedGame> gamesRepository, IRepository<GameProfile> gameProfileRepository, ISlienGamesData unitOfWork)
+        public GamesService(IRepository<EmbeddedGame> gamesRepository, IRepository<GameDetails> gameProfileRepository, ISlienGamesData unitOfWork)
         {
             this.gamesRepository = gamesRepository;
             this.gameProfileRepository = gameProfileRepository;
@@ -30,9 +30,9 @@ namespace SlienGames.Data.Services
             return this.gamesRepository.GetById(id);
         }
 
-        public GameProfile GetDetailsWithComments(string gameName)
+        public GameDetails GetDetailsWithComments(string gameName)
         {
-            var gameDetails = this.gameProfileRepository.GetAll<GameProfile>(
+            var gameDetails = this.gameProfileRepository.GetAll<GameDetails>(
                 x => x.Name == gameName && x.IsPublished,
                 null,
                 x => x.Comments).FirstOrDefault();

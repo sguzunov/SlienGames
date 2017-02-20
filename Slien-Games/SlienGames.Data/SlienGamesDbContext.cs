@@ -58,8 +58,8 @@ namespace SlienGames.Data
                 .HasOptional(x => x.ProfileImage)
                 .WithRequired(x => x.User);
 
-            // GameProfile - CoverImage (one-to-one or zero)
-            modelBuilder.Entity<GameProfile>()
+            // GameDetails - CoverImage (one-to-one or zero)
+            modelBuilder.Entity<GameDetails>()
                 .HasOptional(x => x.CoverImage)
                 .WithRequired(x => x.Game);
 

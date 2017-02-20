@@ -69,7 +69,6 @@
     <Compile Include="ExternalGameResource.cs" />
     <Compile Include="FileInfo.cs" />
     <Compile Include="GameDetails.cs" />
-    <Compile Include="GameProfile.cs" />
     <Compile Include="ProfileImage.cs" />
     <Compile Include="Review.cs" />
     <Compile Include="ReviewImage.cs" />

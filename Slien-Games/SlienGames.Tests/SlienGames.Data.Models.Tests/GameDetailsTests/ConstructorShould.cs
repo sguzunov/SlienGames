@@ -15,7 +15,7 @@ namespace SlienGames.Tests.SlienGames.Data.Models.Tests.GameProfileTests
         [Test]
         public void HaveParametlessConstructor()
         {
-            var type = typeof(GameProfile);
+            var type = typeof(GameDetails);
 
             var ctorParameters = new Type[] { };
             var bindingFlags = BindingFlags.Public | BindingFlags.Instance;
@@ -26,7 +26,7 @@ namespace SlienGames.Tests.SlienGames.Data.Models.Tests.GameProfileTests
         [Test]
         public void InitializeVotesCorrectly()
         {
-            var gameProfile = new GameProfile();
+            var gameProfile = new GameDetails();
 
             var votes = gameProfile.Votes;
 
@@ -36,7 +36,7 @@ namespace SlienGames.Tests.SlienGames.Data.Models.Tests.GameProfileTests
         [Test]
         public void InitializeCommentsCorrectly()
         {
-            var gameProfile = new GameProfile();
+            var gameProfile = new GameDetails();
 
             var comments = gameProfile.Comments;
 
@@ -46,7 +46,7 @@ namespace SlienGames.Tests.SlienGames.Data.Models.Tests.GameProfileTests
         [Test]
         public void InitializeUsersVotedThisGameCorrectly()
         {
-            var gameProfile = new GameProfile();
+            var gameProfile = new GameDetails();
 
             var usersVotedThisGame = gameProfile.UsersVotedThisGame;
 

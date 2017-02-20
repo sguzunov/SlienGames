@@ -12,16 +12,16 @@ namespace SlienGames.Data.Models
     public class User : IdentityUser, IDbModel
     {
         private ICollection<Comment> gamesComments;
-        private ICollection<GameProfile> votedGames;
-        private ICollection<GameProfile> favorites;
+        private ICollection<GameDetails> votedGames;
+        private ICollection<GameDetails> favorites;
         private ICollection<Review> reviews;
         private ICollection<Review> favoriteReviews;
 
         public User()
         {
             this.gamesComments = new HashSet<Comment>();
-            this.votedGames = new HashSet<GameProfile>();
-            this.favorites = new HashSet<GameProfile>();
+            this.votedGames = new HashSet<GameDetails>();
+            this.favorites = new HashSet<GameDetails>();
             this.reviews = new HashSet<Review>();
             this.favoriteReviews = new HashSet<Review>();
         }
@@ -36,13 +36,13 @@ namespace SlienGames.Data.Models
             set { this.gamesComments = value; }
         }
 
-        public virtual ICollection<GameProfile> VotedGames
+        public virtual ICollection<GameDetails> VotedGames
         {
             get { return this.votedGames; }
             set { this.votedGames = value; }
         }
 
-        public virtual ICollection<GameProfile> Favorites
+        public virtual ICollection<GameDetails> Favorites
         {
             get { return this.favorites; }
             set { this.favorites = value; }

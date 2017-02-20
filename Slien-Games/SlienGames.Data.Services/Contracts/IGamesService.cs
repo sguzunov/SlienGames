@@ -10,6 +10,6 @@ namespace SlienGames.Data.Services.Contracts
 
         EmbeddedGame GetById(object id);
 
-        GameProfile GetDetailsWithComments(string gameName);
+        GameDetails GetDetailsWithComments(string gameName);
     }
 }

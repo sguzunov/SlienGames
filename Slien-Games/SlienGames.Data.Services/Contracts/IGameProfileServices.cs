@@ -4,6 +4,6 @@ namespace SlienGames.Data.Services.Contracts
 {
     public interface IGameProfileServices
     {
-        GameProfile GetProfileInfoByName(string gameName);
+        GameDetails GetProfileInfoByName(string gameName);
     }
 }

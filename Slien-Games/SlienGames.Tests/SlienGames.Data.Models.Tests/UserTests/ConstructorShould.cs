@@ -40,7 +40,7 @@ namespace SlienGames.Tests.SlienGames.Data.Models.Tests.UserTests
 
             var votedGames = user.VotedGames;
 
-            Assert.That(votedGames, Is.Not.Null.And.InstanceOf<HashSet<GameProfile>>());
+            Assert.That(votedGames, Is.Not.Null.And.InstanceOf<HashSet<GameDetails>>());
         }
     }
 }

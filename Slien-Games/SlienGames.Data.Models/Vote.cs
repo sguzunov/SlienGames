@@ -5,18 +5,18 @@ namespace SlienGames.Data.Models
 {
     public class Vote : IDbModel
     {
-        private ICollection<GameProfile> games;
+        private ICollection<GameDetails> games;
 
         public Vote()
         {
-            this.games = new HashSet<GameProfile>();
+            this.games = new HashSet<GameDetails>();
         }
 
         public int Id { get; set; }
 
         public bool Value { get; set; }
 
-        public virtual ICollection<GameProfile> Games
+        public virtual ICollection<GameDetails> Games
         {
             get { return this.games; }
             set { this.games = value; }
