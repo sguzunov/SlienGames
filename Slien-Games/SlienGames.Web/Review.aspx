@@ -8,12 +8,12 @@
             <hr />
             <div class="container">
                 <div class="row">
-                    <div class="col-md-2 col-md-offset-2">
+                    <div class="col-md-2 col-md-offset-1">
                         <iframe width="640" height="360" src="<%# "https://www.youtube.com/embed/" + this.CurrentReview.VideoUrl %>"></iframe>
                     </div>
                 </div>
                 <br />
-                <div class="jumbotron" style="background-color:#303030">
+                <div class="jumbotron" style="background-color: #303030">
                     <h1><%# this.CurrentReview.Title %></h1>
                     <p><%# this.CurrentReview.Description %></p>
                 </div>
