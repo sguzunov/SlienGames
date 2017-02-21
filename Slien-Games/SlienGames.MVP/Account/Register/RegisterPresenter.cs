@@ -23,8 +23,11 @@ namespace SlienGames.MVP.Account.Register
             IdentityResult result = e.ApplicationUserManager.Create(user, e.Password);
             if (result.Succeeded)
             {
+                
                 e.ApplicationSignInManager.SignIn(user, isPersistent: false, rememberBrowser: false);
                 this.View.Model.IsRegistered = true;
+               // var user = e.ApplicationUserManager.FindByName(e.Username);
+                e.ApplicationUserManager.AddToRole(user.Id, "mortal");                                
             }
             else
             {

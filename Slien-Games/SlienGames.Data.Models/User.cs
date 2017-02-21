@@ -30,6 +30,8 @@ namespace SlienGames.Data.Models
 
         public virtual ProfileImage ProfileImage { get; set; }
 
+        public bool IsBlocked { get; set; }
+
         public virtual ICollection<Comment> GamesComments
         {
             get { return this.gamesComments; }
