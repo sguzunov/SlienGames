@@ -19,9 +19,7 @@ namespace SlienGames.Data.Contracts
 
         IDbSet<CoverImage> CoverImages { get; set; }
 
-        IDbSet<Vote> Votes { get; set; }
-
-        IDbSet<EmbeddedGame> EmbeddedGames { get; set; } // TODO: Delete
+        IDbSet<GameRating> GamesRatings { get; set; }
 
         IDbSet<T> Set<T>() where T : class;
 

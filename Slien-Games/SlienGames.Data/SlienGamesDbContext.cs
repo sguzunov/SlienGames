@@ -1,5 +1,6 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+
 using Microsoft.AspNet.Identity.EntityFramework;
 
 using SlienGames.Data.Contracts;
@@ -25,17 +26,15 @@ namespace SlienGames.Data
 
         public IDbSet<ExternalGameResource> ExternalGameResources { get; set; }
 
-        public IDbSet<Vote> Votes { get; set; }
-
         public IDbSet<ProfileImage> ProfileImages { get; set; }
 
         public IDbSet<CoverImage> CoverImages { get; set; }
 
-        public IDbSet<EmbeddedGame> EmbeddedGames { get; set; }
-
         public IDbSet<Review> Reviews { get; set; }
 
         public IDbSet<ReviewImage> ReviewImages { get; set; }
+
+        public IDbSet<GameRating> GamesRatings { get; set; }
 
         public new IDbSet<T> Set<T>()
             where T : class
