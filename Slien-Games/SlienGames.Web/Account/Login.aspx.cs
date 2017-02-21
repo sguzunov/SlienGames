@@ -66,6 +66,11 @@ namespace SlienGames.Web.Account
                         }
 
                     case SignInStatus.Failure:
+                        {
+                            FailureText.Text = "You are blocked, go apologyze first!";
+                            ErrorMessage.Visible = true;
+                            break;
+                        }
                     default:
                         {
                             FailureText.Text = "Invalid login attempt";
