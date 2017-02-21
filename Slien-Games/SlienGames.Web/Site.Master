@@ -51,7 +51,7 @@
                 <div id="top-nav">
                     <ul>
 
-                        <li class="home"><a href="#">play</a></li>
+                        <li class="home"><a href="/Games/AllGames">play</a></li>
                         <asp:LoginView runat="server" ViewStateMode="Disabled">
                             <AnonymousTemplate>
                                 <li><a runat="server" href="~/Account/Register">Register</a></li>
@@ -80,7 +80,7 @@
                     <div class="bg-right">
                         <div class="bg-left">
                             <ul>
-                                <li><a href="#">Home</a><span class="sep">&nbsp;</span></li>
+                                <li><a href="/">Home</a><span class="sep">&nbsp;</span></li>
                                 <li><a href="/Games/AllGames">Games</a><span class="sep">&nbsp;</span></li>
                                 <li><a href="/Games/GameDetails?name=TicTacToe">Tic Tac Toe</a><span class="sep">&nbsp;</span></li>
                             </ul>

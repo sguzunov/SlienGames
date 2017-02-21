@@ -1,10 +1,11 @@
-﻿using SlienGames.Data.Models;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+
+using SlienGames.Data.Models;
 
 namespace SlienGames.MVP.Games
 {
     public class AllGamesModel
     {
-        public IEnumerable<EmbeddedGame> EmbeddedGames { get; set; }
+        public IEnumerable<GameDetails> Games { get; set; }
     }
 }

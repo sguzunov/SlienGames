@@ -1,8 +1,11 @@
 ﻿using System;
+
+using Microsoft.AspNet.Identity;
+
 using WebFormsMvp;
 using WebFormsMvp.Web;
+
 using SlienGames.Data.Models;
-using Microsoft.AspNet.Identity;
 using SlienGames.MVP.PlayedGame.CurrentGame;
 
 namespace SlienGames.Web.PlayedGame
@@ -12,7 +15,7 @@ namespace SlienGames.Web.PlayedGame
     {
         public User CurrentUser { get; set; }
 
-        public EmbeddedGame Game { get; set; }
+        public GameDetails Game { get; set; }
 
         public event EventHandler<CurrentGameEventArgs> GetGame;
 

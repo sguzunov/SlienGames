@@ -199,6 +199,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Content\Images\play-game-image.png" />
+    <Content Include="Content\Images\play-game-img.png" />
+    <Content Include="Content\Images\tic-tac-toe-O.png" />
+    <Content Include="Content\Images\tic-tac-toe-X.png" />
     <Content Include="Games\GameDetails.aspx" />
     <Content Include="Account\AddReview.aspx" />
     <Content Include="Profiles\AllFavorites.aspx" />

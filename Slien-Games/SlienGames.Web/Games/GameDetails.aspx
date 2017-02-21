@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="GameDetails.aspx.cs" Inherits="SlienGames.Web.Games.GameDetails" %>
 
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ajaxToolkit" %>
+
 <asp:Content ContentPlaceHolderID="MainContent" runat="server">
     <div class="container body-content">
         <div id="main">
@@ -11,7 +13,24 @@
                         <p class="game-description"><%#: this.Model.GameDescription %></p>
                     </section>
                     <div class="play-btn-panel">
-                        <a href="#" class="btn btn-default play-btn">Play</a>
+                        <a href="/PlayedGame/CurrentGame?id= <%#: this.Model.GameId %>" class="btn btn-default play-btn">Play</a>
+                    </div>
+                    <div>
+                        <asp:UpdatePanel runat="server" ID="RatingUpdater">
+                            <ContentTemplate>
+                                <ajaxToolkit:Rating
+                                    ID="Rating"
+                                    runat="server"
+                                    CurrentRating="3"
+                                    MaxRating="5"
+                                    StarCssClass="ratingStar"
+                                    WaitingStarCssClass="savedRatingStar"
+                                    FilledStarCssClass="filledRatingStar"
+                                    EmptyStarCssClass="emptyRatingStar"
+                                    OnChanged="Rating_Changed" />
+                            </ContentTemplate>
+                        </asp:UpdatePanel>
+                        <asp:ImageButton runat="server" ID="ButtonLikeUnlike" ImageUrl="/Content/Images/liked-game.png" />
                     </div>
                     <div class="comments-section block">
                         <div class="new-comment-section">
@@ -36,7 +55,7 @@
                                                     <p><%#: Item.Content %></p>
                                                     <hr />
                                                     <footer class="comment-footer">
-                                                        <%--<i>Posted on: </i><span class="date"><%#: Item.PostedOn.ToString("dd.MM.yyyy") %></span>--%>
+                                                        <i>Posted on: </i><span class="date"><%#: Item.PostedOn.ToString("dd.MM.yyyy") %></span>
                                                         <i>by </i>
                                                         <a href="../Profiles/Profile.aspx?id=<%# Item.AuthorId %>">
                                                             <%#: Item.Author.UserName %>

@@ -13,7 +13,7 @@ namespace SlienGames.Web.Games
         protected void Page_Load(object sender, EventArgs e)
         {
             this.GetGames?.Invoke(sender, e);
-            this.ListGames.DataSource = this.Model.EmbeddedGames;
+            this.ListGames.DataSource = this.Model.Games;
             this.ListGames.DataBind();
         }
     }
