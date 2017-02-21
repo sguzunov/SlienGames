@@ -25,7 +25,6 @@ namespace SlienGames.Tests.SlienGames.Data.Tests.EfRepositoryTests
             var mockDbContext = new Mock<ISlienGamesDbContext>();
             mockDbContext.Setup(mock => mock.Set<IDbModel>()).Returns(fakeDbSet.Object);
             mockDbContext.Setup(mock => mock.Entry(It.IsAny<IDbModel>())).Returns(fakeDbEntityEntry.Object);
-            fakeDbEntityEntry.Setup(mock => mock.State).Returns(EntityState.Detached);
             var repo = new EfRepository<IDbModel>(mockDbContext.Object);
 
             repo.Add(fakeDbModel.Object);

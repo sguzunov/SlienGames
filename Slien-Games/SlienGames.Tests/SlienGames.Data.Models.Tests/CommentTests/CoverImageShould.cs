@@ -14,7 +14,7 @@ namespace SlienGames.Tests.SlienGames.Data.Models.Tests.CommentTests
         [Test]
         public void Be_TypeOfCoverImage()
         {
-            var gameProfile = new GameProfile();
+            var gameProfile = new GameDetails();
             var coverImage = new CoverImage();
             gameProfile.CoverImage = coverImage;
 
@@ -26,7 +26,7 @@ namespace SlienGames.Tests.SlienGames.Data.Models.Tests.CommentTests
         [Test]
         public void GetAndSeT_ShouldBePublic()
         {
-            var gameProfile = new GameProfile();
+            var gameProfile = new GameDetails();
             var coverImage = new CoverImage();
 
             gameProfile.CoverImage = coverImage;

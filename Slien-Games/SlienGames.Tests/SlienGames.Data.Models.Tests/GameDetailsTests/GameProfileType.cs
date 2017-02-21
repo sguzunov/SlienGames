@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SlienGames.Tests.SlienGames.Data.Models.Tests.GameProfileTests
+namespace SlienGames.Tests.SlienGames.Data.Models.Tests.GameDetailsTests
 {
     [TestFixture]
     public class GameProfileType
@@ -15,7 +15,7 @@ namespace SlienGames.Tests.SlienGames.Data.Models.Tests.GameProfileTests
         [Test]
         public void ShouldBe_IDbModel()
         {
-            var gameProfile = new GameProfile();
+            var gameProfile = new GameDetails();
 
             var result = gameProfile.GetType().GetInterfaces().Any(x => x == typeof(IDbModel));
 

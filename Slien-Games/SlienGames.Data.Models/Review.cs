@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using SlienGames.Data.Models.Contracts;
+using System.Collections.Generic;
 
 namespace SlienGames.Data.Models
 {
-    public class Review
+    public class Review : IDbModel
     {
         private ICollection<Comment> comments;
 

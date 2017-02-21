@@ -2,10 +2,11 @@
 using System.ComponentModel.DataAnnotations;
 
 using SlienGames.Data.Models.Constants;
+using SlienGames.Data.Models.Contracts;
 
 namespace SlienGames.Data.Models
 {
-    public class Comment
+    public class Comment : IDbModel
     {
         public int Id { get; set; }
 
@@ -21,9 +22,9 @@ namespace SlienGames.Data.Models
 
         public DateTime PostedOn { get; set; }
 
-        public virtual int GameProfileId { get; set; }
+        public virtual int GameDetailsId { get; set; }
 
         [Required]
-        public virtual GameProfile GameProfile { get; set; }
+        public virtual GameDetails GameDetails { get; set; }
     }
 }

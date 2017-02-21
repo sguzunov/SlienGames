@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SlienGames.Tests.SlienGames.Data.Models.Tests.GameProfileTests
+namespace SlienGames.Tests.SlienGames.Data.Models.Tests.GameDetailsTests
 {
     [TestFixture]
     public  class IdShould
@@ -14,7 +14,7 @@ namespace SlienGames.Tests.SlienGames.Data.Models.Tests.GameProfileTests
         [Test]
         public void Be_TypeOfInt()
         {
-            var gameProfile = new GameProfile();
+            var gameProfile = new GameDetails();
             gameProfile.Id = 1;
 
             var result = gameProfile.Id.GetType();
@@ -25,7 +25,7 @@ namespace SlienGames.Tests.SlienGames.Data.Models.Tests.GameProfileTests
         [Test]
         public void GetAndSet_ShouldBePublic()
         {
-            var gameProfile = new GameProfile();
+            var gameProfile = new GameDetails();
 
             gameProfile.Id = 1;
 

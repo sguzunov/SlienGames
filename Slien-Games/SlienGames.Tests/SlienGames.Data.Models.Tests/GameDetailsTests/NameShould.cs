@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SlienGames.Tests.SlienGames.Data.Models.Tests.GameProfileTests
+namespace SlienGames.Tests.SlienGames.Data.Models.Tests.GameDetailsTests
 {
     [TestFixture]
     public class NameShould
@@ -17,7 +17,7 @@ namespace SlienGames.Tests.SlienGames.Data.Models.Tests.GameProfileTests
         [Test]
         public void HaveRequiredAttribute()
         {
-            var gameProfile = new GameProfile();
+            var gameProfile = new GameDetails();
 
             var result = gameProfile
                 .GetType()
@@ -33,7 +33,7 @@ namespace SlienGames.Tests.SlienGames.Data.Models.Tests.GameProfileTests
         [Test]
         public void HaveIndexAttribute()
         {
-            var gameProfile = new GameProfile();
+            var gameProfile = new GameDetails();
 
             var result = gameProfile
                 .GetType()
@@ -49,7 +49,7 @@ namespace SlienGames.Tests.SlienGames.Data.Models.Tests.GameProfileTests
         [Test]
         public void HaveMinLengthAttribute()
         {
-            var gameProfile = new GameProfile();
+            var gameProfile = new GameDetails();
 
             var result = gameProfile
                 .GetType()
@@ -64,7 +64,7 @@ namespace SlienGames.Tests.SlienGames.Data.Models.Tests.GameProfileTests
         [Test]
         public void HaveMaxLengthAttribute()
         {
-            var gameProfile = new GameProfile();
+            var gameProfile = new GameDetails();
 
             var result = gameProfile
                 .GetType()
@@ -79,7 +79,7 @@ namespace SlienGames.Tests.SlienGames.Data.Models.Tests.GameProfileTests
         [Test]
         public void HaveMinLengthAttribute_WithRightValue()
         {
-            var gameProfile = new GameProfile();
+            var gameProfile = new GameDetails();
 
             var result = gameProfile
                 .GetType()
@@ -97,7 +97,7 @@ namespace SlienGames.Tests.SlienGames.Data.Models.Tests.GameProfileTests
         [Test]
         public void HaveMaxLengthAttribute_WithRightValue()
         {
-            var gameProfile = new GameProfile();
+            var gameProfile = new GameDetails();
 
             var result = gameProfile
                 .GetType()
@@ -115,7 +115,7 @@ namespace SlienGames.Tests.SlienGames.Data.Models.Tests.GameProfileTests
         [TestCase("farcry")]
         public void GetAndSet_ShouldBePublic(string test)
         {
-            var gameProfile = new GameProfile();
+            var gameProfile = new GameDetails();
             gameProfile.Name = test;
 
             Assert.AreEqual(test, gameProfile.Name);
@@ -125,7 +125,7 @@ namespace SlienGames.Tests.SlienGames.Data.Models.Tests.GameProfileTests
         [TestCase("farcry")]
         public void Be_TypeOfString(string test)
         {
-            var gameProfile = new GameProfile();
+            var gameProfile = new GameDetails();
             gameProfile.Name = test;
 
             var result = gameProfile.Name.GetType();

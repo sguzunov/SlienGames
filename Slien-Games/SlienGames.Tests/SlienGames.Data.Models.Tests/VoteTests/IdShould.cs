@@ -14,7 +14,7 @@ namespace SlienGames.Tests.SlienGames.Data.Models.Tests.VoteTests
         [Test]
         public void Be_TypeOfInt()
         {
-            var vote = new GameProfile();
+            var vote = new GameDetails();
             vote.Id = 1;
 
             var result = vote.Id.GetType();

@@ -1,5 +1,6 @@
 ﻿using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+
 using Microsoft.AspNet.Identity.EntityFramework;
 
 using SlienGames.Data.Contracts;
@@ -21,20 +22,19 @@ namespace SlienGames.Data
 
         public IDbSet<Comment> Comments { get; set; }
 
-        public IDbSet<GameProfile> GamesProfiles { get; set; }
+        public IDbSet<GameDetails> GamesDetails { get; set; }
 
-
-        public IDbSet<Vote> Votes { get; set; }
+        public IDbSet<ExternalGameResource> ExternalGameResources { get; set; }
 
         public IDbSet<ProfileImage> ProfileImages { get; set; }
 
         public IDbSet<CoverImage> CoverImages { get; set; }
 
-        public IDbSet<EmbeddedGame> EmbeddedGames { get; set; }
-
         public IDbSet<Review> Reviews { get; set; }
 
         public IDbSet<ReviewImage> ReviewImages { get; set; }
+
+        public IDbSet<GameRating> GamesRatings { get; set; }
 
         public new IDbSet<T> Set<T>()
             where T : class
@@ -48,11 +48,6 @@ namespace SlienGames.Data
             return base.Entry<TEntity>(entity);
         }
 
-        //public new int SaveChanges()
-        //{
-        //    return this.SaveChanges();
-        //}
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
@@ -62,14 +57,19 @@ namespace SlienGames.Data
                 .HasOptional(x => x.ProfileImage)
                 .WithRequired(x => x.User);
 
-            // GameProfile - CoverImage (one-to-one or zero)
-            modelBuilder.Entity<GameProfile>()
+            // GameDetails - CoverImage (one-to-one or zero)
+            modelBuilder.Entity<GameDetails>()
                 .HasOptional(x => x.CoverImage)
                 .WithRequired(x => x.Game);
 
             modelBuilder.Entity<Review>()
                 .HasOptional(x => x.Picture)
                 .WithRequired(x => x.Review);
+
+            // GameDetails - ExternalGameResource (one-to-one or zero)
+            modelBuilder.Entity<GameDetails>()
+                .HasOptional(x => x.ExternalResource)
+                .WithRequired(x => x.Game);
         }
     }
 }
