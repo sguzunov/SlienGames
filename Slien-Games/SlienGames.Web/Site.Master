@@ -82,6 +82,7 @@
                             <ul>
                                 <li><a href="#">Home</a><span class="sep">&nbsp;</span></li>
                                 <li><a href="/Games/AllGames">Games</a><span class="sep">&nbsp;</span></li>
+                                <li><a href="/Games/GameDetails?name=TicTacToe">Tic Tac Toe</a><span class="sep">&nbsp;</span></li>
                                <%if (Context.User.IsInRole("admin")){ %>
                                 <li><a href="/Admin/Users">Manage users</a><span class="sep">&nbsp;</span></li>
                                 <li><a href="/Admin/Games">Manage games</a><span class="sep">&nbsp;</span></li>

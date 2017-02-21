@@ -28,7 +28,7 @@ namespace SlienGames.Web.PlayedGame
 
             }
             this.GetGame?.Invoke(sender, new CurrentGameEventArgs(int.Parse(gameId)));
-            if (this.Model.EmbeddedGame==null)
+            if (this.Model.EmbeddedGame == null)
             {
                 Server.Transfer("/Errors/PageNotFound.aspx");
             }

@@ -233,7 +233,6 @@
     <Content Include="PlayedGame\Web.config" />
     <Content Include="Admin\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <Content Include="GameInfo\GameInfo.aspx" />
     <Content Include="Games\AllGames.aspx" />
     <Content Include="PlayedGame\TicTacToe.aspx" />
     <Content Include="Profiles\Profile.aspx" />
@@ -434,13 +433,6 @@
     </Compile>
     <Compile Include="Factories\ICustomPresenterFactory.cs" />
     <Compile Include="Factories\WebFormsMvpPresenterFactory.cs" />
-    <Compile Include="GameInfo\GameInfo.aspx.cs">
-      <DependentUpon>GameInfo.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GameInfo\GameInfo.aspx.designer.cs">
-      <DependentUpon>GameInfo.aspx</DependentUpon>
-    </Compile>
     <Compile Include="GamesHubs\States\ITicTacToeHubState.cs" />
     <Compile Include="GamesHubs\States\TicTacToeHubState.cs" />
     <Compile Include="GamesHubs\TicTacToeHub.cs" />
