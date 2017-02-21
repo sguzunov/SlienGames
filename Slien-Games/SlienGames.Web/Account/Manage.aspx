@@ -39,22 +39,20 @@
                                 <div class="cl">&nbsp;</div>
                             </div>
                         </div>
-                        <div class="col-articles articles flexed">                                                 
-                            
+                        <div class="col-articles articles flexed">
+
                             <asp:ListView ID="ListViewFavorites" runat="server"
-                                ItemType="SlienGames.Data.Models.GameProfile">
+                                ItemType="SlienGames.Data.Models.GameDetails">
                                 <ItemTemplate>
                                     <div class="article">
-                                <div class="image">
-                                    <a href="#">
-                                        <img src="<%#: Item.CoverImage!= null?
-                          Item.CoverImage.FileSystemUrlPath 
-                              + Item.CoverImage.FileName : "/Content/Avatars/default.png" %>"
+                                        <div class="image">
+                                            <a href="#">
+                                                <img src="<%#: Item.CoverImage!= null ? Item.CoverImage.FileSystemUrlPath + Item.CoverImage.FileName : "/Content/Avatars/default.png" %>"
                                                     alt="" /></a>
-                                </div>
-                                <h4><a href="#"><%#: Item.Name %></a></h4>
-                                <p class="console"><strong><%#: Item.Rating %></strong></p>
-                            </div>
+                                        </div>
+                                        <h4><a href="#"><%#: Item.Name %></a></h4>
+                                        <p class="console"><strong><%#: Item.Rating %></strong></p>
+                                    </div>
                                 </ItemTemplate>
                             </asp:ListView>
                         </div>

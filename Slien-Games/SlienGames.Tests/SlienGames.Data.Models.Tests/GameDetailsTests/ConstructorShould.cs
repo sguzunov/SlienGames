@@ -23,15 +23,6 @@ namespace SlienGames.Tests.SlienGames.Data.Models.Tests.GameProfileTests
 
             Assert.That(ctor, Is.Not.Null);
         }
-        [Test]
-        public void InitializeVotesCorrectly()
-        {
-            var gameProfile = new GameDetails();
-
-            var votes = gameProfile.Votes;
-
-            Assert.That(votes, Is.Not.Null.And.InstanceOf<HashSet<Vote>>());
-        }
 
         [Test]
         public void InitializeCommentsCorrectly()

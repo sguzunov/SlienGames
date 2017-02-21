@@ -1,12 +1,15 @@
-﻿using SlienGames.Data.Services.Contracts;
-using System;
+﻿using System;
+
 using WebFormsMvp;
+
+using SlienGames.Data.Services.Contracts;
 
 namespace SlienGames.MVP.Games
 {
     public class AllGamesPresenter : Presenter<IAllGamesView>
     {
-        private IGamesService gameService;
+        private readonly IGamesService gameService;
+
         public AllGamesPresenter(IAllGamesView view, IGamesService gameService) : base(view)
         {
             this.gameService = gameService;
@@ -15,7 +18,7 @@ namespace SlienGames.MVP.Games
 
         private void View_GetGames(object sender, EventArgs e)
         {
-            this.View.Model.EmbeddedGames = this.gameService.GetAll();
+            this.View.Model.Games = this.gameService.GetAll();
         }
     }
 }
