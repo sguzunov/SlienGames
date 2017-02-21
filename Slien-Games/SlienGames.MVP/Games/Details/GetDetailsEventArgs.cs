@@ -1,8 +1,8 @@
 ﻿namespace SlienGames.MVP.Games.Details
 {
-    public class GetGameDetailsEventArgs
+    public class GetDetailsEventArgs
     {
-        public GetGameDetailsEventArgs(string gameName)
+        public GetDetailsEventArgs(string gameName)
         {
             this.GameName = gameName;
         }

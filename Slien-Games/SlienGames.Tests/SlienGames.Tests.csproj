@@ -124,9 +124,8 @@
     <Compile Include="SlienGames.Data.Models.Tests\UserTests\ConstructorShould.cs" />
     <Compile Include="SlienGames.Data.Models.Tests\UserTests\ProfileImageShould.cs" />
     <Compile Include="SlienGames.Data.Models.Tests\UserTests\ScoreShould.cs" />
-    <Compile Include="SlienGames.Data.Models.Tests\VoteTests\ConstructorShould.cs" />
-    <Compile Include="SlienGames.Data.Models.Tests\VoteTests\IdShould.cs" />
-    <Compile Include="SlienGames.Data.Models.Tests\VoteTests\ValueShould.cs" />
+    <Compile Include="SlienGames.Data.Models.Tests\GameRatingTests\ConstructorShould.cs" />
+    <Compile Include="SlienGames.Data.Models.Tests\GameRatingTests\ValueShould.cs" />
     <Compile Include="SlienGames.Data.Tests\EfRepositoryTests\AddShould.cs" />
     <Compile Include="SlienGames.Data.Tests\EfRepositoryTests\ConstructorShould.cs" />
     <Compile Include="SlienGames.Data.Tests\EfRepositoryTests\GetByIdShould.cs" />

@@ -9,9 +9,9 @@
 </asp:Content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="GamePlaceholder" runat="server">
-    <div class="current-game-content" style="display: flex; padding-left:180px">
+    <div class="current-game-content" style="display: flex; padding-left: 180px">
         <div id="game-container" style="">
-            <%# this.Game.GameContent %>
+            <%# this.Model.EmbeddedGame.ExternalResource.GameContent %>
         </div>
         <div class="chat-container" style="padding-left: 160px;">
             <uc1:ChatController runat="server" ID="ChatController" />

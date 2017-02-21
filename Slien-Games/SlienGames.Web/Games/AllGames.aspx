@@ -17,16 +17,15 @@
                         </div>
                         <div class="col-articles articles flexed">
                             <asp:ListView ID="ListGames" runat="server"
-                                ItemType="SlienGames.Data.Models.EmbeddedGame">
+                                ItemType="SlienGames.Data.Models.GameDetails">
                                 <ItemTemplate>
                                     <div class="listing-games-template">
-
                                         <div class="span4">
                                             <div class="image">
-                                                <a href="/PlayedGame/CurrentGame?id=<%#: Item.Id %>">
-                                                    <img src="<%# Item.ImagePath %>" alt="" /></a>
+                                                <a href="/Games/GameDetails?name=<%#: Item.Name %>">
+                                                    <img class="game-tmbl-image" src="<%# Item.CoverImage.FileSystemUrlPath %>" alt="" /></a>
                                             </div>
-                                            <h4><a href="/PlayedGame/CurrentGame?id=<%#: Item.Id %>"><%#: Item.Name %></a></h4>
+                                            <h4><a href="/Games/GameDetails?name=<%#: Item.Name%>"><%#: Item.Name %></a></h4>
                                         </div>
                                     </div>
                                 </ItemTemplate>
@@ -37,20 +36,20 @@
                                 PagedControlID="ListGames" PageSize="8"
                                 QueryStringField="page">
                                 <Fields>
-                                    <asp:NextPreviousPagerField 
-                                        ShowFirstPageButton="true" 
-                                        ShowLastPageButton="false" 
+                                    <asp:NextPreviousPagerField
+                                        ShowFirstPageButton="true"
+                                        ShowLastPageButton="false"
                                         ShowNextPageButton="false"
-                                         ShowPreviousPageButton="false"
-                                         ButtonCssClass="page-button"/>
+                                        ShowPreviousPageButton="false"
+                                        ButtonCssClass="page-button" />
                                     <asp:NumericPagerField NumericButtonCssClass="page-button"
-                                         CurrentPageLabelCssClass="clicked-page" />
-                                     <asp:NextPreviousPagerField 
-                                        ShowFirstPageButton="false" 
-                                        ShowLastPageButton="true" 
+                                        CurrentPageLabelCssClass="clicked-page" />
+                                    <asp:NextPreviousPagerField
+                                        ShowFirstPageButton="false"
+                                        ShowLastPageButton="true"
                                         ShowNextPageButton="false"
-                                         ShowPreviousPageButton="false"
-                                         ButtonCssClass="page-button"/>
+                                        ShowPreviousPageButton="false"
+                                        ButtonCssClass="page-button" />
                                 </Fields>
                             </asp:DataPager>
                         </div>

@@ -155,3 +155,31 @@ a.play-btn {
 .mark-o {
     background-image: url(/Content/Images/tic-tac-toe-O.png);
 }
+
+.game-tmbl-image {
+    width: 150px;
+    height: 110px;
+}
+
+.ratingStar {
+    font-size: 0pt;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.filledRatingStar {
+    background-image: url(/Content/Images/star-filled.png);
+}
+
+
+.emptyRatingStar {
+    background-image: url(/Content/Images/star-empty.png);
+}
+
+.savedRatingStar {
+    /*change this to your image name*/
+    background-image: url(/Content/Images/star-saved.png);
+}

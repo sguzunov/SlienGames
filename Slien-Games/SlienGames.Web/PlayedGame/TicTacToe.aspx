@@ -11,8 +11,8 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="GamePlaceholder" runat="server">
     <asp:HiddenField ID="InputUsername" runat="server" />
 
-    <div style="display:flex;">
-        <div style="padding-left:100px; padding-top:50px">
+    <div style="display: flex;">
+        <div style="padding-left: 100px; padding-top: 50px">
             <img id="game-cover" class="cover-image" src="<%= ResolveUrl("~/Uploaded_Images/Covers/tic-tac-toe.png") %>" />
             <input id="find-opponent" type="button" value="Find Opponent" class="btn btn-default" />
             <p id="messages"></p>
@@ -34,7 +34,7 @@
 
                 $('#game-panel')
                     .append($('<p />')
-                    .text(playerName + ' VS ' + opponentName))
+                        .text(playerName + ' VS ' + opponentName))
                     .append($gameField);
 
                 $('.marker-box').click(function () {

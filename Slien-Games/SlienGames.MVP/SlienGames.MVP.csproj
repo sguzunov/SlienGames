@@ -102,10 +102,11 @@
     <Compile Include="Account\Register\RegisterView.cs" />
     <Compile Include="Games\Details\GameDetailsViewModel.cs" />
     <Compile Include="Games\Details\GameDetailsPresenter.cs" />
-    <Compile Include="Games\Details\GetGameDetailsEventArgs.cs" />
+    <Compile Include="Games\Details\GetDetailsEventArgs.cs" />
     <Compile Include="Games\Details\IGameDetailsView.cs" />
     <Compile Include="Games\AllGamesModel.cs" />
     <Compile Include="Games\AllGamesPresenter.cs" />
+    <Compile Include="Games\Details\RateGameEventArgs.cs" />
     <Compile Include="Games\IAllGamesView.cs" />
     <Compile Include="Home\HomeModel.cs" />
     <Compile Include="Home\IHomeView.cs" />
