@@ -10,13 +10,13 @@ namespace SlienGames.Data.Models
 {
     public class GameDetails : IDbModel
     {
-        private ICollection<Vote> votes;
+        private ICollection<GameRating> ratings;
         private ICollection<Comment> comments;
         private ICollection<User> usersVotedThisGame;
 
         public GameDetails()
         {
-            this.votes = new HashSet<Vote>();
+            this.ratings = new HashSet<GameRating>();
             this.comments = new HashSet<Comment>();
             this.usersVotedThisGame = new HashSet<User>();
         }
@@ -44,11 +44,7 @@ namespace SlienGames.Data.Models
 
         public virtual ExternalGameResource ExternalResource { get; set; }
 
-        public virtual ICollection<Vote> Votes
-        {
-            get { return this.votes; }
-            set { this.votes = value; }
-        }
+        public virtual int Votes { get; set; }
 
         public virtual ICollection<Comment> Comments
         {
@@ -60,6 +56,12 @@ namespace SlienGames.Data.Models
         {
             get { return this.usersVotedThisGame; }
             set { this.usersVotedThisGame = value; }
+        }
+
+        public virtual ICollection<GameRating> Ratings
+        {
+            get { return this.ratings; }
+            set { this.ratings = value; }
         }
     }
 }

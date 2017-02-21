@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Security.Claims;
 using System.Threading.Tasks;
 
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+
 using SlienGames.Data.Models.Contracts;
 
 namespace SlienGames.Data.Models
@@ -12,7 +12,7 @@ namespace SlienGames.Data.Models
     public class User : IdentityUser, IDbModel
     {
         private ICollection<Comment> gamesComments;
-        private ICollection<GameDetails> votedGames;
+        private ICollection<GameRating> ratedGames;
         private ICollection<GameDetails> favorites;
         private ICollection<Review> reviews;
         private ICollection<Review> favoriteReviews;
@@ -20,7 +20,7 @@ namespace SlienGames.Data.Models
         public User()
         {
             this.gamesComments = new HashSet<Comment>();
-            this.votedGames = new HashSet<GameDetails>();
+            this.ratedGames = new HashSet<GameRating>();
             this.favorites = new HashSet<GameDetails>();
             this.reviews = new HashSet<Review>();
             this.favoriteReviews = new HashSet<Review>();
@@ -36,10 +36,10 @@ namespace SlienGames.Data.Models
             set { this.gamesComments = value; }
         }
 
-        public virtual ICollection<GameDetails> VotedGames
+        public virtual ICollection<GameRating> VotedGames
         {
-            get { return this.votedGames; }
-            set { this.votedGames = value; }
+            get { return this.ratedGames; }
+            set { this.ratedGames = value; }
         }
 
         public virtual ICollection<GameDetails> Favorites
