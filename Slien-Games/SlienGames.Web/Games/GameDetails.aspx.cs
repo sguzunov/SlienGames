@@ -1,17 +1,24 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+
+using SlienGames.MVP.Games.Details;
+
+using WebFormsMvp;
+using WebFormsMvp.Web;
 
 namespace SlienGames.Web.Games
 {
-    public partial class GameDetails : System.Web.UI.Page
+    [PresenterBinding(typeof(GameDetailsPresenter))]
+    public partial class GameDetails : MvpPage<GameDetailsViewModel>, IGameInfoView
     {
+        public event EventHandler<GetGameDetailsEventArgs> GetGameDetails;
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            var gameName = this.Request.QueryString["name"];
 
+            var gameArgs = new GetGameDetailsEventArgs(gameName);
+
+            this.GetGameDetails(this, gameArgs);
         }
     }
 }

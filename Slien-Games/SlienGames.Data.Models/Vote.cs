@@ -1,10 +1,8 @@
 ﻿using System.Collections.Generic;
 
-using SlienGames.Data.Models.Contracts;
-
 namespace SlienGames.Data.Models
 {
-    public class Vote : IDbModel
+    public class Vote
     {
         private ICollection<GameProfile> games;
 

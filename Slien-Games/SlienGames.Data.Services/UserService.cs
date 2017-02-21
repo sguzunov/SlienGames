@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Linq.Expressions;
 using SlienGames.Data.Contracts;
 using SlienGames.Data.Models;
@@ -101,7 +102,8 @@ namespace SlienGames.Data.Services
 
         public IEnumerable<User> GetAll<T1>(Expression<Func<User, bool>> filterExpression, Expression<Func<User, T1>> sortExpression)
         {
-            return this.usersRepository.GetAll(filterExpression, sortExpression);
+            //return this.usersRepository.GetAll(filterExpression, sortExpression);
+            return new List<User>();
         }
 
         public IEnumerable<T2> GetAll<T1, T2>(Expression<Func<User, bool>> filterExpression, Expression<Func<User, T1>> sortExpression, Expression<Func<User, T2>> selectExpression)
