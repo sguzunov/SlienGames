@@ -22,6 +22,7 @@ namespace SlienGames.Data.Services.Contracts
 
         void ChangeAvatar(string fileName, string fileExtension, string filePath, object userId);
 
+         bool CheckIfIsBlocked(string username);
         void AddReview(
             string coverImageName,
             string coverImageExtension,

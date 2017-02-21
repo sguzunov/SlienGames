@@ -5,6 +5,7 @@ using System.Linq.Expressions;
 using SlienGames.Data.Contracts;
 using SlienGames.Data.Models;
 using SlienGames.Data.Services.Contracts;
+using System.Linq;
 
 namespace SlienGames.Data.Services
 {
@@ -124,6 +125,17 @@ namespace SlienGames.Data.Services
         {
             var spltettedUrl = url.Split('=');
             return spltettedUrl[1];
+        }
+
+        public bool CheckIfIsBlocked(string username)
+        {
+            var user = this.GetAll(x => x.UserName == username).FirstOrDefault();
+            if (user == null)
+            {
+                return false;
+            }
+
+            return user.IsBlocked;
         }
     }
 }

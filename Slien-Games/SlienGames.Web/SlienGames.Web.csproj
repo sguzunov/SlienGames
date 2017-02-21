@@ -89,6 +89,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
@@ -199,6 +200,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Admin\Users.aspx" />
     <Content Include="Games\GameDetails.aspx" />
     <Content Include="Account\AddReview.aspx" />
     <Content Include="Profiles\AllFavorites.aspx" />
@@ -229,6 +231,7 @@
     <Content Include="PlayedGame\CurrentGame.aspx" />
     <Content Include="PlayedGame\PlayedGame.master" />
     <Content Include="PlayedGame\Web.config" />
+    <Content Include="Admin\Web.config" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Games\AllGames.aspx" />
     <Content Include="PlayedGame\TicTacToe.aspx" />
@@ -291,6 +294,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin\Users.aspx.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\Users.aspx.designer.cs">
+      <DependentUpon>Users.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Games\GameDetails.aspx.cs">
       <DependentUpon>GameDetails.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
