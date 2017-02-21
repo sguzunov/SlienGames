@@ -102,7 +102,7 @@ namespace SlienGames.Tests.SlienGames.Data.Tests.SlienGamesDbContextTests
 
             var commentsProperty = context.GetType().GetProperty("GamesProfiles", bindingFlags);
             
-            Assert.That(commentsProperty.PropertyType, Is.EqualTo(typeof(IDbSet<GameProfile>)));
+            Assert.That(commentsProperty.PropertyType, Is.EqualTo(typeof(IDbSet<GameDetails>)));
         }
 
         [Test]

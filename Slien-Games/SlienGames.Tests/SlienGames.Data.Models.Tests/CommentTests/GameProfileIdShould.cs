@@ -15,9 +15,9 @@ namespace SlienGames.Tests.SlienGames.Data.Models.Tests.CommentTests
         public void Be_TypeOfInt()
         {
             var comment = new Comment();           
-            comment.GameProfileId = 1;
+            comment.GameDetailsId = 1;
 
-            var result = comment.GameProfileId.GetType();
+            var result = comment.GameDetailsId.GetType();
 
             Assert.True(result == typeof(int));
         }
@@ -27,9 +27,9 @@ namespace SlienGames.Tests.SlienGames.Data.Models.Tests.CommentTests
         {
             var comment = new Comment();
 
-            comment.GameProfileId = 1;
+            comment.GameDetailsId = 1;
 
-            Assert.True(comment.GameProfileId == 1);
+            Assert.True(comment.GameDetailsId == 1);
         }
     }
 }

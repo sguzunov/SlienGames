@@ -4,6 +4,6 @@
     {
         public virtual int GameId { get; set; }
 
-        public virtual GameProfile Game { get; set; }
+        public virtual GameDetails Game { get; set; }
     }
 }

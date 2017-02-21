@@ -63,15 +63,16 @@
     <Compile Include="Comment.cs" />
     <Compile Include="Constants\DefaultValueConstants.cs" />
     <Compile Include="Constants\ValidationConstants.cs" />
+    <Compile Include="Contracts\IDbModel.cs" />
     <Compile Include="CoverImage.cs" />
-    <Compile Include="EmbeddedGame.cs" />
+    <Compile Include="ExternalGameResource.cs" />
     <Compile Include="FileInfo.cs" />
-    <Compile Include="GameProfile.cs" />
+    <Compile Include="GameDetails.cs" />
     <Compile Include="ProfileImage.cs" />
     <Compile Include="Review.cs" />
     <Compile Include="ReviewImage.cs" />
     <Compile Include="User.cs" />
-    <Compile Include="Vote.cs" />
+    <Compile Include="GameRating.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
