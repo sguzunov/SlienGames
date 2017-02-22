@@ -70,6 +70,8 @@ namespace SlienGames.Data
             modelBuilder.Entity<GameDetails>()
                 .HasOptional(x => x.ExternalResource)
                 .WithRequired(x => x.Game);
+
+            modelBuilder.Entity<GameRating>().HasKey(e => new { e.UserId, e.GameId });
         }
     }
 }
