@@ -38,7 +38,7 @@ namespace SlienGames.Tests.SlienGames.MVP.Tests.Home.HomePresenterTests
         }
 
         [Test]
-        public void BeInstanceOfPresenter()
+        public void CreateInstanceOfPresenter()
         {
             var mockedView = new Mock<IHomeView>();
             var mockedUsersService = new Mock<IUsersService>();

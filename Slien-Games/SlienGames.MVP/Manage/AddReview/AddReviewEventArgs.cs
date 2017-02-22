@@ -18,6 +18,45 @@ namespace SlienGames.MVP.Manage.AddReview
             string videoUrl,
             string description)
         {
+            if (coverImageName==null)
+            {
+                throw new ArgumentNullException(nameof(coverImageName));
+            }
+
+            if (coverImageExtension == null)
+            {
+                throw new ArgumentNullException(nameof(coverImageExtension));
+            }
+
+            if (coverImagePath == null)
+            {
+                throw new ArgumentNullException(nameof(coverImagePath));
+            }
+
+            if (coverImageallBytes == null)
+            {
+                throw new ArgumentNullException(nameof(coverImageallBytes));
+            }
+
+            if (userId == null)
+            {
+                throw new ArgumentNullException(nameof(userId));
+            }
+
+            if (title == null)
+            {
+                throw new ArgumentNullException(nameof(title));
+            }
+            
+            if (videoUrl == null)
+            {
+                throw new ArgumentNullException(nameof(videoUrl));
+            }
+
+            if (description == null)
+            {
+                throw new ArgumentNullException(nameof(description));
+            }
             this.CoverImageName = coverImageName;
             this.CoverImageExtension = coverImageExtension;
             this.CoverImagePath = coverImagePath;

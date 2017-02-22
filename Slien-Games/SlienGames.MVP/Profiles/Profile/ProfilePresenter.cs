@@ -1,4 +1,5 @@
 ﻿using SlienGames.Data.Services.Contracts;
+using System;
 using WebFormsMvp;
 
 namespace SlienGames.MVP.Profiles.Profile
@@ -10,6 +11,11 @@ namespace SlienGames.MVP.Profiles.Profile
         public ProfilePresenter(IProfileView view, IUsersService usersService)
             : base(view)
         {
+            if (usersService == null)
+            {
+                throw new ArgumentNullException();
+            }
+
             this.usersService = usersService;
             this.View.GetCurrentUser += View_MyInit;
         }

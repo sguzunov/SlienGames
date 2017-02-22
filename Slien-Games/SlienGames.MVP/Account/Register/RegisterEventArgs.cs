@@ -1,9 +1,12 @@
 ﻿using SlienGames.Auth;
+using System;
 
 namespace SlienGames.MVP.Account.Register
 {
     public class RegisterEventArgs
     {
+        private const string NullDependencyErrorMessage = "{0} is null!";
+
         public RegisterEventArgs(
             string username,
             string password,
@@ -11,6 +14,26 @@ namespace SlienGames.MVP.Account.Register
             ApplicationUserManager applicationUserManager,
             ApplicationSignInManager applicationSignInManager)
         {
+            if (username == null)
+            {
+                throw new ArgumentNullException(string.Format(NullDependencyErrorMessage, nameof(username)));
+            }
+            if (password == null)
+            {
+                throw new ArgumentNullException(string.Format(NullDependencyErrorMessage, nameof(password)));
+            }
+            if (email == null)
+            {
+                throw new ArgumentNullException(string.Format(NullDependencyErrorMessage, nameof(email)));
+            }
+            if (applicationUserManager == null)
+            {
+                throw new ArgumentNullException(string.Format(NullDependencyErrorMessage, nameof(applicationUserManager)));
+            }
+            if (applicationSignInManager == null)
+            {
+                throw new ArgumentNullException(string.Format(NullDependencyErrorMessage, nameof(applicationSignInManager)));
+            }
             this.Username = username;
             this.Password = password;
             this.Email = email;

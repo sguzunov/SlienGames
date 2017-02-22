@@ -1,5 +1,6 @@
 ﻿using NUnit.Framework;
 using SlienGames.Data.Models;
+using SlienGames.Data.Models.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,9 +17,9 @@ namespace SlienGames.Tests.SlienGames.Data.Models.Tests.GameDetailsTests
         {
             var gameProfile = new GameDetails();
 
-            //var result = gameProfile.GetType().GetInterfaces().Any(x => x == typeof(IDbModel));
+            var result = gameProfile.GetType().GetInterfaces().Any(x => x == typeof(IDbModel));
 
-            //Assert.True(result);
+            Assert.True(result);
         }
     }
 }

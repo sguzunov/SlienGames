@@ -1,4 +1,5 @@
 ﻿using SlienGames.Data.Services.Contracts;
+using System;
 using WebFormsMvp;
 
 namespace SlienGames.MVP.Manage.ManageAvatar
@@ -11,6 +12,15 @@ namespace SlienGames.MVP.Manage.ManageAvatar
         public ManageAvatarPresenter(IManageAvatarView view, IUsersService usersService, IFileSaver fileSaver)
             : base(view)
         {
+            if (usersService == null)
+            {
+                throw new ArgumentNullException(nameof(usersService));
+            }
+
+            if (fileSaver == null)
+            {
+                throw new ArgumentNullException(nameof(fileSaver));
+            }
             this.usersService = usersService;
             this.fileSaver = fileSaver;
             this.View.GetCurrentUser += View_MyInit;

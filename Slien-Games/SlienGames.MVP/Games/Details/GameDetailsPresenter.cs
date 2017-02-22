@@ -42,11 +42,11 @@ namespace SlienGames.MVP.Games.Details
                 throw new ArgumentNullException($"Game with name {e.GameName} is not found!");
             }
 
-            this.view.Model.GameId = gameDetails.Id;
-            this.view.Model.GameName = gameDetails.Name;
-            this.view.Model.GameDescription = gameDetails.Description;
-            this.view.Model.CoverImageFileSystemPath = gameDetails.CoverImage.FileSystemUrlPath;
-            this.view.Model.Comments = gameDetails.Comments;
+            this.View.Model.GameId = gameDetails.Id;
+            this.View.Model.GameName = gameDetails.Name;
+            this.View.Model.GameDescription = gameDetails.Description;
+            this.View.Model.CoverImageFileSystemPath = gameDetails.CoverImage.FileSystemUrlPath;
+            this.View.Model.Comments = gameDetails.Comments;
         }
     }
 }

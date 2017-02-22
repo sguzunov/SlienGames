@@ -14,6 +14,10 @@ namespace SlienGames.MVP.Review
 
         public ReviewPresenter(IReviewView view, IReviewsService reviewsService) : base(view)
         {
+            if (reviewsService == null)
+            {
+                throw new ArgumentNullException(nameof(reviewsService));
+            }
             this.reviewsService = reviewsService;
             this.View.GetCurrentReview += View_GetCurrentReview;
         }
