@@ -1,6 +1,5 @@
 ﻿using System;
 
-using SlienGames.Data.Contracts;
 using SlienGames.Data.Services.Contracts;
 
 using WebFormsMvp;
@@ -9,28 +8,40 @@ namespace SlienGames.MVP.Games.Details
 {
     public class GameDetailsPresenter : Presenter<IGameInfoView>
     {
-        private const string DependencyIsNullErrorMessage = "{0} is null in {1}!";
-
         private readonly IGameInfoView view;
         private readonly IGamesService gameService;
+        private readonly IUsersService userService;
+        private readonly ICommentsService commentsService;
 
-        public GameDetailsPresenter(IGameInfoView view, IGamesService gameProfileServices) : base(view)
+        public GameDetailsPresenter(
+            IGameInfoView view,
+            IGamesService gameProfileServices,
+            IUsersService userService,
+            ICommentsService commentsService) : base(view)
         {
-            if (gameProfileServices == null)
-            {
-                throw new ArgumentNullException(string.Format(DependencyIsNullErrorMessage, nameof(gameProfileServices), this.GetType().Name));
-            }
-
             this.view = view;
             this.gameService = gameProfileServices;
+            this.userService = userService;
+            this.commentsService = commentsService;
 
             this.view.GetGameDetails += View_GetGameDetails;
-            this.view.RateGame += View_RateGame;
+            this.view.LikeGame += View_LikeGame;
+            this.view.AddComment += View_AddComment;
         }
 
-        private void View_RateGame(object sender, RateGameEventArgs e)
+        private void View_AddComment(object sender, NewCommentEventArgs e)
         {
-            this.gameService.RateGame(e.GameId, e.UserId, e.Rating);
+            this.commentsService.AddCommentToGame(e.GameId, e.AuthorUsername, e.CommentContent);
+            this.view.Model.Comments = this.commentsService.GetGameComments(e.GameId);
+        }
+
+        private void View_LikeGame(object sender, LikeGameEventArgs e)
+        {
+            bool isLiked = this.gameService.LikeGame(e.GameId, e.Username);
+            if (isLiked)
+            {
+                this.view.Model.IsFavourite = true;
+            }
         }
 
         private void View_GetGameDetails(object sender, GetDetailsEventArgs e)
@@ -40,6 +51,14 @@ namespace SlienGames.MVP.Games.Details
             if (gameDetails == null)
             {
                 throw new ArgumentNullException($"Game with name {e.GameName} is not found!");
+            }
+
+            if (e.Username != null) // has logged in user
+            {
+                bool userLikesTheGame = this.userService.CheckIfLikesAGame(e.Username, gameDetails.Id);
+
+                // If the user has already liked the game.
+                this.view.Model.IsFavourite = userLikesTheGame ? true : false;
             }
 
             this.view.Model.GameId = gameDetails.Id;

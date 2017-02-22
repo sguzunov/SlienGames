@@ -10,7 +10,6 @@ namespace SlienGames.Data.Models
         public int GameId { get; set; }
 
         [Key, Column(Order = 1)]
-        [Required]
         public Guid UserId { get; set; }
 
         // Rated game.

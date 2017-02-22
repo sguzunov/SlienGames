@@ -8,7 +8,7 @@ namespace SlienGames.MVP.Home
     public class HomePresenter : Presenter<IHomeView>
     {
         private readonly IUsersService usersService;
-        
+
         public HomePresenter(IHomeView view, IUsersService usersService) : base(view)
         {
             this.usersService = usersService;
@@ -18,7 +18,7 @@ namespace SlienGames.MVP.Home
 
         private void View_MyInit(object sender, EventArgs e)
         {
-            this.View.Model.Users = this.usersService.GetAll(null, x => x.Score).Take(5);
+            this.View.Model.Users = this.usersService.GetUsersOrderedByScore().Take(5);
         }
     }
 }

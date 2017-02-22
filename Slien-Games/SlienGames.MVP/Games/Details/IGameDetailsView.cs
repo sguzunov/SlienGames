@@ -8,6 +8,8 @@ namespace SlienGames.MVP.Games.Details
     {
         event EventHandler<GetDetailsEventArgs> GetGameDetails;
 
-        event EventHandler<RateGameEventArgs> RateGame;
+        event EventHandler<LikeGameEventArgs> LikeGame;
+
+        event EventHandler<NewCommentEventArgs> AddComment;
     }
 }

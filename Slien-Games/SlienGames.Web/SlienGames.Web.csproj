@@ -205,8 +205,8 @@
     <Content Include="Content\Images\tic-tac-toe-O.png" />
     <Content Include="Content\Images\tic-tac-toe-X.png" />
     <Content Include="Admin\Users.aspx" />
-    <Content Include="Games\GameDetails.aspx" />
     <Content Include="Account\AddReview.aspx" />
+    <Content Include="Games\GameDetails.aspx" />
     <Content Include="Profiles\AllFavorites.aspx" />
     <Content Include="Account\Lockout.aspx" />
     <Content Include="Account\Login.aspx" />
@@ -305,19 +305,19 @@
     <Compile Include="Admin\Users.aspx.designer.cs">
       <DependentUpon>Users.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Games\GameDetails.aspx.cs">
-      <DependentUpon>GameDetails.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Games\GameDetails.aspx.designer.cs">
-      <DependentUpon>GameDetails.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Account\AddReview.aspx.cs">
       <DependentUpon>AddReview.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Account\AddReview.aspx.designer.cs">
       <DependentUpon>AddReview.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Games\GameDetails.aspx.cs">
+      <DependentUpon>GameDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Games\GameDetails.aspx.designer.cs">
+      <DependentUpon>GameDetails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Profiles\AllFavorites.aspx.cs">
       <DependentUpon>AllFavorites.aspx</DependentUpon>
