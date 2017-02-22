@@ -16,57 +16,57 @@
                         <a href="/PlayedGame/CurrentGame?id= <%#: this.Model.GameId %>" class="btn btn-default play-btn">Play</a>
                     </div>
                     <div>
-                        <asp:UpdatePanel runat="server" ID="RatingUpdater">
-                            <ContentTemplate>
-                                <ajaxToolkit:Rating
-                                    ID="Rating"
-                                    runat="server"
-                                    CurrentRating="3"
-                                    MaxRating="5"
-                                    StarCssClass="ratingStar"
-                                    WaitingStarCssClass="savedRatingStar"
-                                    FilledStarCssClass="filledRatingStar"
-                                    EmptyStarCssClass="emptyRatingStar"
-                                    OnChanged="Rating_Changed" />
-                            </ContentTemplate>
-                        </asp:UpdatePanel>
-                        <asp:ImageButton runat="server" ID="ButtonLikeUnlike" ImageUrl="/Content/Images/liked-game.png" />
-                    </div>
-                    <div class="comments-section block">
-                        <div class="new-comment-section">
-                            <a id="new-comment-btn">Add Comment</a>
-                            <div id="comment-content" class="form-group comment-content hidden">
-                                <label for="comment">Comment:</label>
-                                <textarea class="form-control" rows="5" id="comment"></textarea>
-                            </div>
-                        </div>
-                        <div class="block-bot">
-                            <div class="head">
-                                <div class="head-cnt">
-                                    <h3>Comments</h3>
-                                </div>
-                            </div>
-                            <div class="text-articles articles">
-                                <asp:UpdatePanel runat="server" ID="UpdatePanelComments" UpdateMode="Conditional">
+                        <asp:LoginView ID="LoginViewLike" runat="server" ViewStateMode="Disabled">
+                            <LoggedInTemplate>
+                                <asp:UpdatePanel runat="server" ID="RatingUpdater" UpdateMode="Conditional">
                                     <ContentTemplate>
-                                        <asp:Repeater runat="server" ID="RepeaterComments" ItemType="SlienGames.Data.Models.Comment" DataSource="<%# this.Model.Comments %>">
-                                            <ItemTemplate>
-                                                <article class="game-comment-box article">
-                                                    <p><%#: Item.Content %></p>
-                                                    <hr />
-                                                    <footer class="comment-footer">
-                                                        <i>Posted on: </i><span class="date"><%#: Item.PostedOn.ToString("dd.MM.yyyy") %></span>
-                                                        <i>by </i>
-                                                        <a href="../Profiles/Profile.aspx?id=<%# Item.AuthorId %>">
-                                                            <%#: Item.Author.UserName %>
-                                                        </a>
-                                                    </footer>
-                                                </article>
-                                            </ItemTemplate>
-                                        </asp:Repeater>
+                                        <asp:ImageButton runat="server" ID="ButtonLikeUnlike" OnClick="ButtonLikeUnlike_Click" />
+                                    </ContentTemplate>
+                                </asp:UpdatePanel>
+                            </LoggedInTemplate>
+                        </asp:LoginView>
+                    </div>
+                    <asp:LoginView runat="server" ID="LoginViewAddComment">
+                        <LoggedInTemplate>
+                            <div class="comments-section block">
+                                <asp:UpdatePanel runat="server">
+                                    <ContentTemplate>
+                                        <asp:Label runat="server" ID="CommentContentErrorMessage" />
+                                        <textarea id="CommentContent" runat="server" class="form-control" maxlength="200" />
+                                        <button runat="server" id="ButtonAddComment" class="btn btn-default right" onserverclick="ButtonAddComment_ServerClick">
+                                            <i class="glyphicon glyphicon-pencil"></i>Add Comment
+                                        </button>
                                     </ContentTemplate>
                                 </asp:UpdatePanel>
                             </div>
+                        </LoggedInTemplate>
+                    </asp:LoginView>
+                    <div class="block-bot">
+                        <div class="head">
+                            <div class="head-cnt">
+                                <h3>Comments</h3>
+                            </div>
+                        </div>
+                        <div class="text-articles articles">
+                            <asp:UpdatePanel runat="server" ID="UpdatePanelComments" UpdateMode="Conditional">
+                                <ContentTemplate>
+                                    <asp:Repeater runat="server" ID="RepeaterComments" ItemType="SlienGames.Data.Models.Comment" DataSource="<%# this.Model.Comments %>">
+                                        <ItemTemplate>
+                                            <article class="game-comment-box article">
+                                                <p><%#: Item.Content %></p>
+                                                <hr />
+                                                <footer class="comment-footer">
+                                                    <i>Posted on: </i><span class="date"><%#: Item.PostedOn.ToString("dd.MM.yyyy") %></span>
+                                                    <i>by </i>
+                                                    <a href="../Profiles/Profile.aspx?id=<%# Item.AuthorId %>">
+                                                        <%#: Item.Author.UserName %>
+                                                    </a>
+                                                </footer>
+                                            </article>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                </ContentTemplate>
+                            </asp:UpdatePanel>
                         </div>
                     </div>
                 </section>
