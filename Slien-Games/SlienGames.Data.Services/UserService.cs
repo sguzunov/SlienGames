@@ -5,7 +5,6 @@ using System.Linq.Expressions;
 using SlienGames.Data.Contracts;
 using SlienGames.Data.Models;
 using SlienGames.Data.Services.Contracts;
-using System.Linq;
 
 namespace SlienGames.Data.Services
 {
@@ -18,16 +17,6 @@ namespace SlienGames.Data.Services
 
         public UserService(IRepository<User> usersRepository, ISlienGamesData unitOfWork)
         {
-            if (usersRepository == null)
-            {
-                throw new ArgumentNullException(string.Format(NullDependencyErrorMessage, nameof(usersRepository)));
-            }
-
-            if (unitOfWork == null)
-            {
-                throw new ArgumentNullException(string.Format(NullDependencyErrorMessage, nameof(unitOfWork)));
-            }
-
             this.usersRepository = usersRepository;
             this.uow = unitOfWork;
         }
@@ -92,24 +81,21 @@ namespace SlienGames.Data.Services
             this.uow.Commit();
         }
 
-        public IEnumerable<User> GetAll()
-        {
-            return this.usersRepository.GetAll();
-        }
         public IEnumerable<User> GetAll(Expression<Func<User, bool>> filterExpression)
         {
             return this.usersRepository.GetAll(filterExpression);
         }
 
-        public IEnumerable<User> GetAll<T1>(Expression<Func<User, bool>> filterExpression, Expression<Func<User, T1>> sortExpression)
+        // TODO: Uncomment.
+        public IEnumerable<User> GetUsersOrderedByScore()
         {
-            //return this.usersRepository.GetAll(filterExpression, sortExpression);
-            return new List<User>();
+            return this.usersRepository.GetAll().OrderBy(x => x.Score);
         }
 
-        public IEnumerable<T2> GetAll<T1, T2>(Expression<Func<User, bool>> filterExpression, Expression<Func<User, T1>> sortExpression, Expression<Func<User, T2>> selectExpression)
+        public bool CheckIfLikesAGame(string username, int gameId)
         {
-            return this.usersRepository.GetAll(filterExpression, sortExpression, selectExpression);
+            var games = this.usersRepository.GetAll(x => x.UserName == username, x => x.Favorites).SelectMany(x => x);
+            return games.Any(x => x.Id == gameId);
         }
 
         private void CheckIfValidExtension(string extension)
