@@ -88,6 +88,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="WebFormsMvp, Version=1.4.5.0, Culture=neutral, PublicKeyToken=537f18701145dff0" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -130,6 +131,7 @@
     <Compile Include="SlienGames.Data.Tests\EfRepositoryTests\ConstructorShould.cs" />
     <Compile Include="SlienGames.Data.Tests\EfRepositoryTests\GetByIdShould.cs" />
     <Compile Include="SlienGames.Data.Tests\SlienGamesDbContextTests\ConstructorShould.cs" />
+    <Compile Include="SlienGames.MVP.Tests\Home\HomePresenterTests\ConstuctorShould.cs" />
     <Compile Include="Web.Tests\ChatHubTests\JoinGroupShould.cs" />
     <Compile Include="Web.Tests\ChatHubTests\SendMessageShould.cs" />
     <Compile Include="Web.Tests\TicTacToeHubTests\FindOpponentShould.cs" />
@@ -144,9 +146,17 @@
       <Project>{ad2774fc-9410-4c86-b293-95fb02f70f43}</Project>
       <Name>SlienGames.Data.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SlienGames.Data.Services\SlienGames.Data.Services.csproj">
+      <Project>{36969cbe-152e-40a5-8f38-126e8ea62c87}</Project>
+      <Name>SlienGames.Data.Services</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SlienGames.Data\SlienGames.Data.csproj">
       <Project>{8c257009-eef1-46ba-8d5c-638d3c42b634}</Project>
       <Name>SlienGames.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SlienGames.MVP\SlienGames.MVP.csproj">
+      <Project>{9908D3C9-AC92-460C-AE3A-1C1CFE3109E0}</Project>
+      <Name>SlienGames.MVP</Name>
     </ProjectReference>
     <ProjectReference Include="..\SlienGames.Web\SlienGames.Web.csproj">
       <Project>{9b6774b9-87bb-427f-ad51-3987fa89ce1c}</Project>
@@ -161,7 +171,6 @@
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="SlienGames.MVP.Tests\" />
     <Folder Include="SlienGames.Services.Tests\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
