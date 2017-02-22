@@ -15,7 +15,7 @@ namespace SlienGames.Data.Models
         [MaxLength(ValidationConstants.CommentContentMaxLength)]
         public string Content { get; set; }
 
-        public virtual int AuthorId { get; set; }
+        public virtual Guid AuthorId { get; set; }
 
         [Required]
         public virtual User Author { get; set; }
