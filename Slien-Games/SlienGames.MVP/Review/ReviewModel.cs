@@ -1,4 +1,4 @@
-﻿namespace SlienGames.MVP.Review
+﻿namespace SlienGames.MVP.ReviewMVP
 {
     public class ReviewModel
     {

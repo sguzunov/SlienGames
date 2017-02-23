@@ -2,7 +2,7 @@
 using NUnit.Framework;
 using SlienGames.Data.Models;
 using SlienGames.Data.Services.Contracts;
-using SlienGames.MVP.Review;
+using SlienGames.MVP.ReviewMVP;
 using System;
 using WebFormsMvp;
 

@@ -124,7 +124,7 @@
                             </div>
                         </div>
                         <div class="col-articles articles">
-                            <div class="cl">&nbsp;</div>
+                            <%--<div class="cl">&nbsp;</div>
                             <div class="article">
                                 <div class="image">
                                     <a href="#">
@@ -149,6 +149,21 @@
                                 <h4><a href="#">STARCRAF II</a></h4>
                                 <p class="console"><strong>PC</strong></p>
                             </div>
+                            --%>
+                            <div class="cl">&nbsp;</div>
+                            <asp:ListView ID="ListViewReviews" runat="server"
+                                ItemType="SlienGames.Data.Models.Review">
+                                <ItemTemplate>
+                                  <div class="article">
+                                <div class="image">
+                                    <a href="/Review?id=<%#:Item.Id %>">
+                                        <img src="<%# Item.Picture.FileSystemUrlPath + Item.Picture.FileName %>" alt="" /></a>
+                                </div>
+                                <h4><a href="/Review?id=<%#:Item.Id %>"><%# Item.Title %></a></h4>
+                               <a  href="/Profiles/Profile?id=<%#:Item.Author.Id %>"><p class="console"><strong><%# Item.Author.UserName %></strong></p></a> 
+                            </div>
+                                </ItemTemplate>
+                            </asp:ListView>
                             <div class="cl">&nbsp;</div>
                         </div>
                     </div>

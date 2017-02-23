@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SlienGames.MVP.Review
+namespace SlienGames.MVP.ReviewMVP
 {
     public class ReviewEventArgs : EventArgs
     {

@@ -10,22 +10,36 @@ namespace SlienGames.MVP.Home
         private const string NullDependencyErrorMessage = "{0} is null!";
 
         private readonly IUsersService usersService;
-        
-        public HomePresenter(IHomeView view, IUsersService usersService) : base(view)
+        private readonly IReviewsService reviewsService;
+
+        public HomePresenter(IHomeView view, IUsersService usersService, IReviewsService reviewsService) : base(view)
         {
             if (usersService == null)
             {
                 throw new ArgumentNullException(string.Format(NullDependencyErrorMessage, nameof(usersService)));
             }
 
+            if (reviewsService == null)
+            {
+                throw new ArgumentNullException(string.Format(NullDependencyErrorMessage, nameof(reviewsService)));
+
+            }
+
+            this.reviewsService = reviewsService;
             this.usersService = usersService;
 
             this.View.GetTopUsers += View_MyInit;
+            this.View.GetTopReviews += View_GetTopReviews;
+        }
+
+        private void View_GetTopReviews(object sender, EventArgs e)
+        {
+            this.View.Model.Reviews = this.reviewsService.GetAll().Take(3);
         }
 
         private void View_MyInit(object sender, EventArgs e)
         {
-            this.View.Model.Users = this.usersService.GetAll(null, x => x.Score).Take(5);
+            this.View.Model.Users = this.usersService.GetAll().Take(5);
         }
     }
 }

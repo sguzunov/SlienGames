@@ -17,11 +17,22 @@ namespace SlienGames.Tests.SlienGames.MVP.Tests.Home.HomePresenterTests
     public class ConstuctorShould
     {
         [Test]
-        public void ThrowArgumentNullExceptionWithProperMessage_WhenInstantiatingWithNull()
+        public void ThrowArgumentNullExceptionWithProperMessage_WhenUsersServiceNull()
         {
             var mockedView = new Mock<IHomeView>();
 
-            var exc = Assert.Throws<ArgumentNullException>(() => new HomePresenter(mockedView.Object, null));
+            var exc = Assert.Throws<ArgumentNullException>(() => new HomePresenter(mockedView.Object, null,null));
+
+            Assert.That(exc.Message.Contains("is null"));
+        }
+
+        [Test]
+        public void ThrowArgumentNullExceptionWithProperMessage_WhenReviewsServiceIsNull()
+        {
+            var mockedView = new Mock<IHomeView>();
+            var mockedUsersService = new Mock<IUsersService>();
+
+            var exc = Assert.Throws<ArgumentNullException>(() => new HomePresenter(mockedView.Object, mockedUsersService.Object, null));
 
             Assert.That(exc.Message.Contains("is null"));
         }
@@ -31,8 +42,8 @@ namespace SlienGames.Tests.SlienGames.MVP.Tests.Home.HomePresenterTests
         {
             var mockedView = new Mock<IHomeView>();
             var mockedUsersService = new Mock<IUsersService>();
-
-            var presenter = new HomePresenter(mockedView.Object, mockedUsersService.Object);
+            var mockedReviewsService = new Mock<IReviewsService>();
+            var presenter = new HomePresenter(mockedView.Object, mockedUsersService.Object, mockedReviewsService.Object);
 
             Assert.That(presenter, Is.Not.Null);
         }
@@ -42,8 +53,9 @@ namespace SlienGames.Tests.SlienGames.MVP.Tests.Home.HomePresenterTests
         {
             var mockedView = new Mock<IHomeView>();
             var mockedUsersService = new Mock<IUsersService>();
+            var mockedReviewsService = new Mock<IReviewsService>();
 
-            var presenter = new HomePresenter(mockedView.Object, mockedUsersService.Object);
+            var presenter = new HomePresenter(mockedView.Object, mockedUsersService.Object,mockedReviewsService.Object);
 
             Assert.That(presenter, Is.InstanceOf<Presenter<IHomeView>>());
         }
@@ -53,12 +65,14 @@ namespace SlienGames.Tests.SlienGames.MVP.Tests.Home.HomePresenterTests
         {
             var mockedView = new Mock<IHomeView>();
             var mockedUsersService = new Mock<IUsersService>();
+            var mockedReviewsService = new Mock<IReviewsService>();
+
             var mockedModel = new Mock<HomeModel>();
             mockedView.Setup(x => x.Model).Returns(mockedModel.Object);
             var fakeResult = new List<User>();
             mockedUsersService.Setup(x => x.GetAll(It.IsAny<Expression<Func<User, bool>>>(),It.IsAny<Expression<Func<User, int>>>())).Returns(fakeResult);
 
-            var presenter = new HomePresenter(mockedView.Object, mockedUsersService.Object);
+            var presenter = new HomePresenter(mockedView.Object, mockedUsersService.Object,mockedReviewsService.Object);
             mockedView.Raise(x => x.GetTopUsers += null, null, null);
 
             mockedUsersService.Verify(x => x.GetAll(It.IsAny<Expression<Func<User, bool>>>(), It.IsAny<Expression<Func<User, int>>>()), Times.Once);

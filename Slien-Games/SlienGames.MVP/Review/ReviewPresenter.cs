@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using WebFormsMvp;
 
-namespace SlienGames.MVP.Review
+namespace SlienGames.MVP.ReviewMVP
 {
     public class ReviewPresenter : Presenter<IReviewView>
     {
