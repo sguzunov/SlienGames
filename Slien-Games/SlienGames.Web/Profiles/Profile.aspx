@@ -27,7 +27,7 @@
                         <div class="col-articles articles flexed">                                                 
                             
                             <asp:ListView ID="ListViewFavorites" runat="server"
-                                ItemType="SlienGames.Data.Models. ">
+                                ItemType="SlienGames.Data.Models.GameDetails ">
                                 <ItemTemplate>
                                     <div class="article">
                                 <div class="image">

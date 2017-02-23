@@ -70,12 +70,12 @@ namespace SlienGames.Tests.SlienGames.MVP.Tests.Home.HomePresenterTests
             var mockedModel = new Mock<HomeModel>();
             mockedView.Setup(x => x.Model).Returns(mockedModel.Object);
             var fakeResult = new List<User>();
-            mockedUsersService.Setup(x => x.GetAll(It.IsAny<Expression<Func<User, bool>>>(),It.IsAny<Expression<Func<User, int>>>())).Returns(fakeResult);
+            mockedUsersService.Setup(x => x.GetAll(It.IsAny<Expression<Func<User, bool>>>())).Returns(fakeResult);
 
             var presenter = new HomePresenter(mockedView.Object, mockedUsersService.Object,mockedReviewsService.Object);
             mockedView.Raise(x => x.GetTopUsers += null, null, null);
 
-            mockedUsersService.Verify(x => x.GetAll(It.IsAny<Expression<Func<User, bool>>>(), It.IsAny<Expression<Func<User, int>>>()), Times.Once);
+            mockedUsersService.Verify(x => x.GetAll(It.IsAny<Expression<Func<User, bool>>>()), Times.Once);
         }
     }
 }
