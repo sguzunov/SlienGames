@@ -89,7 +89,7 @@ namespace SlienGames.Tests.SlienGames.MVP.Tests.PlayedGame.CurrentGame.CurrentGa
 
             mockedView.Raise(x => x.GetGame += null, null, new CurrentGameEventArgs(1));
 
-            mockedGameService.Verify(x => x.GetById(It.IsAny<object>()), Times.Once);
+            mockedGameService.Verify(x => x.GetAGameById(It.IsAny<object>()), Times.Once);
         }
     }
 }

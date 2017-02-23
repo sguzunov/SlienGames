@@ -16,13 +16,35 @@ namespace SlienGames.Tests.SlienGames.MVP.Tests.Games.Details.GameDetailsPresent
     public class ConstructorShould
     {
         [Test]
+        public void ThrowArgumentNullExceptionWithProperMessage_WhenGameServiceIsNull()
+        {
+            var mockedView = new Mock<IGameInfoView>();
+            var mockedGamesService = new Mock<IGamesService>();
+            var mockedCommentsService = new Mock<ICommentsService>();
+            Assert.Throws<ArgumentNullException>(() => new GameDetailsPresenter(mockedView.Object, mockedGamesService.Object, null, mockedCommentsService.Object));
+        }
+
+        [Test]
+        public void ThrowArgumentNullExceptionWithProperMessage_WheUsersServiceIsNull()
+        {
+            var mockedView = new Mock<IGameInfoView>();
+            var mockedGamesService = new Mock<IGamesService>();
+            var mockedCommentsService = new Mock<ICommentsService>();
+            var mockedUsersService = new Mock<IUsersService>();
+            Assert.Throws<ArgumentNullException>(() => new GameDetailsPresenter(mockedView.Object, null , mockedUsersService.Object, mockedCommentsService.Object));
+        }
+
+        [Test]
         public void ThrowArgumentNullExceptionWithProperMessage_WhenUserServiceIsNull()
         {
             var mockedView = new Mock<IGameInfoView>();
             var mockedGamesService = new Mock<IGamesService>();
             var mockedCommentsService = new Mock<ICommentsService>();
-            Assert.Throws<ArgumentNullException>(() => new GameDetailsPresenter(mockedView.Object,mockedGamesService.Object ,null,mockedCommentsService.Object));
+            var mockedUsersService = new Mock<IUsersService>();
+
+            Assert.Throws<ArgumentNullException>(() => new GameDetailsPresenter(mockedView.Object, mockedGamesService.Object, mockedUsersService.Object, null));
         }
+
 
         [Test]
         public void InitializeCorrectly_WhenParametersAreValid()
@@ -32,7 +54,7 @@ namespace SlienGames.Tests.SlienGames.MVP.Tests.Games.Details.GameDetailsPresent
             var mockedUsersService = new Mock<IUsersService>();
             var mockedCommentsService = new Mock<ICommentsService>();
 
-            var presenter = new GameDetailsPresenter(mockedView.Object, mockedGamesService.Object, mockedUsersService.Object,mockedCommentsService.Object);
+            var presenter = new GameDetailsPresenter(mockedView.Object, mockedGamesService.Object, mockedUsersService.Object, mockedCommentsService.Object);
 
             Assert.That(presenter, Is.Not.Null);
         }
@@ -54,17 +76,19 @@ namespace SlienGames.Tests.SlienGames.MVP.Tests.Games.Details.GameDetailsPresent
         [Test]
         public void CallGamessServiceRateMethod_WhenViewsEventIsRaised()
         {
-            //var mockedView = new Mock<IGameInfoView>();
-            //var mockedModel = new Mock<GameDetailsViewModel>();
-            //mockedView.Setup(x => x.Model).Returns(mockedModel.Object);
-            //var mockedGameService = new Mock<IGamesService>();
-            //mockedGameService.Setup(x => x.RateGame(It.IsAny<int>(), It.IsAny<Guid>(), It.IsAny<int>())).Verifiable();
-            //var presenter = new GameDetailsPresenter(mockedView.Object, mockedGamesService.Object, mockedUsersService.Object, mockedCommentsService.Object);
+            var mockedView = new Mock<IGameInfoView>();
+            var mockedModel = new Mock<GameDetailsViewModel>();
+            var mockedGamesService = new Mock<IGamesService>();
+            var mockedUsersService = new Mock<IUsersService>();
+            var mockedCommentsService = new Mock<ICommentsService>();
+            mockedView.Setup(x => x.Model).Returns(mockedModel.Object);
+            var mockedGameService = new Mock<IGamesService>();
+            mockedGameService.Setup(x => x.LikeGame(It.IsAny<int>(), It.IsAny<string>()));
+            var presenter = new GameDetailsPresenter(mockedView.Object, mockedGamesService.Object, mockedUsersService.Object, mockedCommentsService.Object);
 
-            //mockedView.Raise(x => x.RateGame += null, null, new RateGameEventArgs(1, new Guid("c56a4180-65aa-42ec-a945-5fd21dec0538"), 2));
+            mockedView.Raise(x => x.LikeGame += null, null, new LikeGameEventArgs(1, "gosho"));
 
-
-            //mockedGameService.Verify(x => x.RateGame(It.IsAny<int>(), It.IsAny<Guid>(), It.IsAny<int>()), Times.Once);
+            mockedGameService.Verify(x => x.LikeGame(It.IsAny<int>(), It.IsAny<string>()), Times.Once);
         }
 
         [Test]
@@ -81,7 +105,7 @@ namespace SlienGames.Tests.SlienGames.MVP.Tests.Games.Details.GameDetailsPresent
             //mockedGameService.Setup(x => x.GetDetailsWithComments(It.IsAny<string>())).Returns(null as GameDetails);
             //var presenter = new GameDetailsPresenter(mockedView.Object, mockedGameService.Object, mockedUsersService.Object, mockedCommentsService.Object);
 
-            //var ex = Assert.Throws<ArgumentNullException>(() => mockedView.Raise(x => x.GetGameDetails += null, null, new GetDetailsEventArgs("gosho","gosho")));
+            //var ex = Assert.Throws<ArgumentNullException>(() => mockedView.Raise(x => x.GetGameDetails += null, null, new GetDetailsEventArgs("gosho", "gosho")));
 
             //Assert.True(ex.Message.Contains("is not found"));
         }

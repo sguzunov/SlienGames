@@ -19,6 +19,21 @@ namespace SlienGames.MVP.Games.Details
             IUsersService userService,
             ICommentsService commentsService) : base(view)
         {
+            if (gameProfileServices == null)
+            {
+                throw new ArgumentNullException(nameof(view));
+            }
+
+            if (userService == null)
+            {
+                throw new ArgumentNullException(nameof(view));
+            }
+
+            if (commentsService == null)
+            {
+                throw new ArgumentNullException(nameof(view));
+            }
+
             this.view = view;
             this.gameService = gameProfileServices;
             this.userService = userService;

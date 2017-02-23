@@ -17,8 +17,9 @@ namespace SlienGames.Web
         {
             this.GetTopUsers?.Invoke(sender, e);
             this.GetTopReviews?.Invoke(sender, e);
+            this.ListViewReviews.DataSource = this.Model.Reviews.ToList();
             this.ListViewTopPlayers.DataSource = this.Model.Users.ToList();
-            this.ListViewTopPlayers.DataBind();
+            this.DataBind();
         }
     }
 }

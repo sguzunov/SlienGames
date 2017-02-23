@@ -52,12 +52,12 @@ namespace SlienGames.Tests.SlienGames.MVP.Tests.Games.AllGamesPresenterTests
             var mockedModel = new Mock<AllGamesModel>();
             mockedView.Setup(x => x.Model).Returns(mockedModel.Object);
             var mockedGamesService = new Mock<IGamesService>();
-            mockedGamesService.Setup(x => x.GetAll()).Returns(new List<GameDetails>());
+            mockedGamesService.Setup(x => x.GetAllGames()).Returns(new List<GameDetails>());
             var presenter = new AllGamesPresenter(mockedView.Object, mockedGamesService.Object);
 
-            mockedView.Raise(x => x.GetGames += null, null,null);
+            mockedView.Raise(x => x.GetGames += null, null, null);
 
-            mockedGamesService.Verify(x => x.GetAll(), Times.Once);
+            mockedGamesService.Verify(x => x.GetAllGames(), Times.Once);
         }
 
     }
