@@ -45,13 +45,14 @@ footer p.corp-name {
 img.cover-image {
     float: left;
     width: auto;
-    max-height: 300px;
+    min-height: 300px;
+    min-width: 420px;
     max-width: 420px;
 }
 
 p.game-description {
-    display: inline-block;
-    max-width: 480px;
+    float:right;
+    max-width: 460px;
     text-align: justify;
     font-size: 14px;
     background-color: #313131;

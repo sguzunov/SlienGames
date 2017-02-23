@@ -6,11 +6,11 @@ namespace SlienGames.Data.Services.Contracts
 {
     public interface IGamesService
     {
-        IEnumerable<GameDetails> GetAll();
+        IEnumerable<GameDetails> GetAllGames();
 
-        GameDetails GetById(object id);
+        GameDetails GetAGameById(object id);
 
-        GameDetails GetDetailsWithComments(string gameName);
+        GameDetails GetDetailsWithCommentsByName(string gameName);
 
         bool LikeGame(int gameId, string username);
     }

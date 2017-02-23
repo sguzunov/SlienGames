@@ -10,8 +10,6 @@ namespace SlienGames.Data.Services
 {
     public class UserService : IUsersService
     {
-        private const string NullDependencyErrorMessage = "{0} is null in UsersServices!";
-
         private readonly IRepository<User> usersRepository;
         private readonly ISlienGamesData uow;
 
@@ -33,7 +31,6 @@ namespace SlienGames.Data.Services
 
         public void ChangeAvatar(string fileName, string fileExtension, string filePath, object userId)
         {
-
             this.CheckIfValidExtension(fileExtension);
 
             var user = this.usersRepository.GetById(userId);
@@ -41,11 +38,16 @@ namespace SlienGames.Data.Services
             {
                 user.ProfileImage = new ProfileImage();
             }
+
             user.ProfileImage.FileSystemUrlPath = filePath;
             user.ProfileImage.FileName = fileName;
             user.ProfileImage.FileExtension = fileExtension;
-            this.usersRepository.Update(user);
-            this.uow.Commit();
+
+            using (this.uow)
+            {
+                this.usersRepository.Update(user);
+                this.uow.Commit();
+            }
         }
 
         public void AddReview(
@@ -72,13 +74,15 @@ namespace SlienGames.Data.Services
                 FileName = coverImageName,
                 FileSystemUrlPath = coverImageFilePath,
                 Review = review
-
             };
             review.Picture = coverPicture;
             user.Reviews.Add(review);
 
-            this.usersRepository.Update(user);
-            this.uow.Commit();
+            using (this.uow)
+            {
+                this.usersRepository.Update(user);
+                this.uow.Commit();
+            }
         }
 
         public IEnumerable<User> GetAll(Expression<Func<User, bool>> filterExpression)
@@ -98,21 +102,6 @@ namespace SlienGames.Data.Services
             return games.Any(x => x.Id == gameId);
         }
 
-        private void CheckIfValidExtension(string extension)
-        {
-            var allowedExtensions = new string[] { ".gif", ".tif", ".png", ".jpg", ".jpeg" };
-            if (Array.IndexOf(allowedExtensions, extension) < 0)
-            {
-                throw new InvalidOperationException();
-            }
-        }
-
-        private string GetVideoId(string url)
-        {
-            var spltettedUrl = url.Split('=');
-            return spltettedUrl[1];
-        }
-
         public bool CheckIfIsBlocked(string username)
         {
             var user = this.GetAll(x => x.UserName == username).FirstOrDefault();
@@ -122,6 +111,21 @@ namespace SlienGames.Data.Services
             }
 
             return user.IsBlocked;
+        }
+
+        private void CheckIfValidExtension(string extension)
+        {
+            var allowedExtensions = new string[] { ".gif", ".tif", ".png", ".jpg", ".jpeg" };
+            if (Array.IndexOf(allowedExtensions, extension) < 0)
+            {
+                throw new ArgumentException("Image extension in invalid!");
+            }
+        }
+
+        private string GetVideoId(string url)
+        {
+            var spltettedUrl = url.Split('=');
+            return spltettedUrl[1];
         }
     }
 }

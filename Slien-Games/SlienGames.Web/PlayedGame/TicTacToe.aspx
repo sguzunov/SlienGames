@@ -13,7 +13,7 @@
 
     <div style="display: flex;">
         <div style="padding-left: 100px; padding-top: 50px">
-            <img id="game-cover" class="cover-image" src="<%= ResolveUrl("~/Uploaded_Images/Covers/tic-tac-toe.png") %>" />
+            <img id="game-cover" class="cover-image" src="<%= ResolveUrl("~/Content/OurBrand/Images/tic-tac-toe.png") %>" />
             <input id="find-opponent" type="button" value="Find Opponent" class="btn btn-default" />
             <p id="messages"></p>
         </div>
@@ -33,9 +33,9 @@
                 }
 
                 $('#game-panel')
-                    .append($('<p />')
+                    .prepend($('<p />')
                         .text(playerName + ' VS ' + opponentName))
-                    .append($gameField);
+                    .prepend($gameField);
 
                 $('.marker-box').click(function () {
                     var position = $(this).attr('data-value');

@@ -18,7 +18,7 @@ namespace SlienGames.MVP.Games
 
         private void View_GetGames(object sender, EventArgs e)
         {
-            this.View.Model.Games = this.gameService.GetAll();
+            this.View.Model.Games = this.gameService.GetAllGames();
         }
     }
 }

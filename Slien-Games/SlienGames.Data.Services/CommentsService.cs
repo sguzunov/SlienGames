@@ -29,7 +29,7 @@ namespace SlienGames.Data.Services
             this.unitOfWork = unitOfWork;
         }
 
-        public void AddCommentToGame(int gameId, string authorUsername, string content)
+        public Comment AddCommentToGame(int gameId, string authorUsername, string content)
         {
             if (content.Length > CommentMaxLenght)
             {
@@ -38,6 +38,16 @@ namespace SlienGames.Data.Services
 
             var game = this.gamesRepository.GetById(gameId);
             var author = this.usersRepository.GetAll(x => x.UserName == authorUsername).FirstOrDefault();
+
+            if (game == null)
+            {
+                throw new ArgumentException($"Game with id = {gameId} is not found!");
+            }
+
+            if (author == null)
+            {
+                throw new ArgumentException($"Game with username = {authorUsername} is not found!");
+            }
 
             var comment = new Comment
             {
@@ -53,11 +63,13 @@ namespace SlienGames.Data.Services
                 game.Comments.Add(comment);
                 this.unitOfWork.Commit();
             }
+
+            return comment;
         }
 
         public IEnumerable<Comment> GetGameComments(int gameId)
         {
-            var comments = this.commentsRepository.GetAll<Comment>(x => x.GameDetailsId == gameId, null, x => x.Author).Distinct();
+            var comments = this.commentsRepository.GetAll<Comment>(x => x.GameDetailsId == gameId, null, x => x.Author);
             return comments;
         }
     }

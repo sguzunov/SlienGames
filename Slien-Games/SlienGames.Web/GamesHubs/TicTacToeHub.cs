@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
+
 using Microsoft.AspNet.SignalR;
 
 using SlienGames.Web.GamesHubs.States;
@@ -37,7 +38,11 @@ namespace SlienGames.Web.GamesHubs
         public void FindOpponent()
         {
             string playerConnectionId = this.Context.ConnectionId;
-            var player = this.state.Clients.First(x => x.ConnectionId == playerConnectionId);
+            IPlayer player;
+            lock (syncRootGame)
+            {
+                player = this.state.Clients.First(x => x.ConnectionId == playerConnectionId);
+            }
 
             var opponent = this.state.Clients.FirstOrDefault(x => x.ConnectionId != playerConnectionId && !x.IsPlayingNow);
             if (opponent == null)
@@ -54,7 +59,12 @@ namespace SlienGames.Web.GamesHubs
         public void PlayTurn(int markerPosition)
         {
             string playerConnectionId = this.Context.ConnectionId;
-            var player = this.state.Clients.First(x => x.ConnectionId == playerConnectionId);
+            IPlayer player;
+            lock (syncRootPlayer)
+            {
+                player = this.state.Clients.First(x => x.ConnectionId == playerConnectionId);
+            }
+
             if (!player.IsOnTurn)
             {
                 this.Clients.Client(playerConnectionId).waitTurn();
@@ -104,14 +114,22 @@ namespace SlienGames.Web.GamesHubs
 
         private void FinishGame(IMultiplayerGame game)
         {
-            this.state.Clients.Remove(game.FirstPlayer);
-            this.state.Clients.Remove(game.SecondtPlayer);
-            this.state.Games.Remove(game);
+            lock (syncRootGame)
+            {
+                this.state.Clients.Remove(game.FirstPlayer);
+                this.state.Clients.Remove(game.SecondtPlayer);
+                this.state.Games.Remove(game);
+            }
         }
 
         private IMultiplayerGame GetGameBy(string playerConnectionId)
         {
-            var game = this.state.Games.First(x => x.FirstPlayer.ConnectionId == playerConnectionId || x.SecondtPlayer.ConnectionId == playerConnectionId);
+            IMultiplayerGame game;
+            lock (syncRootGame)
+            {
+                game = this.state.Games.First(x => x.FirstPlayer.ConnectionId == playerConnectionId || x.SecondtPlayer.ConnectionId == playerConnectionId);
+
+            }
             return game;
         }
 

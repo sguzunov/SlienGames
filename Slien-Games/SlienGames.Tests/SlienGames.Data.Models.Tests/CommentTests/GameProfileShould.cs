@@ -42,7 +42,7 @@ namespace SlienGames.Tests.SlienGames.Data.Models.Tests.CommentTests
 
             var result = comment
                 .GetType()
-                .GetProperty("GameProfile")
+                .GetProperty("GameDetails")
                 .GetCustomAttributes(false)
                 .Where(x => x.GetType() == typeof(RequiredAttribute))
                 .Any();

@@ -75,53 +75,53 @@ namespace SlienGames.Tests.SlienGames.Data.Tests.SlienGamesDbContextTests
         }
 
         [Test]
-        public void CreateInstanceWithGamesProfileProperty()
+        public void CreateInstanceWithGamesDetailsProperty()
         {
             var context = new SlienGamesDbContext();
             var bindingFlags = BindingFlags.Public | BindingFlags.Instance;
 
-            var commentsProperty = context.GetType().GetProperty("GamesProfiles", bindingFlags);
+            var commentsProperty = context.GetType().GetProperty("GamesDetails", bindingFlags);
 
             Assert.That(commentsProperty, Is.Not.Null);
         }
         [Test]
-        public void CreateInstanceWithGamesProfileVirtualProperty()
+        public void CreateInstanceWithGamesDetailsVirtualProperty()
         {
             var context = new SlienGamesDbContext();
             var bindingFlags = BindingFlags.Public | BindingFlags.Instance;
 
-            var commentsProperty = context.GetType().GetProperty("GamesProfiles", bindingFlags);
+            var commentsProperty = context.GetType().GetProperty("GamesDetails", bindingFlags);
 
             Assert.That(commentsProperty.GetGetMethod().IsVirtual, Is.True);
         }
         [Test]
-        public void CreateInstanceWithGamesProfileVirtualPropertyOfTypeIDbSet()
+        public void CreateInstanceWithGamesDetailsVirtualPropertyOfTypeIDbSet()
         {
             var context = new SlienGamesDbContext();
             var bindingFlags = BindingFlags.Public | BindingFlags.Instance;
 
-            var commentsProperty = context.GetType().GetProperty("GamesProfiles", bindingFlags);
+            var commentsProperty = context.GetType().GetProperty("GamesDetails", bindingFlags);
 
             Assert.That(commentsProperty.PropertyType, Is.EqualTo(typeof(IDbSet<GameDetails>)));
         }
 
         [Test]
-        public void CreateInstanceWithVotesProperty()
+        public void CreateInstanceWithGamesRatingsProperty()
         {
             var context = new SlienGamesDbContext();
             var bindingFlags = BindingFlags.Public | BindingFlags.Instance;
 
-            var commentsProperty = context.GetType().GetProperty("Votes", bindingFlags);
+            var commentsProperty = context.GetType().GetProperty("GamesRatings", bindingFlags);
 
             Assert.That(commentsProperty, Is.Not.Null);
         }
         [Test]
-        public void CreateInstanceWithVotesVirtualProperty()
+        public void CreateInstanceWithGamesRatingsVirtualProperty()
         {
             var context = new SlienGamesDbContext();
             var bindingFlags = BindingFlags.Public | BindingFlags.Instance;
 
-            var commentsProperty = context.GetType().GetProperty("Votes", bindingFlags);
+            var commentsProperty = context.GetType().GetProperty("GamesRatings", bindingFlags);
 
             Assert.That(commentsProperty.GetGetMethod().IsVirtual, Is.True);
         }
@@ -131,7 +131,7 @@ namespace SlienGames.Tests.SlienGames.Data.Tests.SlienGamesDbContextTests
             var context = new SlienGamesDbContext();
             var bindingFlags = BindingFlags.Public | BindingFlags.Instance;
 
-            var commentsProperty = context.GetType().GetProperty("Votes", bindingFlags);
+            var commentsProperty = context.GetType().GetProperty("GamesRatings", bindingFlags);
 
             Assert.That(commentsProperty.PropertyType, Is.EqualTo(typeof(IDbSet<GameRating>)));
         }

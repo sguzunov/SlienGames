@@ -46,7 +46,7 @@ namespace SlienGames.MVP.Games.Details
 
         private void View_GetGameDetails(object sender, GetDetailsEventArgs e)
         {
-            var gameDetails = this.gameService.GetDetailsWithComments(e.GameName);
+            var gameDetails = this.gameService.GetDetailsWithCommentsByName(e.GameName);
 
             if (gameDetails == null)
             {

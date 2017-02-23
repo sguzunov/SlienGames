@@ -12,13 +12,13 @@ namespace SlienGames.Tests.SlienGames.Data.Models.Tests.CommentTests
     public class AuthorIdShould
     {
         [Test]
-        public void Be_TypeOfInt()
+        public void Be_TypeOGuid()
         {
             var comment = new Comment();
 
             var result = comment.AuthorId.GetType();
 
-            Assert.True(result == typeof(int));
+            Assert.True(result == typeof(Guid));
         }
     }
 }

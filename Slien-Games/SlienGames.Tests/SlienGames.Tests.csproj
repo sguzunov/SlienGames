@@ -91,6 +91,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\CommentsServiceTests\AddCommentToGameShould.cs" />
+    <Compile Include="Services\CommentsServiceTests\GetDetailsWithCommentsByNameShould.cs" />
+    <Compile Include="Services\GamesServiceTests\GetAGameByIdShould.cs" />
+    <Compile Include="Services\GamesServiceTests\GetAllGamesShould.cs" />
+    <Compile Include="Services\GamesServiceTests\GetDetailsWithCommentsShould.cs" />
+    <Compile Include="Services\GamesServiceTests\LikeGameShould.cs" />
+    <Compile Include="Services\UserServiceTests\AddReviewShould.cs" />
+    <Compile Include="Services\UserServiceTests\ChangeAvatarShould.cs" />
     <Compile Include="SlienGames.Data.Models.Tests\CommentTests\AuthorIdShould.cs" />
     <Compile Include="SlienGames.Data.Models.Tests\CommentTests\AuthorShould.cs" />
     <Compile Include="SlienGames.Data.Models.Tests\CommentTests\CommentType.cs" />
@@ -141,6 +149,10 @@
     <ProjectReference Include="..\SlienGames.Data.Models\SlienGames.Data.Models.csproj">
       <Project>{ad2774fc-9410-4c86-b293-95fb02f70f43}</Project>
       <Name>SlienGames.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SlienGames.Data.Services\SlienGames.Data.Services.csproj">
+      <Project>{36969CBE-152E-40A5-8F38-126E8EA62C87}</Project>
+      <Name>SlienGames.Data.Services</Name>
     </ProjectReference>
     <ProjectReference Include="..\SlienGames.Data\SlienGames.Data.csproj">
       <Project>{8c257009-eef1-46ba-8d5c-638d3c42b634}</Project>

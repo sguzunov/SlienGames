@@ -47,7 +47,7 @@
                                     <div class="article">
                                         <div class="image">
                                             <a href="#">
-                                                <img src="<%#: Item.CoverImage!= null ? Item.CoverImage.FileSystemUrlPath + Item.CoverImage.FileName : "/Content/Avatars/default.png" %>"
+                                                <img src="<%#: Item.CoverImage!= null ? Item.CoverImage.FileSystemUrlPath : "/Content/Avatars/default.png" %>"
                                                     alt="" /></a>
                                         </div>
                                         <h4><a href="#"><%#: Item.Name %></a></h4>

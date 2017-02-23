@@ -13,7 +13,7 @@
                         <p class="game-description"><%#: this.Model.GameDescription %></p>
                     </section>
                     <div class="play-btn-panel">
-                        <a href="/PlayedGame/CurrentGame?id= <%#: this.Model.GameId %>" class="btn btn-default play-btn">Play</a>
+                        <asp:LinkButton runat="server" ID="ButtonGoPlay" CssClass="btn btn-default play-btn">Play</asp:LinkButton>
                     </div>
                     <div>
                         <asp:LoginView ID="LoginViewLike" runat="server" ViewStateMode="Disabled">

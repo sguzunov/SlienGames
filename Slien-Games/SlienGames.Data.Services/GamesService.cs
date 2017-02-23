@@ -4,6 +4,7 @@ using System.Linq;
 using SlienGames.Data.Contracts;
 using SlienGames.Data.Models;
 using SlienGames.Data.Services.Contracts;
+using System;
 
 namespace SlienGames.Data.Services
 {
@@ -24,17 +25,17 @@ namespace SlienGames.Data.Services
             this.unitOfWork = unitOfWork;
         }
 
-        public IEnumerable<GameDetails> GetAll()
+        public IEnumerable<GameDetails> GetAllGames()
         {
             return this.gamesRepository.GetAll();
         }
 
-        public GameDetails GetById(object id)
+        public GameDetails GetAGameById(object id)
         {
             return this.gamesRepository.GetById(id);
         }
 
-        public GameDetails GetDetailsWithComments(string gameName)
+        public GameDetails GetDetailsWithCommentsByName(string gameName)
         {
             var gameDetails = this.gamesRepository.GetAll<GameDetails>(
                 x => x.Name == gameName,
@@ -46,6 +47,11 @@ namespace SlienGames.Data.Services
 
         public bool LikeGame(int gameId, string username)
         {
+            if (username == null)
+            {
+                throw new ArgumentNullException($"{nameof(username)} cannot be null!");
+            }
+
             var user = this.usersRepository.GetAll<User>(x => x.UserName == username, null, x => x.Favorites).First();
 
             if (user.Favorites.Any(x => x.Id == gameId)) return false;

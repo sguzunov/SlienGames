@@ -35,6 +35,9 @@ namespace SlienGames.Web.Games
             {
                 this.SetFavouriteBtnImage();
             }
+
+            this.ButtonGoPlay.PostBackUrl = "/PlayedGame/" + (this.Model.GameName == "TicTacToe" ? "TicTacToe.aspx" : $"CurrentGame?={this.Model.GameId}");
+            this.DataBind();
         }
 
         protected void ButtonLikeUnlike_Click(object sender, EventArgs e)

@@ -17,7 +17,7 @@ namespace SlienGames.MVP.PlayedGame.CurrentGame
 
         private void View_GetGame(object sender, CurrentGameEventArgs e)
         {
-            this.View.Model.EmbeddedGame = gameService.GetById(e.Id);
+            this.View.Model.EmbeddedGame = gameService.GetAGameById(e.Id);
         }
 
         private void View_GetUser(object sender, CurrentGameEventArgs e)
