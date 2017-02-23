@@ -22,31 +22,22 @@ namespace SlienGames.Web.Games {
         protected global::System.Web.UI.WebControls.Image ImageCover;
         
         /// <summary>
-        /// RatingUpdater control.
+        /// LoginViewLike control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel RatingUpdater;
+        protected global::System.Web.UI.WebControls.LoginView LoginViewLike;
         
         /// <summary>
-        /// Rating control.
+        /// LoginViewAddComment control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.Rating Rating;
-        
-        /// <summary>
-        /// ButtonLikeUnlike control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton ButtonLikeUnlike;
+        protected global::System.Web.UI.WebControls.LoginView LoginViewAddComment;
         
         /// <summary>
         /// UpdatePanelComments control.

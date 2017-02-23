@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 using SlienGames.Data.Models;
 
@@ -13,6 +12,6 @@ namespace SlienGames.Data.Services.Contracts
 
         GameDetails GetDetailsWithComments(string gameName);
 
-        void RateGame(int gameId, Guid userId, int ratingValue);
+        bool LikeGame(int gameId, string username);
     }
 }

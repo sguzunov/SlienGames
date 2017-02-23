@@ -4,7 +4,6 @@ using System.Linq;
 using SlienGames.Data.Contracts;
 using SlienGames.Data.Models;
 using SlienGames.Data.Services.Contracts;
-using System;
 
 namespace SlienGames.Data.Services
 {
@@ -12,7 +11,6 @@ namespace SlienGames.Data.Services
     {
         private readonly IRepository<User> usersRepository;
         private readonly IRepository<GameDetails> gamesRepository;
-        private readonly IRepository<GameRating> gamesRatingsRepository;
         private readonly ISlienGamesData unitOfWork;
 
         public GamesService(
@@ -22,7 +20,6 @@ namespace SlienGames.Data.Services
             ISlienGamesData unitOfWork)
         {
             this.gamesRepository = gamesRepository;
-            this.gamesRatingsRepository = gamesRatingsRepository;
             this.usersRepository = usersRepository;
             this.unitOfWork = unitOfWork;
         }
@@ -47,23 +44,20 @@ namespace SlienGames.Data.Services
             return gameDetails;
         }
 
-        public void RateGame(int gameId, Guid userId, int ratingValue)
+        public bool LikeGame(int gameId, string username)
         {
-            var user = this.usersRepository.GetById(userId);
-            var game = this.gamesRepository.GetById(gameId);
+            var user = this.usersRepository.GetAll<User>(x => x.UserName == username, null, x => x.Favorites).First();
 
-            var rating = new GameRating
-            {
-                User = user,
-                Game = game,
-                Value = ratingValue
-            };
+            if (user.Favorites.Any(x => x.Id == gameId)) return false;
 
             using (this.unitOfWork)
             {
-                this.gamesRatingsRepository.Add(rating);
+                var game = this.gamesRepository.GetById(gameId);
+                user.Favorites.Add(game);
                 this.unitOfWork.Commit();
             }
+
+            return true;
         }
     }
 }

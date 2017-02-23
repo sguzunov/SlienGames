@@ -20,16 +20,5 @@ namespace SlienGames.Tests.SlienGames.Data.Models.Tests.CommentTests
 
             Assert.True(result == typeof(int));
         }
-
-        [TestCase(2)]
-        [TestCase(3)]
-        public void GetAndSet_ShouldBePublic(int id)
-        {
-            var comment = new Comment();
-
-            comment.AuthorId = id;
-
-            Assert.True(id == comment.AuthorId);
-        }
     }
 }

@@ -39,7 +39,7 @@ namespace SlienGames.MVP.Home
 
         private void View_MyInit(object sender, EventArgs e)
         {
-            this.View.Model.Users = this.usersService.GetAll().Take(5);
+            this.View.Model.Users = this.usersService.GetUsersOrderedByScore().Take(5);
         }
     }
 }

@@ -21,6 +21,7 @@ namespace SlienGames.Data.Models
             this.usersVotedThisGame = new HashSet<User>();
         }
 
+        [Key]
         public int Id { get; set; }
 
         [Required]

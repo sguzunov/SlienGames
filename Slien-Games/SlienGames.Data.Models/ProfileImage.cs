@@ -1,4 +1,4 @@
-﻿using SlienGames.Data.Models.Constants;
+﻿ using SlienGames.Data.Models.Constants;
 
 namespace SlienGames.Data.Models
 {
