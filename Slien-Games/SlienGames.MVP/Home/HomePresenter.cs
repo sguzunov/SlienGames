@@ -7,13 +7,34 @@ namespace SlienGames.MVP.Home
 {
     public class HomePresenter : Presenter<IHomeView>
     {
-        private readonly IUsersService usersService;
+        private const string NullDependencyErrorMessage = "{0} is null!";
 
-        public HomePresenter(IHomeView view, IUsersService usersService) : base(view)
+        private readonly IUsersService usersService;
+        private readonly IReviewsService reviewsService;
+
+        public HomePresenter(IHomeView view, IUsersService usersService, IReviewsService reviewsService) : base(view)
         {
+            if (usersService == null)
+            {
+                throw new ArgumentNullException(string.Format(NullDependencyErrorMessage, nameof(usersService)));
+            }
+
+            if (reviewsService == null)
+            {
+                throw new ArgumentNullException(string.Format(NullDependencyErrorMessage, nameof(reviewsService)));
+
+            }
+
+            this.reviewsService = reviewsService;
             this.usersService = usersService;
 
             this.View.GetTopUsers += View_MyInit;
+            this.View.GetTopReviews += View_GetTopReviews;
+        }
+
+        private void View_GetTopReviews(object sender, EventArgs e)
+        {
+            this.View.Model.Reviews = this.reviewsService.GetAll().Take(3);
         }
 
         private void View_MyInit(object sender, EventArgs e)

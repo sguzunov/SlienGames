@@ -1,4 +1,5 @@
 ﻿using SlienGames.Data.Services.Contracts;
+using System;
 using WebFormsMvp;
 
 namespace SlienGames.MVP.Manage
@@ -10,6 +11,10 @@ namespace SlienGames.MVP.Manage
         public ManagePresenter(IManageView view, IUsersService usersService)
             : base(view)
         {
+            if (usersService==null)
+            {
+                throw new ArgumentNullException(nameof(usersService));
+            }
             this.usersService = usersService;
             this.View.GetCurrentUser += View_MyInit;
         }

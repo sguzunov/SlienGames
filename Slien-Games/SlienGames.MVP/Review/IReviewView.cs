@@ -1,7 +1,7 @@
 ﻿using System;
 using WebFormsMvp;
 
-namespace SlienGames.MVP.Review
+namespace SlienGames.MVP.ReviewMVP
 {
     public interface IReviewView : IView<ReviewModel>
     {
