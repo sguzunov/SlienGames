@@ -12,6 +12,11 @@ namespace SlienGames.MVP.Games
 
         public AllGamesPresenter(IAllGamesView view, IGamesService gameService) : base(view)
         {
+            if (gameService==null)
+            {
+                throw new ArgumentNullException(nameof(gameService));
+            }
+
             this.gameService = gameService;
             this.View.GetGames += View_GetGames;
         }

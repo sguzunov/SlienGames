@@ -14,6 +14,16 @@ namespace SlienGames.MVP.Manage.AddReview
         private readonly IFileSaver fileSaver;
         public AddReviewPresenter(IAddReviewView view, IUsersService usersService, IFileSaver fileSaver) : base(view)
         {
+            if (usersService==null)
+            {
+                throw new ArgumentNullException(nameof(usersService));
+            }
+
+            if (fileSaver ==null)
+            {
+                throw new ArgumentNullException(nameof(fileSaver));
+            }
+
             this.usersService = usersService;
             this.fileSaver = fileSaver;
             this.View.SaveReview += View_SaveReview;

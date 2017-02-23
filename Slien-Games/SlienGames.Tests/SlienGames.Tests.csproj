@@ -51,6 +51,10 @@
       <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AspNet.SignalR.Core, Version=2.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.SignalR.Core.2.2.1\lib\net45\Microsoft.AspNet.SignalR.Core.dll</HintPath>
       <Private>True</Private>
@@ -61,6 +65,14 @@
     </Reference>
     <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Moq, Version=4.5.30.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
@@ -88,6 +100,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="WebFormsMvp, Version=1.4.5.0, Culture=neutral, PublicKeyToken=537f18701145dff0" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -138,6 +151,33 @@
     <Compile Include="SlienGames.Data.Tests\EfRepositoryTests\ConstructorShould.cs" />
     <Compile Include="SlienGames.Data.Tests\EfRepositoryTests\GetByIdShould.cs" />
     <Compile Include="SlienGames.Data.Tests\SlienGamesDbContextTests\ConstructorShould.cs" />
+    <Compile Include="SlienGames.MVP.Tests\Account\LoginTests\LoginPresenterTests\ConstructorShould.cs" />
+    <Compile Include="SlienGames.MVP.Tests\Account\LoginTests\LoginEventArgsTests\ConstructorShould.cs" />
+    <Compile Include="SlienGames.MVP.Tests\Account\RegisterTests\RegisterEventArgsTests\ConstructorShould.cs" />
+    <Compile Include="SlienGames.MVP.Tests\Account\RegisterTests\RegisterPresenterTests\ConstructorShould.cs" />
+    <Compile Include="SlienGames.MVP.Tests\Games\AllGamesPresenterTests\ConstructorShould.cs" />
+    <Compile Include="SlienGames.MVP.Tests\Games\Details\GameDetailsPresenterTests\ConstructorShould.cs" />
+    <Compile Include="SlienGames.MVP.Tests\Games\Details\GetDetailsEventArgsTests\ConstructorShould.cs" />
+    <Compile Include="SlienGames.MVP.Tests\Home\HomePresenterTests\ConstuctorShould.cs" />
+    <Compile Include="SlienGames.MVP.Tests\Manage\AddReviewTests\AddReviewEventArgsTests\ConstructorShould.cs" />
+    <Compile Include="SlienGames.MVP.Tests\Manage\AddReviewTests\AddReviewPresenterTests\ConstructorShould.cs" />
+    <Compile Include="SlienGames.MVP.Tests\Manage\ManageAvatarTests\IdEventArgsTests\ConstructorShould.cs" />
+    <Compile Include="SlienGames.MVP.Tests\Manage\ManageAvatarTests\ManageAvatarEventArgsTests\ConstructorShould.cs" />
+    <Compile Include="SlienGames.MVP.Tests\Manage\ManageAvatarTests\ManageAvatarPresenterTests\ConstructorShould.cs" />
+    <Compile Include="SlienGames.MVP.Tests\Manage\ManageEventArgsTests\ConstructorShould.cs" />
+    <Compile Include="SlienGames.MVP.Tests\Manage\ManagePresenterTests\ConstructorShould.cs" />
+    <Compile Include="SlienGames.MVP.Tests\PlayedGame\CurrentGame\CurrentGameEventargsTests\ConstructorShould.cs" />
+    <Compile Include="SlienGames.MVP.Tests\PlayedGame\CurrentGame\CurrentGamePresenterTests\ConstructorShould.cs" />
+    <Compile Include="SlienGames.MVP.Tests\PlayedGame\TicTacToe\TicTacToeEventArgsTests\ConstructorShould.cs" />
+    <Compile Include="SlienGames.MVP.Tests\PlayedGame\TicTacToe\TicTacToePresenterTests\ConstructorShould.cs" />
+    <Compile Include="SlienGames.MVP.Tests\Profiles\AllFavoritesTests\AllFavoritesEventArgsTests\ConstructorShould.cs" />
+    <Compile Include="SlienGames.MVP.Tests\Profiles\AllFavoritesTests\AllFavoritesPresenterTests\ConstructorShould.cs" />
+    <Compile Include="SlienGames.MVP.Tests\Profiles\ProfileTests\ProfileEventArgsTests\ConstructorShould.cs" />
+    <Compile Include="SlienGames.MVP.Tests\Profiles\ProfileTests\ProfilePresenterTests\ConstructorShould.cs" />
+    <Compile Include="SlienGames.MVP.Tests\Review\ReviewEventArgsTests\ContructorShould.cs" />
+    <Compile Include="SlienGames.MVP.Tests\Review\ReviewPresenterTests\ConstructorShould.cs" />
+    <Compile Include="Web.Tests\ChatHubTests\JoinGroupShould.cs" />
+    <Compile Include="Web.Tests\ChatHubTests\SendMessageShould.cs" />
     <Compile Include="Web.Tests\TicTacToeHubTests\FindOpponentShould.cs" />
     <Compile Include="Web.Tests\TicTacToeHubTests\RegisterPlayerShould.cs" />
   </ItemGroup>
@@ -146,17 +186,25 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\SlienGames.Auth\SlienGames.Auth.csproj">
+      <Project>{4075FF4B-8E98-4BE6-9A8F-90951D599C39}</Project>
+      <Name>SlienGames.Auth</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SlienGames.Data.Models\SlienGames.Data.Models.csproj">
       <Project>{ad2774fc-9410-4c86-b293-95fb02f70f43}</Project>
       <Name>SlienGames.Data.Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\SlienGames.Data.Services\SlienGames.Data.Services.csproj">
-      <Project>{36969CBE-152E-40A5-8F38-126E8EA62C87}</Project>
+      <Project>{36969cbe-152e-40a5-8f38-126e8ea62c87}</Project>
       <Name>SlienGames.Data.Services</Name>
     </ProjectReference>
     <ProjectReference Include="..\SlienGames.Data\SlienGames.Data.csproj">
       <Project>{8c257009-eef1-46ba-8d5c-638d3c42b634}</Project>
       <Name>SlienGames.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SlienGames.MVP\SlienGames.MVP.csproj">
+      <Project>{9908D3C9-AC92-460C-AE3A-1C1CFE3109E0}</Project>
+      <Name>SlienGames.MVP</Name>
     </ProjectReference>
     <ProjectReference Include="..\SlienGames.Web\SlienGames.Web.csproj">
       <Project>{9b6774b9-87bb-427f-ad51-3987fa89ce1c}</Project>
@@ -170,7 +218,9 @@
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="SlienGames.Services.Tests\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

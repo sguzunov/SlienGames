@@ -1,4 +1,5 @@
 ﻿using SlienGames.Data.Services.Contracts;
+using System;
 using WebFormsMvp;
 
 namespace SlienGames.MVP.PlayedGame.CurrentGame
@@ -9,6 +10,16 @@ namespace SlienGames.MVP.PlayedGame.CurrentGame
         private readonly IUsersService usersService;
         public CurrentGamePresenter(ICurrentGameView view, IGamesService gameService, IUsersService usersService) : base(view)
         {
+            if (gameService == null)
+            {
+                throw new ArgumentNullException(nameof(gameService));
+            }
+            
+            if (usersService == null)
+            {
+                throw new ArgumentNullException(nameof(usersService));
+            }
+
             this.gameService = gameService;
             this.usersService = usersService;
             this.View.GetGame += View_GetGame;
@@ -24,6 +35,6 @@ namespace SlienGames.MVP.PlayedGame.CurrentGame
         {
             this.View.Model.User = this.usersService.GetUserById(e.Id);
         }
-        
+
     }
 }
