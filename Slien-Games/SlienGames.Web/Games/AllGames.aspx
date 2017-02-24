@@ -17,7 +17,7 @@
                         </div>
                         <div class="col-articles articles flexed">
                             <asp:ListView ID="ListGames" runat="server"
-                                ItemType="SlienGames.Data.Models.GameDetails">
+                                ItemType="SlienGames.Data.Models.GameDetails" SelectMethod="ListGames_GetData">
                                 <ItemTemplate>
                                     <div class="listing-games-template">
                                         <div class="span4">

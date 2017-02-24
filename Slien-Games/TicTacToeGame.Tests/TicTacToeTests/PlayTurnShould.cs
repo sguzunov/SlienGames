@@ -57,10 +57,12 @@ namespace TicTacToeGame.Tests.TicTacToeTests
         [Test]
         public void ReturnTrue_WhenFirstTurnIsPlayed()
         {
+            // Arrange
             var fakeFirstPlayer = new Mock<IPlayer>();
             var fakeSecondPlayer = new Mock<IPlayer>();
             var game = new TicTacToe(fakeFirstPlayer.Object, fakeSecondPlayer.Object);
 
+            // Act & Assert
             Assert.IsTrue(game.PlayTurn(fakeFirstPlayer.Object, 1));
         }
 
